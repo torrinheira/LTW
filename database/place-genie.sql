@@ -6,14 +6,14 @@ DROP IF EXISTS reservation;
 
 CREATE TABLE user (
     id              INTEGER PRIMARY KEY,
-    username        VARCHAR UNIQUE NOT NULL,
-    password        VARCHAR NOT NULL
+    username        VARCHAR UNIQUE NOT NULL ON CONFLICT ABORT,
+    password        VARCHAR NOT NULL ON CONFLICT ABORT
 );
 
 CREATE TABLE property (
     id              INTEGER PRIMARY KEY,
     title           VARCHAR,
-    price           REAL,
+    price           REAL NOT NULL ON CONFLICT ABORT,
     location_id     INTEGER REFERENCES location(id),
     description     VARCHAR,
     capacity        INTEGER,
@@ -30,6 +30,6 @@ CREATE TABLE reservation (
     id              INTEGER PRIMARY KEY,
     property_id     INTEGER REFERENCES property(id),
     tourist_id      INTEGER REFERENCES user(id),
-    arrival_date    DATE,
-    departure_date  DATE
+    arrival_date    DATE NOT NULL ON CONFLICT ABORT,
+    departure_date  DATE NOT NULL ON CONFLICT ABORT
 );
