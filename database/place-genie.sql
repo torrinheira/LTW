@@ -1,5 +1,6 @@
 CREATE TABLE user (
-    username        VARCHAR PRIMARY KEY,
+    id              INTEGER PRIMARY KEY,
+    username        VARCHAR UNIQUE NOT NULL,
     password        VARCHAR NOT NULL
 );
 
@@ -10,7 +11,7 @@ CREATE TABLE property (
     location_id     INTEGER REFERENCES location(id),
     description     VARCHAR,
     capacity        INTEGER,
-    owner           VARCHAR REFERENCES user(username)
+    owner_id        INTEGER REFERENCES user(id)
 );
 
 CREATE TABLE location (
@@ -22,7 +23,7 @@ CREATE TABLE location (
 CREATE TABLE reservation (
     id              INTEGER PRIMARY KEY,
     property_id     INTEGER REFERENCES property(id),
-    tourist         VARCHAR REFERENCES user(username),
+    tourist_id      INTEGER REFERENCES user(id),
     arrival_date    DATE,
     departure_date  DATE
 );
