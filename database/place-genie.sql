@@ -1,3 +1,9 @@
+DROP IF EXISTS user;
+DROP IF EXISTS property;
+DROP IF EXISTS location;
+DROP IF EXISTS reservation;
+
+
 CREATE TABLE user (
     id              INTEGER PRIMARY KEY,
     username        VARCHAR UNIQUE NOT NULL,
