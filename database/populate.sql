@@ -18,5 +18,6 @@ INSERT INTO location VALUES (3, 1034343.60, 9343434.21);
 
 -- inserting values into reservation table
 INSERT INTO reservation VALUES (1, 3, 4, '2019-11-04', '2019-11-11');
+INSERT INTO reservation VALUES (2, 1, 2, '2020-04-01', '2020-04-10');
 
 
