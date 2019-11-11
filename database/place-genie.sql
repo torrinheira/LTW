@@ -14,16 +14,15 @@ CREATE TABLE property (
     id              INTEGER PRIMARY KEY,
     title           VARCHAR,
     price           REAL NOT NULL ON CONFLICT ABORT,
-    location_id     INTEGER REFERENCES location(id),
+    city_id         INTEGER REFERENCES city(id),
     description     VARCHAR,
     capacity        INTEGER,
     owner_id        INTEGER REFERENCES user(id) ON DELETE CASCADE
 );
 
-CREATE TABLE location (
+CREATE TABLE city (
     id              INTEGER PRIMARY KEY,
-    latitude        REAL,
-    longitude       REAL
+    name            VARCHAR NOT NULL UNIQUE
 );
 
 CREATE TABLE reservation (
