@@ -9,14 +9,14 @@
             <img src="./images/logo.png" width="130" height="80" alt="Place Genie Logo">
             <div>
                 <a href="">Be a genie</a>
-                <a href="">Sign up</a>
+                <a href="pages/signup.html">Sign up</a>
                 <a href="pages/login.html">Log in</a>
             </div>
         </header>
 
-        <div id="search">
+        <section id="search">
             <!-- TODO: set the action correctly -->
-            <form action="save.php" method="get">
+            <form action="action_search.php" method="get">
                 <fieldset>
                     <legend>Wish for a place</legend>
                     <label>Where<input type="search" placeholder="Your dreams"></label>
@@ -27,6 +27,11 @@
                     <input type="submit" value="Make a wish">
                 </fieldset>
             </form>
-        </div>
+        </section>
+
+        <footer>
+            <p>&copy; Place Genie, LTW-2019</p>
+            <p>Bernardo Santos, Margarida Cosme, Vítor Gonçalves</p>
+        </footer>
     </body>
 </html>
