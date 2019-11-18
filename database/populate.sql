@@ -12,9 +12,9 @@ INSERT INTO property VALUES (2, 'T0 em Lisboa', 305, 2, 'T0 no centro de Lisboa,
 INSERT INTO property VALUES (3, 'T1 em Vilamoura', 189, 3, 'Melhor lugar para passar férias em Vilamoura. Perto da praia e de clubes noturnos.', 3, 3);
 
 -- inserting values into location table
-INSERT INTO location VALUES (1, 1234343.90, 2343434.23);
-INSERT INTO location VALUES (2, 1234378.89, 2343400.22);
-INSERT INTO location VALUES (3, 1034343.60, 9343434.21);
+INSERT INTO city VALUES (1, 'Porto');
+INSERT INTO city VALUES (2, 'Lisboa');
+INSERT INTO city VALUES (3, 'Madrid');
 
 -- inserting values into reservation table
 INSERT INTO reservation VALUES (1, 3, 4, '2019-11-04', '2019-11-11');

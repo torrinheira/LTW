@@ -1,7 +1,7 @@
-DROP IF EXISTS user;
-DROP IF EXISTS property;
-DROP IF EXISTS location;
-DROP IF EXISTS reservation;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS property;
+DROP TABLE IF EXISTS city;
+DROP TABLE IF EXISTS reservation;
 
 
 CREATE TABLE user (

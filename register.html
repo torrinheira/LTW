@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Register menu</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <section id="register">
+
+            <h2>Register</h2>
+          
+            <form action="action_register.php" method="post">
+          
+                <input type="text" name="username" placeholder="Username" required>
+                <span class="hint">At least 3 characters</span>
+          
+                <input type="password" name="password" placeholder="Password" required>
+                <span class="hint">At least 6 characters</span>
+          
+                <input type="password" name="repeat" placeholder="Repeat Password" required>
+                <span class="hint">Must match password</span>
+                
+                <input type="submit" value="Register">
+          
+            </form>
+          
+          </section>
+    </body>
+</html>
