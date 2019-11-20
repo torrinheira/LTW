@@ -14,4 +14,22 @@
         return $stmt->fetch();
     }
 
+    function isPasswordValide($password){
+        if(strlen($password) >=5){                      //verify password length
+            if(strcspn($password,'0123456789') + 1){    //verify password has a number
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function addNewUser($username, $password){
+        $db = Database::instance()->db();
+
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
+        $stmt->execute(array($username, $hashed_password));
+    }
+
 ?>
