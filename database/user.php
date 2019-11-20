@@ -29,7 +29,12 @@
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
-        $stmt->execute(array($username, $hashed_password));
+        if($stmt->execute(array($username, $hashed_password))){
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
 
 ?>

@@ -19,7 +19,9 @@ die(header('Location: ../pages/signup.html')); //.html ou .php (not sure)
 if($username && $password){
     if(!usernameExists($username)){
         if(isPasswordValide($password)){
-            addNewUser($username, $password);
+            if(addNewUser($username, $password) != -1){
+                //ver actions do sign_up do restivo
+            }
         }
         else{
             $_SESSION["ERROR"] = "Password must have at minimum 5 characters, including at leasr 1 number.";
