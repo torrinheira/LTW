@@ -9,7 +9,7 @@
             <img src="./images/logo.png" width="130" height="80" alt="Place Genie Logo">
             <div>
                 <a href="">Be a genie</a>
-                <a href="">Sign up</a>
+                <a href="pages/signup.html">Sign up</a>
                 <a href="pages/login.html">Log in</a>
             </div>
         </header>
