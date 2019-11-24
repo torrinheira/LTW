@@ -31,7 +31,7 @@
         $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
         if($stmt->execute(array($username, $hashed_password))){
             $_SESSION['username'] = $username;
-            header("location:../javascript/start-page.js");
+            header("location:../index.php");
         }
         else{
             header("Location:".$_SERVER['HTTP_REFERER']."");
@@ -50,7 +50,7 @@
 
         if($user !== false && password_verify($password, $user['password'])){
             $_SESSION['username'] = $username;
-            header("location:../javascript/start-page.js"); //TODO: this page here needs to be changed
+            header("location:../index.php"); //TODO: this page here needs to be changed
         }
         else{
             header("Location:".$_SERVER['HTTP_REFERER']."");

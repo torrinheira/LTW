@@ -20,6 +20,7 @@ if($username && $password){
     if(!usernameExists($username)){
         if(isPasswordValide($password)){
             addNewUser($username, $password);
+            echo hello;
         }
         else{
             header("Location:".$_SERVER['HTTP_REFERER']."");

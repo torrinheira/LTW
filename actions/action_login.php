@@ -7,6 +7,7 @@ $password = $_POST['password'];
 
 if($username && $password){
     login($username, $password);
+   
 }
 else{
     header('Location: ../pages/login.html'); //se der erro redirecionar novamente para signup page
