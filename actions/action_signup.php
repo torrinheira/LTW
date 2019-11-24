@@ -27,7 +27,7 @@ if($username && $password){
         }
     }
     else{
-        header("Location:".$_SERVER['HTTP_REFERER']."");
+        header("Location:".$_SERVER['HTTP_REFERER'].""); //When a web browser moves from one website to another and between pages of a website, it can optionally pass the URL it came from. 
         $_SESSION["ERROR"] = "Username already taken...";
     }
 }
