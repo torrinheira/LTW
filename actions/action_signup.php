@@ -23,7 +23,7 @@ if($username && $password){
         }
         else{
             header("Location:".$_SERVER['HTTP_REFERER']."");
-            $_SESSION["ERROR"] = "Password must have at minimum 5 characters, including at leasr 1 number.";
+            $_SESSION["ERROR"] = "Password must have at minimum 5 characters, including at least 1 number.";
         }
     }
     else{
