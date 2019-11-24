@@ -10,13 +10,13 @@ CREATE TABLE user (
 );
 
 CREATE TABLE property (
-    id              INTEGER PRIMARY KEY,
-    title           VARCHAR,
-    price           REAL NOT NULL ON CONFLICT ABORT,
-    city_id         INTEGER REFERENCES city(id),
-    description     VARCHAR,
-    capacity        INTEGER,
-    owner_id        INTEGER REFERENCES user(id) ON DELETE CASCADE
+    id                    INTEGER PRIMARY KEY,
+    title                 VARCHAR,
+    price                 REAL NOT NULL ON CONFLICT ABORT,
+    city_id               INTEGER REFERENCES city(id),
+    description           VARCHAR,
+    capacity              INTEGER,
+    owner_username        INTEGER REFERENCES user(username) ON DELETE CASCADE
 );
 
 CREATE TABLE city (
@@ -25,9 +25,9 @@ CREATE TABLE city (
 );
 
 CREATE TABLE reservation (
-    id              INTEGER PRIMARY KEY,
-    property_id     INTEGER REFERENCES property(id),
-    tourist_id      INTEGER REFERENCES user(id) ON DELETE CASCADE,
-    arrival_date    DATE NOT NULL ON CONFLICT ABORT,
-    departure_date  DATE NOT NULL ON CONFLICT ABORT
+    id                    INTEGER PRIMARY KEY,
+    property_id           INTEGER REFERENCES property(id),
+    tourist_username      INTEGER REFERENCES user(username) ON DELETE CASCADE,
+    arrival_date          DATE NOT NULL ON CONFLICT ABORT,
+    departure_date        DATE NOT NULL ON CONFLICT ABORT
 );
