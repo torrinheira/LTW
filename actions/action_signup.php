@@ -19,15 +19,15 @@ die(header('Location: ../pages/signup.html')); //.html ou .php (not sure)
 if($username && $password){
     if(!usernameExists($username)){
         if(isPasswordValide($password)){
-            if(addNewUser($username, $password) != -1){
-                //ver actions do sign_up do restivo
-            }
+            addNewUser($username, $password);
         }
         else{
+            header("Location:".$_SERVER['HTTP_REFERER']."");
             $_SESSION["ERROR"] = "Password must have at minimum 5 characters, including at leasr 1 number.";
         }
     }
     else{
+        header("Location:".$_SERVER['HTTP_REFERER']."");
         $_SESSION["ERROR"] = "Username already taken...";
     }
 }

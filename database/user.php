@@ -30,10 +30,11 @@
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
         if($stmt->execute(array($username, $hashed_password))){
-            return 1;
+            $_SESSION['username'] = $username;
+            header("location:../javascript/start-page.js");
         }
         else{
-            return -1;
+            $_SESSION["ERROR"] = "Error signing up :( ";
         }
     }
 
