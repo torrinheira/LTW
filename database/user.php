@@ -34,7 +34,27 @@
             header("location:../javascript/start-page.js");
         }
         else{
+            header("Location:".$_SERVER['HTTP_REFERER']."");
             $_SESSION["ERROR"] = "Error signing up :( ";
+        }
+    }
+
+    function login($username, $password){
+
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM user WHERE username = ? ');
+        $stmt->execute(array($username));
+
+        $user = $stmt->fetch();
+
+        if($user !== false && password_verify($password, $user['password'])){
+            $_SESSION['username'] = $username;
+            header("location:../javascript/start-page.js"); //TODO: this page here needs to be changed
+        }
+        else{
+            header("Location:".$_SERVER['HTTP_REFERER']."");
+            $_SESSION["ERROR"] = "Username and password do not match...Try again! ";
         }
     }
 
