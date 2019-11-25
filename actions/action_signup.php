@@ -4,10 +4,6 @@ include_once('../database/user.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-//web browser moves from one website to another and between pages of a website, 
-//it can optionally pass the URL it came from. This is called the HTTP_REFERER, 
-//and this post looks at how to use this variable with PHP.
-
 //TODO: se estiver a dar bosta aqui tentar usar o HTTP_REFERER ($_SERVER user provavelmente tbm é útil)
 
 if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
