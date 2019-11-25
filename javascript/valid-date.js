@@ -11,7 +11,7 @@ checkOut.addEventListener('change', validateCheckOut);
 function validateCheckIn(event) {
     event.preventDefault();
 
-    if (checkOut.value > checkOut.value)
+    if (checkOut.value > checkIn.value)
         return;
         
     let checkInDate = new Date(checkIn.value);
@@ -23,12 +23,13 @@ function validateCheckIn(event) {
 
 function validateCheckOut(event) {
     event.preventDefault();
-    if (checkOut.value < checkOut.value)
+
+    if (checkOut.value > checkIn.value)
         return;
 
     let checkOutDate = new Date(checkOut.value);
     let checkInDate = new Date(+checkOutDate);
     let previousDay = checkOutDate.getDate() - 1;
     checkInDate.setDate(previousDay);
-    checkIn.value = checkOutDate.toISOString().split('T')[0];
+    checkIn.value = checkInDate.toISOString().split('T')[0];
 }
