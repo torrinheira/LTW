@@ -1,7 +1,7 @@
 <?php
     
+    include_once('../includes/session.php');
     include_once('../database/user.php');
-    include_once('../database/session.php');
 
 
     $username = $_POST['username'];
@@ -10,13 +10,13 @@
     // check if the username has any invalid characters
     if (!preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters and numbers!');
-        die(header('Location: ../pages/signup.html'));
+        die(header('Location: ../pages/signup.php'));
     }
 
     // check if the username is available
-    if (availableUsername($username)) {
+    if (!availableUsername($username)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username already taken...');
-        die(header('Location: ../pages/signup.html'));
+        die(header('Location: ../pages/signup.php'));
     }
 
     // check if the password is valid
@@ -24,7 +24,7 @@
         also find out what the second part of the condition does */
     if (strlen($password) <= 5 || !(strcspn($password, '0123456789') + 1)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password must be at least 5 characters long and contain a number!');
-        die(header('Location: ../pages/signup.html'));
+        die(header('Location: ../pages/signup.php'));
     }
 
 
@@ -32,12 +32,12 @@
         insertUser($username, $password);
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Signed up and logged in!');
-        header('Location: ../index.html');
+        header('Location: ../index.php');
     }
     catch (PDOException $e) {
         die($e->getMessage());
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to sign up!');
-        header('Location: ../pages/signup.html');
+        header('Location: ../pages/signup.php');
     }
 
 ?>

@@ -8,7 +8,7 @@
         $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
         $stmt->execute(array($username));
 
-        return !$stmt->fetch();
+        return $stmt->fetch() ? false : true;
     }
 
     function insertUser($username, $password) {
@@ -16,7 +16,6 @@
 
         $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
 
-        // TODO: generate a random salt and add it to the password
         $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
     }
 

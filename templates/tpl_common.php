@@ -1,16 +1,44 @@
 <?php
 
+    include_once('../debug/debug.php');
+
+
     /**
      * Draws header for all pages
      */
     function draw_header() { ?>
+        
         <header>
             <img src="../images/logo.png" width="130" height="80" alt="Place Genie Logo">
-            <ul>
-                <li><a href="../pages/signup.php">Sign up</a></li>
-                <li><a href="../pages/login.php">Log in</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <?php console_log($_SESSION['username']);
+                    if (isset($_SESSION['username'])) {
+                        console_log($_SESSION['username']);
+                    } else {
+                        console_log('poh caralho');
+                    } ?>
+                    <?php if (isset($_SESSION['username'])) { ?>
+                        <li><?=$_SESSION['username']?></li>
+                        <li><a href="../actions/action_logout.php">Logout</a></li>
+                    <?php } else { ?>
+                        <li><a href="../pages/signup.php">Sign up</a></li>
+                        <li><a href="../pages/login.php">Log in</a></li>
+                    <?php } ?>
+                </ul>
+            </nav>
         </header>
+
+        <?php if (isset($_SESSION['messages'])) { ?>
+            <section id="messages">
+                <?php foreach($_SESSION['messages'] as $message) { ?>
+                    <div class="<?=$message['type']?>">
+                        <?=$message['content']?>
+                    </div>
+                <?php } ?>
+            </section>
+        <?php unset($_SESSION['messages']); } ?>
+
     <?php }
 
     /**

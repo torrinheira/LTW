@@ -1,7 +1,13 @@
 <?php
 
+    include_once('../includes/session.php');
     include_once('../templates/tpl_common.php');
     include_once('../templates/tpl_auth.php');
+
+
+    if (isset($_SESSION['username'])) {
+        die(header('Location: ../index.php'));
+    }
 
 ?>
 
@@ -12,6 +18,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
+        <?php draw_header(); ?>
         <?php draw_login(); ?>
         <?php draw_footer(); ?>
     </body>
