@@ -1,3 +1,10 @@
+<?php
+
+include_once('./templates/tpl_common.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,9 +17,9 @@
         <header>
             <img src="./images/logo.png" width="130" height="80" alt="Place Genie Logo">
         </header>
-        <footer>
-            <p>&copy; Place Genie, LTW-2019</p>
-            <p>Bernardo Santos, Margarida Cosme, Vítor Gonçalves</p>
-        </footer>
+
+        
+        <?php draw_footer(); ?>
+        
     </body>
 </html>
