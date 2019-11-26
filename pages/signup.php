@@ -1,7 +1,7 @@
 <?php
 
-include_once('../templates/tpl_common.php');
-include_once('../templates/tpl_auth.php');
+    include_once('../templates/tpl_common.php');
+    include_once('../templates/tpl_auth.php');
 
 ?>
 
