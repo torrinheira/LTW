@@ -11,12 +11,11 @@
     if (validCredentials($username, $password)){
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged in successfully!');
-        // TODO: change this page
         header('Location: ../index.php');
     }
     else {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid credentials! Login failed!');
-        header('Location: ../pages/login.html'); //se der erro redirecionar novamente para signup page
+        header('Location: ../pages/login.php');
     }
 
 ?>

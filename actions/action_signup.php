@@ -1,34 +1,43 @@
 <?php
-include_once('../database/user.php');
+    
+    include_once('../database/user.php');
+    include_once('../database/session.php');
 
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-//TODO: se estiver a dar bosta aqui tentar usar o HTTP_REFERER ($_SERVER user provavelmente tbm é útil)
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-if ( !preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
-    $_SESSION["ERROR"] = "Username can only contain letters(upper/lower case) and numbers";
-    die(header('Location: ../pages/signup.html')); //.html ou .php (not sure)
-}
-
-if($username && $password){
-    if(!usernameExists($username)){
-        if(isPasswordValide($password)){
-            addNewUser($username, $password);
-            echo hello;
-        }
-        else{
-            $_SESSION["ERROR"] = "Password must have at minimum 5 characters, including at least 1 number.";
-            header("Location:".$_SERVER['HTTP_REFERER']."");
-        }
+    // check if the username has any invalid characters
+    if (!preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters and numbers!');
+        die(header('Location: ../pages/signup.html'));
     }
-    else{
-        $_SESSION["ERROR"] = "Username already taken...";
-        header("Location:".$_SERVER['HTTP_REFERER'].""); //When a web browser moves from one website to another and between pages of a website, it can optionally pass the URL it came from. 
+
+    // check if the username is available
+    if (availableUsername($username)) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username already taken...');
+        die(header('Location: ../pages/signup.html'));
     }
-}
-else{
-    $_SESSION["ERROR"] = "Username and Password must be field.";
-    header('Location: ../pages/signup.html'); //se der erro redirecionar novamente para signup page
-}
+
+    // check if the password is valid
+    /* TODO: check if the password characters are valid to prevent injection,
+        also find out what the second part of the condition does */
+    if (strlen($password) <= 5 || !(strcspn($password, '0123456789') + 1)) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password must be at least 5 characters long and contain a number!');
+        die(header('Location: ../pages/signup.html'));
+    }
+
+
+    try {
+        insertUser($username, $password);
+        $_SESSION['username'] = $username;
+        $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Signed up and logged in!');
+        header('Location: ../index.html');
+    }
+    catch (PDOException $e) {
+        die($e->getMessage());
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to sign up!');
+        header('Location: ../pages/signup.html');
+    }
+
 ?>
