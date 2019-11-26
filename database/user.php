@@ -21,7 +21,7 @@
         return false;
     }
 
-    function addNewUser($username, $password){
+    function addNewUser($username, $password) {
         $db = Database::instance()->db();
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -36,23 +36,26 @@
         }
     }
 
-    function login($username, $password){
+    function validCredentials($username, $password) {
 
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM user WHERE username = ? ');
+        $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
         $stmt->execute(array($username));
 
         $user = $stmt->fetch();
 
-        if($user !== false && password_verify($password, $user['password'])){
+        return $user !== false && password_verify($password, $user['password']);
+    }
+    /*
+        if ($user !== false && password_verify($password, $user['password'])){
             $_SESSION['username'] = $username;
             header("location:../index.php"); //TODO: this page here needs to be changed
         }
-        else{
+        else {
             header("Location:".$_SERVER['HTTP_REFERER']."");
             $_SESSION["ERROR"] = "Username and password do not match...Try again! ";
         }
     }
-
+    */
 ?>
