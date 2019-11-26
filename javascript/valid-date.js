@@ -1,5 +1,6 @@
 'use strict'
 
+// TODO: ensure the dates are greater than todays date
 
 let checkIn = document.getElementById('check-in');
 let checkOut = document.getElementById('check-out');
