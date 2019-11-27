@@ -1,7 +1,7 @@
 <?php
 
     include_once('../includes/session.php');
-    include_once('../database/property.php');
+    include_once('../database/db_property.php');
 
     //verify if user is logged in
     if(!isset($_SESSION['username'])){
