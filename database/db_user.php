@@ -2,6 +2,8 @@
 
     include_once('../includes/database.php');
 
+    //functions related with users (login, logout, signup)
+
     function availableUsername($username) {
         $db = Database::instance()->db();
 
