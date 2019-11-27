@@ -29,5 +29,14 @@
 
         return $user !== false && password_verify($password, $user['password']);
     }
+
+    function getUserInfo($username) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM user WHERE username = ?');
+        $stmt->execute(array($username));
+
+        return $stmt->fetch();
+    }
     
 ?>

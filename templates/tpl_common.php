@@ -11,7 +11,7 @@
             <nav>
                 <ul>
                     <?php if (isset($_SESSION['username'])) { ?>
-                        <li><?=$_SESSION['username']?></li>
+                        <li><a href="../pages/profile.php?username=<?=$_SESSION['username']?>"><?=$_SESSION['username']?></a></li>
                         <li><a href="../actions/action_logout.php">Logout</a></li>
                     <?php } else { ?>
                         <li><a href="../pages/signup.php">Sign up</a></li>
