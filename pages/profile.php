@@ -33,7 +33,7 @@
         </section>
         
         <?php if ($username == $_SESSION['username']) { ?>
-            <button formaction="../actions/action_edit_profile.php" formmethod="post">Edit Profile</button>
+            <a href="./edit_profile.php">Edit profile</a>
         <?php } ?>
 
         <?php draw_footer(); ?>

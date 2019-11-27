@@ -40,5 +40,14 @@
 
         return $stmt->fetch();
     }
+
+    function changePassword($username, $new_password) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('UPDATE user SET password = ? WHERE username = ?');
+        $stmt->execute(array(password_hash($new_password, PASSWORD_DEFAULT), $username));
+
+        return $stmt->fetch();
+    }
     
 ?>
