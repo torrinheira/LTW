@@ -9,7 +9,7 @@
     function addProperty($username, $title, $price_night, $city, $address, $description, $capacity){
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('INSERT INTO property VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt = $db->prepare('INSERT INTO property(,,,,,,) VALUES(?, ?, ?, ?, ?, ?, ?)');
 
     }
 
