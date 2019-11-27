@@ -1,7 +1,5 @@
 <?php
 
-    include_once('../debug/debug.php');
-
 
     /**
      * Draws header for all pages
@@ -9,15 +7,9 @@
     function draw_header() { ?>
         
         <header>
-            <img src="../images/logo.png" width="130" height="80" alt="Place Genie Logo">
+            <a href="../index.php"><img src="../images/logo.png" width="130" height="80" alt="Place Genie Logo"></a>
             <nav>
                 <ul>
-                    <?php console_log($_SESSION['username']);
-                    if (isset($_SESSION['username'])) {
-                        console_log($_SESSION['username']);
-                    } else {
-                        console_log('poh caralho');
-                    } ?>
                     <?php if (isset($_SESSION['username'])) { ?>
                         <li><?=$_SESSION['username']?></li>
                         <li><a href="../actions/action_logout.php">Logout</a></li>
