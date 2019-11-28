@@ -21,7 +21,6 @@
     
     <body>
         <?php draw_header(); ?>
-        <?php draw_search(); ?>
         <!--TODO: Remove this to another places, it's just here fot testing  -->   
         <?php
             foreach($all_properties as $property){
@@ -34,14 +33,16 @@
 
 <?php
     function draw_property_info($property){ ?>
-        <p> ID: <?= $property['id']?> </p>
-        <p> Title: <?= $property['title']?> </p>
-        <p> Price: <?= $property['price']?> </p>
-        <p> City: <?= $property['city']?> </p>
-        <p> Address: <?= $property['address']?> </p>
-        <p> Description: <?= $property['description']?> </p>
-        <p> Capacity: <?= $property['capacity']?> </p>
-        <p> Owner: <?= $property['owner_id']?> </p>
+    <section class = info_property>
+        <h2 class="id_property"><?= $property['id']?> </h2>
+        <h2 class="tile_property"><?= $property['title']?> </h2>
+        <h2 class="price_property"><?= $property['price']?> </h2>
+        <h2 class="city_property"><?= $property['city']?> </h2>
+        <h2 class="address_property"><?= $property['address']?> </h2>
+        <h2 class="description_property"><?= $property['description']?> </h2>
+        <h2 class="capacity_property"><?= $property['capacity']?> </h2>
+        <h2 class="owner_property"><?= $property['owner_id']?> </h2>
+    </section>
     
 <?php
     }
