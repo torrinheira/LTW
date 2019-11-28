@@ -44,6 +44,16 @@
         return $stmt->fetchAll();
     }
 
+    function getAllCities(){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT city FROM property');
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+
     
 
 ?>
