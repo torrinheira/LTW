@@ -39,7 +39,7 @@
     function draw_search() { ?>
         <section id="search">
             <!-- TODO: set the action correctly -->
-            <form action="action_search.php" method="get">
+            <form action="../pages/search.php" method="get">
                     <label>Where<input type="search" name ="city" placeholder="Your dreams"></label>
                     <label>Check-in<input id="check-in" type="date" value="<?php echo date('Y-m-d');?>"></label>
                     <label>Check-out<input id="check-out" type="date" value="<?php echo date('Y-m-d', strtotime('tomorrow'));?>"></label>
