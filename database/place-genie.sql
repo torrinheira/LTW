@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS reservation;
 
 
 CREATE TABLE user (
-    id              INTEGER NOT NULL PRIMARY KEY,
+    id              INTEGER PRIMARY KEY,
     username        VARCHAR NOT NULL UNIQUE,
     password        VARCHAR NOT NULL ON CONFLICT ABORT
 );
