@@ -16,7 +16,7 @@
     function insertUser($username, $password) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('INSERT INTO user VALUES(?, ?)');
+        $stmt = $db->prepare('INSERT INTO user(username, password) VALUES(?, ?)');
 
         $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
     }
@@ -46,6 +46,15 @@
 
         $stmt = $db->prepare('UPDATE user SET password = ? WHERE username = ?');
         $stmt->execute(array(password_hash($new_password, PASSWORD_DEFAULT), $username));
+
+        return $stmt->fetch();
+    }
+
+    function changeUsername($username, $new_username) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('UPDATE user SET username = ? WHERE username = ?');
+        $stmt = $db->execute(array($new_username, $username));
 
         return $stmt->fetch();
     }

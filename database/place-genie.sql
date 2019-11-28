@@ -5,34 +5,31 @@ DROP TABLE IF EXISTS reservation;
 
 
 CREATE TABLE user (
-    username        VARCHAR PRIMARY KEY,
+    id              INTEGER NOT NULL PRIMARY KEY,
+    username        VARCHAR NOT NULL UNIQUE,
     password        VARCHAR NOT NULL ON CONFLICT ABORT
 );
 
 CREATE TABLE property (
-    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
-    title                 VARCHAR,
+    id                    INTEGER PRIMARY KEY,
+    title                 VARCHAR NOT NULL,
     price                 REAL NOT NULL ON CONFLICT ABORT,
     city                  VARCHAR NOT NULL ON CONFLICT ABORT,  
     address               VARCHAR NOT NULL ON CONFLICT ABORT,            
     description           VARCHAR,
-    capacity              INTEGER,
-    owner_username        VARCHAR REFERENCES user(username) ON DELETE CASCADE
+    capacity              INTEGER NOT NULL,
+    owner_id              INTEGER REFERENCES user(id) ON DELETE CASCADE,
+
+    CHECK(capacity >= 1 AND price >= 0)
 );
 
 
 CREATE TABLE reservation (
-    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    id                    INTEGER PRIMARY KEY,
     property_id           INTEGER REFERENCES property(id),
-    tourist_username      VARCHAR REFERENCES user(username) ON DELETE CASCADE,
+    tourist_id            INTEGER REFERENCES user(id) ON DELETE CASCADE,
     arrival_date          DATE NOT NULL ON CONFLICT ABORT,
-    departure_date        DATE NOT NULL ON CONFLICT ABORT
-);
+    departure_date        DATE NOT NULL ON CONFLICT ABORT,
 
-
-/*
-CREATE TABLE city (
-    id              INTEGER PRIMARY KEY,
-    name            VARCHAR NOT NULL UNIQUE
+    CHECK(departure_date > arrival_date)
 );
-*/

@@ -11,7 +11,7 @@
     }
 
     
-    // TODO: check ig the password has any invalid characters
+    // TODO: check if the password has any invalid characters
     $old_password = $_POST['old_password'];
     // check if the password is correct
     if (!validCredentials($username, $old_password)) {
@@ -20,7 +20,7 @@
     }
 
 
-    // check if the password has any invalid characters
+    // TODO: check if the passwords have any invalid characters
     $new_password = $_POST['new_password'];
     $rep_password = $_POST['rep_password'];
     // check if the old password and the confirmation one are equal
