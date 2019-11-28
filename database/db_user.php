@@ -1,6 +1,8 @@
 <?php
 
     include_once('../includes/database.php');
+    // TODO: remove this include
+    include_once('../debug/debug.php');
 
     //functions related with users (login, logout, signup)
 
@@ -54,9 +56,18 @@
         $db = Database::instance()->db();
 
         $stmt = $db->prepare('UPDATE user SET username = ? WHERE username = ?');
-        $stmt = $db->execute(array($new_username, $username));
-
+        $stmt->execute(array($new_username, $username));
+        
         return $stmt->fetch();
     }
-    
+
+    function getUserID($username) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT id FROM user WHERE username = ?');
+        $stmt->execute(array($username));
+
+        return $stmt->fetch()['id'];
+    }
+
 ?>

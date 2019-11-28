@@ -28,7 +28,7 @@
         <section id="edit_profile">
             <header>Public profile</header>
             <form action="../actions/action_edit_profile.php" method="post">
-                <label>Username<input type="text" name="username" placeholder="Username" value="<?=$profile_info['username']?>" required></label>
+                <label>Username<input type="text" name="new_username" placeholder="Username" value="<?=$profile_info['username']?>" required></label>
                 <input type="submit" value="Update profile">
             </form>
         </section>
