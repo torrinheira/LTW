@@ -1,8 +1,7 @@
 <?php
 
     include_once('../includes/database.php');
-    // TODO: remove this include
-    include_once('../debug/debug.php');
+    
 
     //functions related with users (login, logout, signup)
 
