@@ -2,6 +2,14 @@
 
     include_once('../includes/session.php');
     include_once('./templates/tpl_common.php');
+    include_once('../database/db_property.php');
+
+    $city = $_GET['city'];
+
+    $lower_city = strtolower($city);
+    searchProperties($lower_city);
+
+    //do a cycle to iterate throw
 
 ?>
 

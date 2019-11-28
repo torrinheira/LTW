@@ -54,9 +54,19 @@
         $db = Database::instance()->db();
 
         $stmt = $db->prepare('UPDATE user SET username = ? WHERE username = ?');
-        $stmt = $db->execute(array($new_username, $username));
+        $stmt->execute(array($new_username, $username));
 
         return $stmt->fetch();
+    }
+
+    function getUserID($username){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT id FROM user WHERE username = ?');
+        $stmt->execute(array($username));
+
+        //if doesn't exists nothing it returns null
+        return $stmt->fetch()['id'];
     }
     
 ?>
