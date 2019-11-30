@@ -1,14 +1,16 @@
 <?php
 
     include_once('../includes/session.php');
-    include_once('./templates/tpl_common.php');
+    include_once('../templates/tpl_common.php');
     include_once('../database/db_property.php');
+    include_once('../debug/debug.php');
+
 
     $city = $_GET['city'];
 
     $lower_city = strtolower($city);
     $all_properties = searchProperties($lower_city);
-    print_r($all_properties);
+    //print_r($all_properties);
 ?>
 
 
@@ -20,8 +22,10 @@
     </head>
     
     <body>
+        <?php console_log('que passa'); ?>
         <?php draw_header(); ?>
-        <!--TODO: Remove this to another places, it's just here fot testing  -->   
+        <?php console_log('que passa2'); ?>
+
         <?php
             foreach($all_properties as $property){
                 draw_property_info($property);
@@ -31,19 +35,24 @@
     </body>
 </html>
 
+
 <?php
     function draw_property_info($property){ ?>
+
     <section class = info_property>
-        <h2 class="id_property"><?= $property['id']?> </h2>
-        <h2 class="tile_property"><?= $property['title']?> </h2>
-        <h2 class="price_property"><?= $property['price']?> </h2>
-        <h2 class="city_property"><?= $property['city']?> </h2>
-        <h2 class="address_property"><?= $property['address']?> </h2>
-        <h2 class="description_property"><?= $property['description']?> </h2>
-        <h2 class="capacity_property"><?= $property['capacity']?> </h2>
-        <h2 class="owner_property"><?= $property['owner_id']?> </h2>
+        <h3 class="id_property"><?= $property['id']?> </h3>
+        <h3 class="tile_property"><?= $property['title']?> </h3>
+        <h3 class="price_property"><?= $property['price']?> </h3>
+        <h3 class="city_property"><?= $property['city']?> </h3>
+        <h3 class="address_property"><?= $property['address']?> </h3>
+        <h3 class="description_property"><?= $property['description']?> </h3>
+        <h3 class="capacity_property"><?= $property['capacity']?> </h3>
+        <h3 class="owner_property"><?= $property['owner_id']?> </h3>
+        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+
     </section>
     
 <?php
     }
-    ?>
+?>
