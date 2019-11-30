@@ -22,10 +22,7 @@
     </head>
     
     <body>
-        <?php console_log('que passa'); ?>
         <?php draw_header(); ?>
-        <?php console_log('que passa2'); ?>
-
         <?php
             foreach($all_properties as $property){
                 draw_property_info($property);
