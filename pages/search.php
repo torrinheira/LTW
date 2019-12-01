@@ -28,13 +28,19 @@
             $more_properties = searchProperties($city['city']);
             //print_r($more_properties);
             print_r('----------------------------------------------------');
-            $all_properties =  $more_properties +$all_properties ;
+            //$all_properties =  $more_properties +$all_properties ;
+            $all_properties= array_merge($all_properties, $more_properties);
             print_r($all_properties);
 
 
         }
 
     }
+    print_r('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+    print_r($all_properties);
+
+
+    
 ?>
 
 
