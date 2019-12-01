@@ -11,36 +11,19 @@
     
     //search into the db all properties located in city 'city'
     $lower_city = strtolower($city);
-    $all_properties = searchProperties($lower_city);
-    //$properties_ids = getCitiesID($lower_city);
+    $all_properties = [];
 
 
     //extract all properties city kept in the database
     $cities = getAllCities();
     foreach($cities as $city){
-        console_log($city['city']);
-        //print_r($city['city']);
-        //se lower_city esiver ctg na city, e se a city nao estiver num id dar display
         $pos = strpos($city['city'], $lower_city);
-        console_log($pos);
 
         if($pos !== false){
             $more_properties = searchProperties($city['city']);
-            //print_r($more_properties);
-            print_r('----------------------------------------------------');
-            //$all_properties =  $more_properties +$all_properties ;
             $all_properties= array_merge($all_properties, $more_properties);
-            print_r($all_properties);
-
-
         }
-
-    }
-    print_r('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-    print_r($all_properties);
-
-
-    
+    }    
 ?>
 
 

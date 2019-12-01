@@ -41,8 +41,10 @@ INSERT INTO user VALUES (3, 'margaridacosme', 'rcom6784');
 INSERT INTO user VALUES (4, 'speedgonzalez', 'ltw_ez');
 
 -- inserting values into property table
-INSERT INTO property VALUES (4, 'T2 no Porto', 245, 'aeroporto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
-INSERT INTO property VALUES (5, 'T2 no Porto', 245, 'portolandia','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
+INSERT INTO property VALUES (4, 'T3 no Porto', 245, 'aeroporto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 2);
+INSERT INTO property VALUES (5, 'T4 no Porto', 245, 'portolandia','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
+INSERT INTO property VALUES (6, 'T5 no Porto', 245, 'portalegre','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 4);
+INSERT INTO property VALUES (7, 'T6 no Porto', 245, 'minasporto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 3);
 
 INSERT INTO property VALUES (1, 'T2 no Porto', 245, 'porto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
 INSERT INTO property VALUES (2, 'T0 em Lisboa', 305, 'lisboa','rua do paraios nº34', 'T0 no centro de Lisboa, perto de várias atrações turisticas.', 2, 2);
