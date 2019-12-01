@@ -41,6 +41,9 @@ INSERT INTO user VALUES (3, 'margaridacosme', 'rcom6784');
 INSERT INTO user VALUES (4, 'speedgonzalez', 'ltw_ez');
 
 -- inserting values into property table
+INSERT INTO property VALUES (4, 'T2 no Porto', 245, 'aeroporto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
+INSERT INTO property VALUES (5, 'T2 no Porto', 245, 'portolandia','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
+
 INSERT INTO property VALUES (1, 'T2 no Porto', 245, 'porto','travessa nova do covelo nº27', 'T3 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
 INSERT INTO property VALUES (2, 'T0 em Lisboa', 305, 'lisboa','rua do paraios nº34', 'T0 no centro de Lisboa, perto de várias atrações turisticas.', 2, 2);
 INSERT INTO property VALUES (3, 'T1 em Vilamoura', 189, 'vilamoura','rua do lago nº23', 'Melhor lugar para passar férias em Vilamoura. Perto da praia e de clubes noturnos.', 3, 3);

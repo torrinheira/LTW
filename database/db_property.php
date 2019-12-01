@@ -54,6 +54,14 @@
 
     }
 
+    function getCitiesID($city){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT id FROM property WHERE city = ?');
+        $stmt->execute(array($city));
+
+        return $stmt->fetchAll();
+    }
     
 
 ?>
