@@ -69,5 +69,15 @@
         //if doesn't exists nothing it returns null
         return $stmt->fetch()['id'];
     }
+
+    function getUserUsername($id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT username FROM user WHERE id = ?');
+        $stmt->execute(array($id));
+
+        //if doesn't exists nothing it returns null
+        return $stmt->fetch()['username'];
+    }
     
 ?>

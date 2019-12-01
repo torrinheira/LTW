@@ -3,14 +3,21 @@
     include_once('../includes/session.php');
     include_once('../templates/tpl_common.php');
     include_once('../database/db_property.php');
+    include_once('../database/db_user.php');
     include_once('../debug/debug.php');
 
-
+    //city's name passed from form
     $city = $_GET['city'];
 
+    //search into the db all properties located in city 'city'
     $lower_city = strtolower($city);
     $all_properties = searchProperties($lower_city);
-    //print_r($all_properties);
+
+    //extract all properties city kept in the database
+    $cities = getAllCities();
+    foreach($cities as $city){
+        print_r($city['city']);
+    }
 ?>
 
 
@@ -37,14 +44,14 @@
     function draw_property_info($property){ ?>
 
     <section class = info_property>
-        <h3 class="id_property"><?= $property['id']?> </h3>
-        <h3 class="tile_property"><?= $property['title']?> </h3>
-        <h3 class="price_property"><?= $property['price']?> </h3>
-        <h3 class="city_property"><?= $property['city']?> </h3>
-        <h3 class="address_property"><?= $property['address']?> </h3>
-        <h3 class="description_property"><?= $property['description']?> </h3>
-        <h3 class="capacity_property"><?= $property['capacity']?> </h3>
-        <h3 class="owner_property"><?= $property['owner_id']?> </h3>
+        <h3 class="id_property"> Property id: <?= $property['id']?> </h3>
+        <h3 class="tile_property">Title: <?= $property['title']?> </h3>
+        <h3 class="price_property">Price per night: <?= $property['price']?> </h3>
+        <h3 class="city_property">City:<?= $property['city']?> </h3>
+        <h3 class="address_property">Address: <?= $property['address']?> </h3>
+        <h3 class="description_property">Description: <?= $property['description']?> </h3>
+        <h3 class="capacity_property">Max capacity: <?= $property['capacity']?> </h3>
+        <h3 class="owner_property"> Owner: <?= getUserUsername($property['owner_id'])?> </h3>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 
