@@ -46,10 +46,10 @@ CREATE TABLE image (
 );
 
 /* populate tables to test SEARCH feature */
-INSERT INTO user VALUES (1, 'vitorhugo5', 'ltw1234');
+INSERT INTO user VALUES (1, 'vitorhugo5','vhlg1234@hotmail.com','ltw1234','vitor','leite',1, 'adoro ltw. As aulas do restivo sao top!');
 INSERT INTO user VALUES (2, 'bernardosantos', '1234esof');
 INSERT INTO user VALUES (3, 'margaridacosme', 'rcom6784');
-INSERT INTO user VALUES (4, 'speedgonzalez', 'ltw_ez');
+INSERT INTO user VALUES (4, 'speedygonzalez', 'ltw_ez');
 
 -- inserting values into property table
 
