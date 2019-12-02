@@ -56,13 +56,13 @@
 
     <section class = info_property>
         <h3 class="id_property"> Property id: <?= $property['id']?> </h3>
-        <h3 class="tile_property">Title: <?= $property['title']?> </h3>
-        <h3 class="price_property">Price per night: <?= $property['price']?> </h3>
-        <h3 class="city_property">City:<?= $property['city']?> </h3>
-        <h3 class="address_property">Address: <?= $property['address']?> </h3>
-        <h3 class="description_property">Description: <?= $property['description']?> </h3>
-        <h3 class="capacity_property">Max capacity: <?= $property['capacity']?> </h3>
-        <h3 class="owner_property"> Owner: <?= getUserUsername($property['owner_id'])?> </h3>
+        <h4 class="tile_property">Title: <?= $property['title']?> </h4>
+        <h5 class="price_property">Price per night: <?= $property['price']?> </h5>
+        <h5 class="city_property">City:<?= $property['city']?> </h5>
+        <h5 class="address_property">Address: <?= $property['address']?> </h5>
+        <h5 class="description_property">Description: <?= $property['description']?> </h5>
+        <h5 class="capacity_property">Max capacity: <?= $property['capacity']?> </h5>
+        <h5 class="owner_property"> Owner: <?= getUserUsername($property['owner_id'])?> </h5>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 
