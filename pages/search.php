@@ -1,13 +1,17 @@
 <?php
 
     include_once('../includes/session.php');
+    include_once('../includes/input_validation.php');
     include_once('../templates/tpl_common.php');
     include_once('../database/db_property.php');
     include_once('../database/db_user.php');
-    include_once('../debug/debug.php');
 
     //city's name passed from form
     $city = $_GET['city'];
+    if(!check_input($city)){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid input! only letters and numbers are allowed!');
+        die(header('Location: ../index.php'));
+    }
     
     //search into the db all properties located in city 'city'
     $lower_city = strtolower($city);
@@ -40,6 +44,7 @@
     
     <body>
         <?php draw_header(); ?>
+        <?php draw_search(); ?>
         <?php
 
             foreach($all_properties as $property){
