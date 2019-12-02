@@ -1,7 +1,7 @@
 <?php
 
     include_once('../includes/database.php');
-    
+
 
     //functions related with users (login, logout, signup)
 
@@ -14,12 +14,12 @@
         return $stmt->fetch() ? false : true;
     }
 
-    function insertUser($username, $password) {
+    function insertUser($username, $email, $password, $first_name, $last_name) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('INSERT INTO user(username, password) VALUES(?, ?)');
+        $stmt = $db->prepare('INSERT INTO user(username, email, password, first_name, last_name) VALUES(?, ?, ?, ?, ?)');
 
-        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));
+        $stmt->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT), $first_name, $last_name));
     }
 
     function validCredentials($username, $password) {
@@ -51,12 +51,12 @@
         return $stmt->fetch();
     }
 
-    function changeUsername($username, $new_username) {
+    function changeProfile($username, $new_username, $new_first_name, $new_last_name, $new_email, $new_description) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('UPDATE user SET username = ? WHERE username = ?');
-        $stmt->execute(array($new_username, $username));
-
+        $stmt = $db->prepare('UPDATE user SET (username, first_name, last_name, email, description) = (?, ?, ?, ?, ?) WHERE username = ?');
+        $stmt->execute(array($new_username, $new_first_name, $new_last_name, $new_email, $new_description, $username));
+        
         return $stmt->fetch();
     }
 

@@ -4,8 +4,13 @@
     include_once('../database/db_user.php');
 
 
+    // TODO: check if any of these variables have invalid characters
     $username = $_POST['username'];
+    $email = $_POST['email'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $password = $_POST['password'];
+
 
     // check if the username has any invalid characters
     if (!preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
@@ -29,7 +34,7 @@
 
 
     try {
-        insertUser($username, $password);
+        insertUser($username, $email, $password, $first_name, $last_name);
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Signed up and logged in!');
         header('Location: ../index.php');
