@@ -30,6 +30,11 @@
 
         <section id="profile">
             <p><?=$profile_info['username']?></p>
+            <p><?=$profile_info['first_name'] . ' ' . $profile_info['last_name']?></p>
+            <p><?=$profile_info['email']?></p>
+            <?php if ($profile_info['description'] != null) { ?>
+                <p><?=$profile_info['description']?></p>
+            <?php } ?>
         </section>
         
         <?php if ($username == $_SESSION['username']) { ?>
