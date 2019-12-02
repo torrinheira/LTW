@@ -23,6 +23,10 @@
             $more_properties = searchProperties($city['city']);
             $all_properties= array_merge($all_properties, $more_properties);
         }
+        else if(levenshtein($city['city'], $lower_city) <= 3){
+            $more_properties = searchProperties($city['city']);
+            $all_properties= array_merge($all_properties, $more_properties);
+        }
     }    
 ?>
 
