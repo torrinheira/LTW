@@ -49,13 +49,12 @@ CREATE TABLE image (
 -----------------------
 -- POPULATE DATABASE --
 -----------------------
-PRAGMA foreign_keys = on;
 
 
 -- password     bernas123
 INSERT INTO user VALUES (1, 'bernas', 'bernardosantos@mail.com', '$2y$10$ikv4NjBnEAAgt1HKiKd4nupczXAFX8ufBMTaWDOzL58PderbTP6l6', 'Bernardo', 'Santos', NULL, NULL);
 -- password     p4ssw0rd
-INSERT INTO user VALUES (2, 'vitor', 'turrinheira@fafense.com', '$2y$10$dsxoJhvABopd/5G3KY0lkezajUyaGwR5Fdj60jxMyNDJGmKnNdB7G', 'Vítor', 'Hugo', NULL, NULL);
+INSERT INTO user VALUES (2, 'vitor', 'turrinheira@fafense.com', '$2y$10$dsxoJhvABopd/5G3KY0lkezajUyaGwR5Fdj60jxMyNDJGmKnNdB7G', 'Vítor', 'Hugo', NULL, 'LTW é a minha cadeira preferida! ;)');
 -- password     rcom6784
 INSERT INTO user VALUES (3, 'margaridacosme', 'mcosme@gmail.com', '$2y$10$FPDF42/Mp/MBf.WLAXXuyuY2QbNf0rr1M.N/hb.QSM4er28YDcRca', 'Margarida', 'Cosme', NULL, NULL);
 

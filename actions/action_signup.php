@@ -1,6 +1,7 @@
 <?php
     
     include_once('../includes/session.php');
+    include_once('../includes/input_validation.php');
     include_once('../database/db_user.php');
 
 
@@ -13,7 +14,7 @@
 
 
     // check if the username has any invalid characters
-    if (!preg_match ("/^[a-zA-Z0-9]+$/", $username)) {
+    if (!check_input($username)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters and numbers!');
         die(header('Location: ../pages/signup.php'));
     }
@@ -27,7 +28,7 @@
     // check if the password is valid
     /* TODO: check if the password characters are valid to prevent injection,
         also find out what the second part of the condition does */
-    if (strlen($password) <= 5 || !(strcspn($password, '0123456789') + 1)) {
+    if (!check_password($password)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password must be at least 5 characters long and contain a number!');
         die(header('Location: ../pages/signup.php'));
     }
