@@ -70,7 +70,7 @@
 
     <section class = info_property>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-        <a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&numberguest=<?=$numberguest?>">Property ID: <?= $property['id']?> </a> 
+        <a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$numberguest?>">Property ID: <?= $property['id']?> </a> 
         <h4 class="tile_property">Title: <?= $property['title']?> </h4>
         <h5 class="price_property">Price per night: <?= $property['price']?> </h5>
         <h5 class="owner_property"> Owner: <?= getUserUsername($property['owner_id'])?> </h5>

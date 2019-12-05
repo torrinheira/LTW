@@ -62,6 +62,15 @@
 
         return $stmt->fetchAll();
     }
+
+    function getPropertyInfo($property_id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM property WHERE id = ?');
+        $stmt->execute(array($property_id));
+
+        return $stmt->fetch();
+    }
     
 
 ?>

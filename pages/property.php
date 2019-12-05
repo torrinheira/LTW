@@ -6,12 +6,12 @@
     include_once('../templates/tpl_property.php');
     include_once('../database/db_user.php');
     include_once('../database/db_property.php');
-    include_once('../database/db_property.php');
 
     $property_id = $_GET['id'];
     $checkin = $_GET['checkin'];
     $checkout = $_GET['checkout'];
     $numberguest = $_GET['guests'];
+    $property = getPropertyInfo($property_id);
 
 ?>
 
@@ -23,8 +23,8 @@
     </head>
     <body>
         <?php draw_header(); ?>
-        <?php draw_property_info($property_id)?>
-        <?php draw_reservation();?>
+        <?php draw_property_info($property);?>
+        <?php draw_reservation($checkin, $checkout, $numberguest);?>
         <?php draw_footer(); ?>
     </body>
 </html>
