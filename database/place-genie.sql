@@ -45,13 +45,19 @@ CREATE TABLE image (
     description         VARCHAR NOT NULL
 );
 
-/* populate tables to test SEARCH feature */
-INSERT INTO user VALUES (1, 'vitorhugo5','vhlg1234@hotmail.com','ltw1234','vitor','leite',1, 'adoro ltw. As aulas do restivo sao top!');
-INSERT INTO user VALUES (2, 'bernardosantos', '1234esof');
-INSERT INTO user VALUES (3, 'margaridacosme', 'rcom6784');
-INSERT INTO user VALUES (4, 'speedygonzalez', 'ltw_ez');
 
--- inserting values into property table
+-----------------------
+-- POPULATE DATABASE --
+-----------------------
+
+
+-- password     bernas123
+INSERT INTO user VALUES (1, 'bernas', 'bernardosantos@mail.com', '$2y$10$ikv4NjBnEAAgt1HKiKd4nupczXAFX8ufBMTaWDOzL58PderbTP6l6', 'Bernardo', 'Santos', NULL, NULL);
+-- password     p4ssw0rd
+INSERT INTO user VALUES (2, 'vitor', 'turrinheira@fafense.com', '$2y$10$dsxoJhvABopd/5G3KY0lkezajUyaGwR5Fdj60jxMyNDJGmKnNdB7G', 'Vítor', 'Hugo', NULL, 'LTW é a minha cadeira preferida! ;)');
+-- password     rcom6784
+INSERT INTO user VALUES (3, 'margaridacosme', 'mcosme@gmail.com', '$2y$10$FPDF42/Mp/MBf.WLAXXuyuY2QbNf0rr1M.N/hb.QSM4er28YDcRca', 'Margarida', 'Cosme', NULL, NULL);
+
 
 INSERT INTO property VALUES (1, 'T2 no Porto', 245, 'porto','travessa nova do covelo nº27', 'T2 com vista para o rio Douro. Remodelado em 2017.', 5, 1);
 INSERT INTO property VALUES (2, 'T0 em Lisboa', 305, 'lisboa','rua do paraios nº34', 'T0 no centro de Lisboa, perto de várias atrações turisticas.', 2, 2);
@@ -62,7 +68,5 @@ INSERT INTO property VALUES (6, 'T1 no Porto', 145, 'portalegre','rua doutor rob
 INSERT INTO property VALUES (7, 'T2 no Porto', 205, 'minasporto','circunvalção porto nº213', 'T2 junto à circunvalação, perto da pizzaria Dominos.', 5, 3);
 
 
-
--- inserting values into reservation table
 INSERT INTO reservation VALUES (1, 3, 4, '2019-11-04', '2019-11-11');
 INSERT INTO reservation VALUES (2, 1, 3, '2020-04-01', '2020-04-10');
