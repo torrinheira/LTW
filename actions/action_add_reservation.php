@@ -9,4 +9,6 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to confirm your reservation.');
         die(header('Location: ../pages/login.php'));
     }
+
+    
 ?>
