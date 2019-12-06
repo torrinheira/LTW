@@ -19,15 +19,13 @@
     function draw_property_list_item($property, $owner, $checkin, $checkout, $guests){ ?>
 
     <li>
-        <a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-            <!-- TODO: remove the id field, it is only temporary for testing purposes -->
-            <h3>Property ID: <?= $property['id']?></h3> 
-            <h4 class="pl_title">Title: <?=$property['title']?></h4>
-            <h5 class="pl_price">Price: <?=$property['price']?></h5>
-            <h5 class="pl_owner"><a href="../pages/profile.php?username=<?=$owner?>">Owner: <?=$owner?></a></h5>
+        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
+        <h3>Property ID: <?= $property['id']?></h3> 
+        <h4 class="pl_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>
+        <h5 class="pl_price">Price: <?=$property['price']?></h5>
+        <h5 class="pl_owner"><a href="../pages/profile.php?username=<?=$owner?>">Owner: <?=$owner?></a></h5>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-        </a>
     </li>
     
 <?php
