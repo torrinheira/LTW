@@ -52,6 +52,14 @@
         <p><a href="./add_property.php">Add Property</a></p>
         <?php } ?>
 
+        <?php if ($username == $_SESSION['username']) { ?>
+        <p><a href="./manage_properties.php">Manage your properties</a></p>
+        <?php } ?>
+
+        <?php if ($username == $_SESSION['username']) { ?>
+        <p><a href="./manage_reservations.php">Check your reservations</a></p>
+        <?php } ?>
+
         <?php draw_footer(); ?>
 
     </body>
