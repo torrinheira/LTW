@@ -2,17 +2,11 @@
 
     include_once('../database/db_image.php');
 
-    include_once('../debug/debug.php');
-
 
     function uploadImage($image, $description) {
 
         // create an id for the new image
         $id = insertImage($description);
-
-        //TODO: remove
-        console_log($id);
-        console_log($image);
 
         // generate file names for the original, medium and small images
         $originalFileName = "../images/originals/$id.jpg";

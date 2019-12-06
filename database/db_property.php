@@ -8,18 +8,11 @@
 
 
     /* adds a new property to db */
-    function addProperty($username, $title, $price_night, $city2, $address, $description, $capacity){
+    function addProperty($title, $price_night, $city, $address, $description, $capacity, $user_id){
         $db = Database::instance()->db();
 
-        //saves the city at lower case
-        $city = strtolower($city2);
-        //TODO: check if user is valid or not (in other word, only a logged user can add a property)
-        $user_id = getUserID($username);
-
-        
-        $stmt = $db->prepare('INSERT INTO property( title, price, city, address, description,capacity, owner_id) VALUES(?, ?, ?, ?, ?, ?, ?)');
-        $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $user_id ));
-
+        $stmt = $db->prepare('INSERT INTO property(title, price, city, address, description, capacity, owner_id) VALUES(?, ?, ?, ?, ?, ?, ?)');
+        $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $user_id));
     }
 
     /* lists all the properties of a user with username 'username */

@@ -16,6 +16,7 @@ CREATE TABLE user (
     description     VARCHAR
 );
 
+
 CREATE TABLE property (
     id              INTEGER PRIMARY KEY,
     title           VARCHAR NOT NULL,
@@ -26,6 +27,7 @@ CREATE TABLE property (
     capacity        INTEGER NOT NULL,
     owner_id        INTEGER REFERENCES user(id) ON DELETE CASCADE,
 
+    -- TODO: capacity needs to have a limit
     CHECK(capacity >= 1 AND price >= 0)
 );
 
@@ -39,6 +41,7 @@ CREATE TABLE reservation (
 
     CHECK(departure_date > arrival_date)
 );
+
 
 CREATE TABLE image (
     id                  INTEGER PRIMARY KEY,
