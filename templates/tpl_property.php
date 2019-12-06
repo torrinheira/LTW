@@ -1,8 +1,9 @@
 <?php
 
-    function draw_reservation($checkin, $checkout, $numberguests) {?>
+    function draw_reservation($checkin, $checkout, $numberguests, $property_id) {?>
         <section id="reservation_form">
             <form action="../actions/action_add_reservation.php" method="post">
+                <input type = "hidden" name = "property_id" value="<?=$property_id?>">
                 <label>Check-in<input name="checkin" type="date" value="<?php echo date($checkin);?>"></label>
                 <label>Check-out<input name="checkout" type="date" value="<?php echo date($checkout);?>"></label>
                 <label>Guests<input name="guests" type="number" value="<?= $numberguests?>" min="1" max="20"></label>
@@ -47,6 +48,17 @@
         <h5 class="owner_property"> Owner: <?= get_username($property['owner_id'])?> </h5>
     </section>
     
+<?php
+    }
+?>
+
+
+<?php
+    function draw_no_found(){ ?>
+
+        <section id="no_results">
+            <p> No property found for your search...</p>
+        </section>
 <?php
     }
 ?>

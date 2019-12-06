@@ -24,7 +24,7 @@
     <body>
         <?php draw_header(); ?>
         <?php draw_property_info($property);?>
-        <?php draw_reservation($checkin, $checkout, $numberguest);?>
+        <?php draw_reservation($checkin, $checkout, $numberguest, $property_id);?>
         <?php draw_footer(); ?>
     </body>
 </html>

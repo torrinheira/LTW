@@ -74,5 +74,6 @@ INSERT INTO property VALUES (6, 'T1 no Porto', 145, 'portalegre','rua doutor rob
 INSERT INTO property VALUES (7, 'T2 no Porto', 205, 'minasporto','circunvalção porto nº213', 'T2 junto à circunvalação, perto da pizzaria Dominos.', 5, 3);
 
 -- insert reservations
-INSERT INTO reservation VALUES (1, 3, 4, '2019-11-04', '2019-11-11');
+INSERT INTO reservation VALUES (3, 3, 4, '2019-11-04', '2019-11-11');
+INSERT INTO reservation VALUES (1, 3, 4, '2019-11-20', '2019-11-21');
 INSERT INTO reservation VALUES (2, 1, 3, '2020-04-01', '2020-04-10');
