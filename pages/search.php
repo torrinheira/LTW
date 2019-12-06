@@ -32,7 +32,9 @@
 <html>
     <head>
         <title>Place Genie</title>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+
+        <script src="../javascript/valid_date.js" defer></script>
     </head>
     <body>
         
