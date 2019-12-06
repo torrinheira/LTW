@@ -15,7 +15,10 @@ Repository for the project of the LTW couse @FEUP
 * **Show a page to user with reservations and with their properties**: Someone
 * **Reservation and check properties availability**: Vitor
 * **Java Script features**: Someone
+* **Try & Catch**: Deal with exceptions thrown by the database
 
 ## FIXME
-* **Reservation** : When someone who is not logged in starts searching for a property and tries to book, they need to log in (it's already implemented), but after logging in, they go back to the home page, and we have to get them in reservation page.
-* **Profile Pictures** - old profile pictures are not being deleted yet, FIXME tag in includes/images.php. Currently pictures are being overwritten.
+|        Issue        | Description                         |
+|:-------------------:|:------------------------------------|
+|  **Reservation**    | When someone who is not logged in starts searching for a property and tries to book, they need to log in (it's already implemented), but after logging in, they go back to the home page, and we have to get them in reservation page. |
+|**Profile Pictures** | Old profile pictures are not being deleted yet, FIXME tag in includes/images.php. Currently pictures are being overwritten. |
