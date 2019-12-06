@@ -32,3 +32,21 @@
 <?php
     }
 ?>
+
+<?php
+    function draw_property_info($property){ ?>
+
+    <section class = info_property>
+        <h3 class= "id_property">Property ID: <?= $property['id']?> </h3> 
+        <h4 class="tile_property">Title: <?= $property['title']?> </h4>
+        <h5 class="price_property">Price per night: <?= $property['price']?> </h5>
+        <h5 class="city_property">City:<?= $property['city']?> </h5>
+        <h5 class="address_property">Address: <?= $property['address']?> </h5>
+        <h5 class="description_property">Description: <?= $property['description']?> </h5>
+        <h5 class="capacity_property">Max capacity: <?= $property['capacity']?> </h5>
+        <h5 class="owner_property"> Owner: <?= get_username($property['owner_id'])?> </h5>
+    </section>
+    
+<?php
+    }
+?>

@@ -44,7 +44,7 @@
         <?php 
             foreach ($properties as $property) {
                 if (levenshtein($property['city'], $city) <= 3) {
-                    $property_info = getPropertyInfo($property['id']);
+                    $property_info = get_property_info($property['id']);
                     $owner_username = get_username($property_info['owner_id']);
                     draw_property_list_item($property_info, $owner_username, $checkin, $checkout, $guests);
                 }
