@@ -21,7 +21,7 @@
     $capacity = $_POST['capacity'];
     $user_id = getUserID($_SESSION['username']);
 
-    
+
     addProperty($title, $price_night, $city, $address, $description, $capacity, $user_id);
     
 
