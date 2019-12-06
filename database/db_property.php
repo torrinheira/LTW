@@ -37,14 +37,13 @@
         return $stmt->fetchAll();
     }
 
-    function getAllCities(){
+    function get_properties_cities(){
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT city FROM property');
+        $stmt = $db->prepare('SELECT id, city FROM property');
         $stmt->execute();
 
         return $stmt->fetchAll();
-
     }
 
     function getCitiesID($city){
