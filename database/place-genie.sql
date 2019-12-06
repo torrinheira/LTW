@@ -34,7 +34,7 @@ CREATE TABLE property (
 
 CREATE TABLE reservation (
     id                  INTEGER PRIMARY KEY,
-    property_id         INTEGER REFERENCES property(id),
+    property_id         INTEGER REFERENCES property(id) ON DELETE CASCADE,
     tourist_id          INTEGER REFERENCES user(id) ON DELETE CASCADE,
     arrival_date        DATE NOT NULL ON CONFLICT ABORT,
     departure_date      DATE NOT NULL ON CONFLICT ABORT,

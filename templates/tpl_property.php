@@ -60,3 +60,13 @@
 <?php
     }
 ?>
+
+<?php
+    function draw_manage_property($user_property){ ?>
+
+        <section id="property_of_user">
+            <li> <?= $user_property['title']?>, <?= $user_property['city']?> :  <a href="../pages/edit_property.php">Edit</a>   <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a>  </li>
+        </section>
+<?php
+    }
+?>

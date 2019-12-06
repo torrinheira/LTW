@@ -63,6 +63,22 @@
 
         return $stmt->fetch();
     }
+
+    function get_user_properties($user_id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM property WHERE owner_id = ?');
+        $stmt->execute(array($user_id));
+
+        return $stmt->fetchAll();
+    }
+
+    function delete_property($property_id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('DELETE FROM property WHERE id = ?');
+        $stmt->execute(array($property_id));
+    }
     
 
 ?>
