@@ -48,6 +48,10 @@
             <a href="./edit_profile.php">Edit profile</a>
         <?php } ?>
 
+        <?php if ($username == $_SESSION['username']) { ?>
+        <p><a href="./add_property.php">Add Property</a></p>
+        <?php } ?>
+
         <?php draw_footer(); ?>
 
     </body>

@@ -1,7 +1,7 @@
 <?php
 
     include_once('../includes/database.php');
-    include_once('./db_user.php');
+    include_once('db_user.php');
 
     //functions related with properties(remove, add, change,..)
 
@@ -18,7 +18,7 @@
 
         
         $stmt = $db->prepare('INSERT INTO property( title, price, city, address, description,capacity, owner_id) VALUES(?, ?, ?, ?, ?, ?, ?)');
-        $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $id ));
+        $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $user_id ));
 
     }
 
@@ -61,6 +61,15 @@
         $stmt->execute(array($city));
 
         return $stmt->fetchAll();
+    }
+
+    function getPropertyInfo($property_id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT * FROM property WHERE id = ?');
+        $stmt->execute(array($property_id));
+
+        return $stmt->fetch();
     }
     
 
