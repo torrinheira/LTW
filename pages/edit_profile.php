@@ -19,11 +19,29 @@
 <html>
     <head>
         <title>Place Genie</title>
-        <meta charset="UTF-8"></meta>
+        <meta charset="utf-8"></meta>
     </head>
     <body> 
 
         <?php draw_header(); ?>
+
+        <section id="change_picture">
+            <header>Profile picture</header>
+            
+            <img src="../images/t_medium/<?=$profile_info['image']?>.jpg" width="400" height="400">
+
+            <form action="../actions/action_change_profile_picture.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit" value="Upload">
+            </form>
+            
+            <?php // if the id is different from the default profile picture id
+            if ($profile_info['image'] != 1) { ?>
+                <form action="../actions/action_remove_profile_picture.php" method="post">
+                    <input type="submit" value="Remove photo">
+                </form>
+            <?php } ?>
+        </section>
 
         <section id="edit_profile">
             <header>Public profile</header>

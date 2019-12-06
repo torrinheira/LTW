@@ -3,6 +3,8 @@
     include_once('../includes/database.php');
 
 
+    const DEFAULT_PIC = 1;
+
     //functions related with users (login, logout, signup)
 
     function availableUsername($username) {
@@ -17,9 +19,9 @@
     function insertUser($username, $email, $password, $first_name, $last_name) {
         $db = Database::instance()->db();
 
-        $stmt = $db->prepare('INSERT INTO user(username, email, password, first_name, last_name) VALUES(?, ?, ?, ?, ?)');
+        $stmt = $db->prepare('INSERT INTO user(username, email, password, first_name, last_name, image) VALUES(?, ?, ?, ?, ?, ?)');
 
-        $stmt->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT), $first_name, $last_name));
+        $stmt->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT), $first_name, $last_name, DEFAULT_PIC));
     }
 
     function validCredentials($username, $password) {
@@ -78,6 +80,24 @@
 
         //if doesn't exists nothing it returns null
         return $stmt->fetch()['username'];
+    }
+
+    function getProfilePicture($username) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('SELECT image FROM user WHERE username = ?');
+        $stmt->execute(array($username));
+
+        return $stmt->fetch()['image'];
+    }
+    
+    function setProfilePicture($username, $image) {
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('UPDATE user SET image = ? WHERE username = ?');
+        $stmt->execute(array($image, $username));
+
+        return $stmt->fetch();
     }
     
 ?>
