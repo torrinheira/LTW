@@ -14,8 +14,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Place Genie | Signup</title>
-        <meta charset="UTF-8">
+        <title>Place Genie</title>
+        <meta charset="utf-8">
     </head>
     <body>
         <?php draw_header(); ?>

@@ -1,9 +1,12 @@
 <?php
 
     include_once('../includes/session.php');
+
     include_once('../templates/tpl_auth.php');    
     include_once('../templates/tpl_common.php');
+
     include_once('../templates/tpl_property.php');
+
     include_once('../database/db_user.php');
     include_once('../database/db_property.php');
 
@@ -12,6 +15,7 @@
     $checkout = $_GET['checkout'];
     $numberguest = $_GET['guests'];
     $property = get_property_info($property_id);
+    $owner = get_username($property['owner_id']);
 
 ?>
 
@@ -23,7 +27,7 @@
     </head>
     <body>
         <?php draw_header(); ?>
-        <?php draw_property_info($property);?>
+        <?php draw_property_info($property, $owner);?>
         <?php draw_reservation($checkin, $checkout, $numberguest, $property_id);?>
         <?php draw_footer(); ?>
     </body>
