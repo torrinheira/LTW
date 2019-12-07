@@ -21,8 +21,8 @@
 
         <?php draw_header(); ?>
 
-        <!-- fazer display da informação toda da propriedade (com fotos e tudo)-->
-        <?php print_r($property_info); ?>
+        <!-- TODO: in this function is missing photos display-->
+        <?php draw_property_info_resumed($property_info) ?>
 
         <?php draw_footer(); ?>
 

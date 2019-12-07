@@ -38,6 +38,18 @@
     </section>
 <?php } ?>
 
+<?php function draw_property_info_resumed($property) { ?>
+    <section class = info_property>
+        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
+        <h4 class="p_title">Title: <?= $property['title']?> </h4>
+        <h5 class="p_price">Price per night: <?= $property['price']?> </h5>
+        <h5 class="p_city">City:<?= $property['city']?> </h5>
+        <h5 class="p_address">Address: <?= $property['address']?> </h5>
+        <h5 class="p_description">Description: <?= $property['description']?> </h5>
+        <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
+    </section>
+<?php } ?>
+
 
 <?php function draw_no_found() { ?>
     <section id="no_results">
