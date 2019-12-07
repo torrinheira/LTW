@@ -11,9 +11,10 @@ Repository for the project of the LTW couse @FEUP
 
 ## TODO
 * **Comments** : Bernas
-* **Add properties** : Margarida
-* **Show a page to user with reservations and with their properties**: Someone
-* **Reservation and check properties availability**: Vitor
+* **Add photos to properties** : Bernas
+* **Add properties** : Done
+* **Show a page to user with reservations and with their properties**: Margarida e Vitor
+* **Reservation and check properties availability**: Done
 * **Java Script features**: Someone
 * **Try & Catch**: Deal with exceptions thrown by the database
 

@@ -20,9 +20,12 @@
     </section>
 
     <?php if ($profile['username'] == $_SESSION['username']) { ?>
-        <a href="./edit_profile.php">Edit profile</a>
-        <a href="./add_property.php">Add property</a>
+        <p><a href="./edit_profile.php">Edit profile</a></p>
+        <p><a href="./add_property.php">Add property</a></p>
+        <p><a href="./manage_properties.php">Manage your properties</a></p>
+        <p><a href="./manage_reservations.php">Check your reservations</a></p>
     <?php } ?>
+
 <?php } ?>
 
 

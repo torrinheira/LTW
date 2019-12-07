@@ -61,11 +61,6 @@
 
                     //checks all properties reservations one by one
                     foreach($reservations as $reservation){
-                        console_log('ok');
-                        console_log($reservation['arrival_date']);
-                        console_log($reservation['departure_date']);
-                        console_log($checkin);
-                        console_log($checkout);
 
                         if($checkin >= $reservation['arrival_date'] && $checkin <= $reservation['departure_date']){
                             $is_available = FALSE;

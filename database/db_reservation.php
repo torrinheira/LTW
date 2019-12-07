@@ -12,4 +12,12 @@
         return $stmt->fetchAll();
 
     }
+
+    function add_reservation($property_id, $tourist_id, $arrival_date, $departure_date){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('INSERT INTO reservation(property_id, tourist_id, arrival_date, departure_date) VALUES(?, ?, ?, ?)');
+        $stmt->execute(array($property_id, $tourist_id,$arrival_date, $departure_date));
+
+    }
 ?>
