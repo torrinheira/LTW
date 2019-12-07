@@ -1,7 +1,6 @@
-<?php function draw_profile($profile, $comments) { ?>
+<?php function draw_profile($profile) { ?>
     <section id=profile>
         <?php draw_profile_info($profile); ?>
-        <?php draw_profile_comments($comments); ?>
     </section>
 <?php } ?>
 
@@ -28,8 +27,3 @@
 
 <?php } ?>
 
-
-<?php function draw_profile_comments($comments) { ?>
-
-
-<?php } ?>
