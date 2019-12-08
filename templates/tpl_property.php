@@ -38,6 +38,18 @@
     </section>
 <?php } ?>
 
+<?php function draw_property_info_resumed($property) { ?>
+    <section class = info_property>
+        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
+        <h4 class="p_title">Title: <?= $property['title']?> </h4>
+        <h5 class="p_price">Price per night: <?= $property['price']?> </h5>
+        <h5 class="p_city">City:<?= $property['city']?> </h5>
+        <h5 class="p_address">Address: <?= $property['address']?> </h5>
+        <h5 class="p_description">Description: <?= $property['description']?> </h5>
+        <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
+    </section>
+<?php } ?>
+
 
 <?php function draw_no_found() { ?>
     <section id="no_results">
@@ -48,7 +60,7 @@
 
 <?php function draw_manage_property($user_property) { ?>
     <section id="property_of_user">
-        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php">Edit</a><a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a></li>
+        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a></li>
     </section>
 <?php } ?>
 

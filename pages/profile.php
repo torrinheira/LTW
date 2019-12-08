@@ -4,6 +4,8 @@
     include_once('../templates/tpl_common.php');
     include_once('../templates/tpl_profile.php');
     include_once('../database/db_user.php');
+    include_once('../debug/debug.php');
+
     
 
     // TODO: check if the username has invalid characters

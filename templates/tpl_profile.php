@@ -27,3 +27,13 @@
 
 <?php } ?>
 
+<?php function draw_host_info($profile) { ?>
+    <section id=host_information>
+        <p><label id="host_username"> Username: <?= $profile['username']?></label></p>
+        <p><label id="host_first_last_name">Name: <?= $profile['first_name']?> <?= $profile['last_name']?></label></p>
+        <p><label id="host_email">Email: <?=$profile['email']?> </label></p>
+        <p><label id="host_description">Description: <?=$profile['description']?></label></p>
+        <!--TODO: fazer display da imagem-->
+    </section>
+<?php } ?>
+
