@@ -28,7 +28,7 @@
     <body>
 
         <?php draw_header(); ?>
-        <?php draw_profile($profile_info); ?>
+        <?php draw_profile($profile_info); ?>7
         <?php draw_footer(); ?>
 
     </body>

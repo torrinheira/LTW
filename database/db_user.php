@@ -62,7 +62,7 @@
         return $stmt->fetch();
     }
 
-    function getUserID($username){
+    function get_user_id($username) {
         $db = Database::instance()->db();
 
         $stmt = $db->prepare('SELECT id FROM user WHERE username = ?');

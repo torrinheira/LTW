@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS property;
 DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS image;
+DROP TABLE IF EXISTS comment;
 
 
 CREATE TABLE user (
@@ -53,7 +54,8 @@ CREATE TABLE comment (
     id              INTEGER PRIMARY KEY,
     user_id         INTEGER REFERENCES user(id) ON DELETE CASCADE,
     property_id     INTEGER REFERENCES property(id) ON DELETE CASCADE,
-    text            VARCHAR NOT NULL
+    date            DATE NOT NULL,
+    content         VARCHAR NOT NULL
 );
 
 
@@ -83,8 +85,10 @@ INSERT INTO property VALUES (6, 'T1 no Porto', 145, 'portalegre','rua doutor rob
 INSERT INTO property VALUES (7, 'T2 no Porto', 205, 'minasporto','circunvalção porto nº213', 'T2 junto à circunvalação, perto da pizzaria Dominos.', 5, 3);
 
 -- insert comments
-INSERT INTO comment VALUES(1, 1, 2, 'Epah está um bocado podre :/');
-INSERT INTO comment VALUES(2, 2, 1, 'Tchee grande cena bro, curti milhões :)');
+INSERT INTO comment VALUES(1, 1, 2, '2019-12-10', 'Epah está um bocado podre :/');
+INSERT INTO comment VALUES(2, 2, 1, '2019-12-10', 'Tchee grande cena bro, curti milhões :)');
+INSERT INTO comment VALUES(3, 3, 1, '2019-12-10', 'Vista muito boa!');
+
 
 -- insert reservations
 INSERT INTO reservation VALUES (1, 3, 4, '2019-11-20', '2019-11-21');

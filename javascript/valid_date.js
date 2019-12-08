@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 // TODO: ensure the dates are greater than todays date
 
-let checkIn = document.getElementById('check-in');
-let checkOut = document.getElementById('check-out');
+let checkIn = document.getElementById('checkin');
+let checkOut = document.getElementById('checkout');
 
 checkIn.addEventListener('change', validateCheckIn);
 checkOut.addEventListener('change', validateCheckOut);
