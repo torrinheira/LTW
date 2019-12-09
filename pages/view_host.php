@@ -8,8 +8,7 @@
 
     $property_id = $_GET['id'];
     $property_info = get_property_info($property_id);
-    $host_id = $property_info['owner_id'];
-    $host_username = get_username($host_id);
+    $host_username = $property_info['owner'];
     $host_info = getUserInfo($host_username);
 ?>
 

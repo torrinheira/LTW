@@ -11,20 +11,20 @@
 <?php } ?>
 
 
-<?php function draw_property_list_item($property, $owner, $checkin, $checkout, $guests) { ?>
+<?php function draw_property_list_item($property, $checkin, $checkout, $guests) { ?>
     <li>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
         <h3>Property ID: <?= $property['id']?></h3> 
         <h4 class="pl_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>
         <h5 class="pl_price">Price: <?=$property['price']?></h5>
-        <h5 class="pl_owner"><a href="../pages/profile.php?username=<?=$owner?>">Owner: <?=$owner?></a></h5>
+        <h5 class="pl_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
         <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
     </li>
 <?php } ?>
 
 
-<?php function draw_property_info($property, $owner) { ?>
+<?php function draw_property_info($property) { ?>
     <section class = info_property>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
         <h3>Property ID: <?= $property['id']?></h3> 
@@ -34,7 +34,7 @@
         <h5 class="p_address">Address: <?= $property['address']?> </h5>
         <h5 class="p_description">Description: <?= $property['description']?> </h5>
         <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
-        <h5 class="p_owner"><a href="../pages/profile.php?username=<?=$owner?>">Owner: <?=$owner?></a></h5>
+        <h5 class="p_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
     </section>
 <?php } ?>
 

@@ -13,10 +13,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 // TODO: check if all these are valid
-$user_id = get_user_id($_SESSION['username']);
+$username = $_SESSION['username'];
 $property_id = $_POST['property_id'];
 $content = $_POST['content'];
 
-insert_comment($user_id, $property_id, $content, date('Y-m-d'));
+insert_comment($username, $property_id, $content, date('Y-m-d'));
 
 ?>

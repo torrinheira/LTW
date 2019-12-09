@@ -20,8 +20,6 @@
         die(header('Location: ../pages/login.php'));
     }
 
-    $user_id = get_user_id($username);
-
     //we need to verify again if dates and number of guests are right, otherwise is not possible to conclude the reservation
     if($checkout <= $checkin){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please verify your check in and check out dates.');
@@ -56,7 +54,7 @@
 
                     
     if(($property_info['capacity'] >= $guests) && $is_available){
-        add_reservation($property_id, $user_id, $checkin, $checkout);
+        add_reservation($property_id, $username, $checkin, $checkout);
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Reservation made successfully..');
         die(header('Location: ../index.php'));
     }

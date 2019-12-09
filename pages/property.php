@@ -15,7 +15,7 @@
     $checkout = $_GET['checkout'];
     $numberguest = $_GET['guests'];
     $property = get_property_info($property_id);
-    $owner = get_username($property['owner_id']);
+    $owner = $property['owner'];
 
     $comments = get_comments($property_id);
 

@@ -12,8 +12,8 @@
         die(header('Location: ../pages/login.php'));
     }
 
+
     $property_id = $_POST['id_property'];
-    $user_id = get_user_id($username);
 
     // validate the new first name
     $new_title = $_POST['new_title'];
@@ -36,10 +36,10 @@
 
     $new_capacity = $_POST['new_capacity'];
 
-    update_property($property_id, $new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity, $user_id);
+    update_property($property_id, $new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity);
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Property info updated!');
     //TODO: change here the page
-    header("Location: ../pages/profile.php");
+    header("Location: ../pages/profile.php?username=$username");
 
 
 ?>

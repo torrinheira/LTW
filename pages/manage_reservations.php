@@ -14,8 +14,7 @@
     }
 
     $username = $_SESSION['username'];
-    $user_id = get_user_id($username);
-    $reservations = get_user_reservations($user_id);
+    $reservations = get_user_reservations($username);
 ?>
 
 <!DOCTYPE html>

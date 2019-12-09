@@ -58,7 +58,7 @@
 
                 if (levenshtein($property['city'], $city) <= 3) {
                     $property_info = get_property_info($property['id']);
-                    $owner_username = get_username($property_info['owner_id']);
+                    $owner_username = $property_info['owner'];
                     $reservations = all_property_reservation($property['id']);
 
                     //checks all properties reservations one by one

@@ -19,12 +19,13 @@
     $address = $_POST['address'];
     $description = $_POST['description'];
     $capacity = $_POST['capacity'];
-    $user_id = get_user_id($_SESSION['username']);
+    $owner = $_SESSION['username'];
 
 
-    addProperty($title, $price_night, $city, $address, $description, $capacity, $user_id);
+    addProperty($title, $price_night, $city, $address, $description, $capacity, $owner);
     
 
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Property added successfuly!');
-    header('Location: ../index.php');
+    header("Location: ../pages/profile.php?username=$username");
+
 ?>

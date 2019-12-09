@@ -1,92 +1,73 @@
 <?php
 
-    include_once('../includes/database.php');
-    include_once('db_user.php');
-
-    //functions related with properties(remove, add, change,..)
+include_once('../includes/database.php');
+include_once('db_user.php');
 
 
 
-    /* adds a new property to db */
-    function addProperty($title, $price_night, $city, $address, $description, $capacity, $user_id){
-        $db = Database::instance()->db();
 
-        $stmt = $db->prepare('INSERT INTO property(title, price, city, address, description, capacity, owner_id) VALUES(?, ?, ?, ?, ?, ?, ?)');
-        $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $user_id));
-    }
+/* adds a new property to db */
+function addProperty($title, $price_night, $city, $address, $description, $capacity, $owner)
+{
+    $db = Database::instance()->db();
 
-    /* lists all the properties of a user with username 'username */
-    function allPropertiesOfUser($username){
-        $db = Database::instance()->db();
+    $stmt = $db->prepare('INSERT INTO property(title, price, city, address, description, capacity, owner) VALUES(?, ?, ?, ?, ?, ?, ?)');
+    $stmt->execute(array($title, $price_night, $city, $address, $description, $capacity, $owner));
+}
 
-        $user_id = get_user_id($username);
 
-        $stmt = $db->prepare('SELECT * FROM property WHERE owner_id = ?');
-        $stmt->execute(array($user_id));
+function get_properties_cities()
+{
+    $db = Database::instance()->db();
 
-        return $stmt->fetchAll();
-    }
+    $stmt = $db->prepare('SELECT id, city FROM property');
+    $stmt->execute();
 
-    //returns all info about a property in a city passed as argument
-    function searchProperties($city){
-        $db = Database::instance()->db();
+    return $stmt->fetchAll();
+}
 
-        $stmt = $db->prepare('SELECT * FROM property WHERE city = ?');
-        $stmt->execute(array($city));
+function getCitiesID($city)
+{
+    $db = Database::instance()->db();
 
-        return $stmt->fetchAll();
-    }
+    $stmt = $db->prepare('SELECT id FROM property WHERE city = ?');
+    $stmt->execute(array($city));
 
-    function get_properties_cities(){
-        $db = Database::instance()->db();
+    return $stmt->fetchAll();
+}
 
-        $stmt = $db->prepare('SELECT id, city FROM property');
-        $stmt->execute();
+function get_property_info($property_id)
+{
+    $db = Database::instance()->db();
 
-        return $stmt->fetchAll();
-    }
+    $stmt = $db->prepare('SELECT * FROM property WHERE id = ?');
+    $stmt->execute(array($property_id));
 
-    function getCitiesID($city){
-        $db = Database::instance()->db();
+    return $stmt->fetch();
+}
 
-        $stmt = $db->prepare('SELECT id FROM property WHERE city = ?');
-        $stmt->execute(array($city));
+function get_user_properties($owner)
+{
+    $db = Database::instance()->db();
 
-        return $stmt->fetchAll();
-    }
+    $stmt = $db->prepare('SELECT * FROM property WHERE owner = ?');
+    $stmt->execute(array($owner));
 
-    function get_property_info($property_id){
-        $db = Database::instance()->db();
+    return $stmt->fetchAll();
+}
 
-        $stmt = $db->prepare('SELECT * FROM property WHERE id = ?');
-        $stmt->execute(array($property_id));
+function delete_property($property_id)
+{
+    $db = Database::instance()->db();
 
-        return $stmt->fetch();
-    }
+    $stmt = $db->prepare('DELETE FROM property WHERE id = ?');
+    $stmt->execute(array($property_id));
+}
 
-    function get_user_properties($user_id){
-        $db = Database::instance()->db();
+function update_property($property_id, $new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity)
+{
+    $db = Database::instance()->db();
 
-        $stmt = $db->prepare('SELECT * FROM property WHERE owner_id = ?');
-        $stmt->execute(array($user_id));
-
-        return $stmt->fetchAll();
-    }
-
-    function delete_property($property_id){
-        $db = Database::instance()->db();
-
-        $stmt = $db->prepare('DELETE FROM property WHERE id = ?');
-        $stmt->execute(array($property_id));
-    }
-
-    function update_property($property_id, $new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity, $user_id){
-        $db = Database::instance()->db();
-
-        $stmt = $db->prepare('UPDATE property SET (title, price, city, address, description, capacity) = (?, ?, ?, ?, ?, ?) WHERE id = ?');
-        $stmt->execute(array($new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity, $property_id));
-
-    }
-    
-
-?>
+    $stmt = $db->prepare('UPDATE property SET (title, price, city, address, description, capacity) = (?, ?, ?, ?, ?, ?) WHERE id = ?');
+    $stmt->execute(array($new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity, $property_id));
+}
