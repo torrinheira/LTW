@@ -29,4 +29,12 @@
 
         return $stmt->fetchAll();
     }
+
+    function cancel_reservation($reservation_id){
+        $db = Database::instance()->db();
+
+        $stmt = $db->prepare('DELETE FROM reservation WHERE id = ?');
+        $stmt->execute(array($reservation_id));
+    }
+
 ?>
