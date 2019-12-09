@@ -38,7 +38,8 @@
             }
         ?>
         </ul>
-
+        <p><a href="./add_property.php">Add property</a></p>
+        
         <?php draw_footer(); ?>
 
     </body>

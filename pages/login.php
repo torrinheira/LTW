@@ -15,7 +15,10 @@
 <html>
     <head>
         <title>Place Genie | Login</title>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+
+        <link href="../css/common.css" rel="stylesheet">
+
     </head>
     <body>
         <?php draw_header(); ?>

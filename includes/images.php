@@ -55,9 +55,9 @@
         }
 
         // FIXME: the files are not being deleted yet
-        unlink("../images/originals/$image_id.jpg");
-        unlink("../images/t_medium/$image_id.jpg");
-        unlink("../images/t_small/$image_id.jpg");
+        unlink(realpath("../images/originals/" . $image_id . ".jpg"));
+        unlink(realpath("../images/t_medium/" . $image_id. ".jpg"));
+        unlink(realpath("../images/t_small/" . $image_id . ".jpg"));
     }
 
 ?>

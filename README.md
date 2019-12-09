@@ -17,6 +17,7 @@ Repository for the project of the LTW couse @FEUP
 * **Reservation and check properties availability**: Done
 * **Java Script features**: Someone
 * **Try & Catch**: Deal with exceptions thrown by the database
+* **404 Page**
 
 ## FIXME
 |        Issue        | Description                         |

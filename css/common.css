@@ -1,0 +1,21 @@
+
+
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 0.50em;
+}
+
+#menu > nav > ul {
+    list-style-type: none;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#menu li {
+    padding-left: 1em;
+}

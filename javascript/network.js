@@ -14,8 +14,6 @@ export function request(method, url, data, listener) {
         request.open(method, url + '?' + encodeForAjax(data), true);
         request.send();
     }
-
-    
 }
 
 

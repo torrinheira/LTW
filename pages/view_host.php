@@ -19,6 +19,9 @@
     <head>
         <title>Place Genie</title>
         <meta charset="utf-8">
+
+        <link href="../css/common.css" rel="stylesheet">
+
     </head>
 
     <body>

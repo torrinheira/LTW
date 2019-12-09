@@ -1,6 +1,7 @@
 <?php
 
 include_once('../includes/database.php');
+include_once('../debug/debug.php');
 
 
 function insertImage($description)
@@ -22,5 +23,5 @@ function deleteImage($image_id)
     $stmt = $db->prepare('DELETE FROM image WHERE id = ?');
     $stmt->execute(array($image_id));
 
-    return $stmt->fetch() ? true : false;
+    return $stmt->fetch() ? false : true;
 }
