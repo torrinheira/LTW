@@ -19,7 +19,7 @@
     function allPropertiesOfUser($username){
         $db = Database::instance()->db();
 
-        $user_id = getUserID($username);
+        $user_id = get_user_id($username);
 
         $stmt = $db->prepare('SELECT * FROM property WHERE owner_id = ?');
         $stmt->execute(array($user_id));

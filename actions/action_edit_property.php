@@ -14,7 +14,7 @@
 
 
     $property_id = $_POST['id_property'];
-    $user_id = getUserID($username);
+    $user_id = get_user_id($username);
 
     // validate the new first name
     $new_title = $_POST['new_title'];

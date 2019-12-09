@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS property;
 DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS image;
+DROP TABLE IF EXISTS comment;
 
 
 CREATE TABLE user (
@@ -49,6 +50,16 @@ CREATE TABLE image (
 );
 
 
+CREATE TABLE comment (
+    id              INTEGER PRIMARY KEY,
+    user_id         INTEGER REFERENCES user(id) ON DELETE CASCADE,
+    property_id     INTEGER REFERENCES property(id) ON DELETE CASCADE,
+    date            DATE NOT NULL,
+    content         VARCHAR NOT NULL
+);
+
+
+
 -----------------------
 -- POPULATE DATABASE --
 -----------------------
@@ -73,7 +84,13 @@ INSERT INTO property VALUES (5, 'T4 no Porto', 345, 'portolandia','travessa 1000
 INSERT INTO property VALUES (6, 'T1 no Porto', 145, 'portalegre','rua doutor roberto frias', 'T1 em frente à FEUP. Remodelado em 2018.', 5, 4);
 INSERT INTO property VALUES (7, 'T2 no Porto', 205, 'minasporto','circunvalção porto nº213', 'T2 junto à circunvalação, perto da pizzaria Dominos.', 5, 3);
 
+-- insert comments
+INSERT INTO comment VALUES(1, 1, 2, '2019-12-10', 'Epah está um bocado podre :/');
+INSERT INTO comment VALUES(2, 2, 1, '2019-12-10', 'Tchee grande cena bro, curti milhões :)');
+INSERT INTO comment VALUES(3, 3, 1, '2019-12-10', 'Vista muito boa!');
+
+
 -- insert reservations
-INSERT INTO reservation VALUES (3, 3, 4, '2019-11-04', '2019-11-11');
 INSERT INTO reservation VALUES (1, 3, 4, '2019-11-20', '2019-11-21');
 INSERT INTO reservation VALUES (2, 1, 3, '2020-04-01', '2020-04-10');
+INSERT INTO reservation VALUES (3, 3, 4, '2019-11-04', '2019-11-11');

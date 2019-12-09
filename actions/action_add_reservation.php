@@ -20,7 +20,7 @@
         die(header('Location: ../pages/login.php'));
     }
 
-    $user_id = getUserID($username);
+    $user_id = get_user_id($username);
 
     //we need to verify again if dates and number of guests are right, otherwise is not possible to conclude the reservation
     if($checkout <= $checkin){

@@ -63,3 +63,16 @@
         <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a></li>
     </section>
 <?php } ?>
+
+
+<?php function draw_comments() { ?>
+    <section id="comments">
+        <header>Comments</header>
+        <?php if (isset($_SESSION['username'])) { ?>
+        <form id="comment_form">
+            <textarea id="content" placeholder="What did you think of this property?" rows="5"></textarea>
+            <input id="submit" type="button" value="Post" />
+        </form>
+        <?php } ?>
+    </section>
+<?php } ?>

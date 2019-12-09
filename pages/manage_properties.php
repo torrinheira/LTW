@@ -15,7 +15,7 @@
     }
 
     $username = $_SESSION['username'];
-    $user_id = getUserID($username);
+    $user_id = get_user_id($username);
     $user_properties = get_user_properties($user_id);
 ?>
 
