@@ -27,7 +27,7 @@
         <title>Place Genie </title>
         <meta charset="utf-8">
 
-        <script src="../javascript/comments.js" defer></script>
+        <script src="../javascript/comments.js" type="module" defer></script>
     </head>
     <body>
         <?php draw_header(); ?>
