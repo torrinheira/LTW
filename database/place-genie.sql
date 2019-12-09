@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS comment;
 
 
 CREATE TABLE user (
-    username        VARCHAR PRIMARY KEY,
+    id              INTEGER PRIMARY KEY,
+    username        VARCHAR NOT NULL UNIQUE,
     email           VARCHAR NOT NULL UNIQUE,
     password        VARCHAR NOT NULL ON CONFLICT ABORT,
     first_name      VARCHAR NOT NULL,
@@ -25,7 +26,7 @@ CREATE TABLE property (
     address         VARCHAR NOT NULL ON CONFLICT ABORT,            
     description     VARCHAR,
     capacity        INTEGER NOT NULL,
-    owner           VARCHAR REFERENCES user(username) ON DELETE CASCADE,
+    owner           VARCHAR REFERENCES user(username) ON DELETE CASCADE ON UPDATE CASCADE,
 
     -- TODO: capacity needs to have a limit
     CHECK(capacity >= 1 AND price >= 0)
@@ -35,7 +36,7 @@ CREATE TABLE property (
 CREATE TABLE reservation (
     id                  INTEGER PRIMARY KEY,
     property_id         INTEGER REFERENCES property(id) ON DELETE CASCADE,
-    tourist             VARCHAR REFERENCES user(username) ON DELETE CASCADE,
+    tourist             VARCHAR REFERENCES user(username) ON DELETE CASCADE ON UPDATE CASCADE,
     arrival_date        DATE NOT NULL ON CONFLICT ABORT,
     departure_date      DATE NOT NULL ON CONFLICT ABORT,
 
@@ -51,7 +52,7 @@ CREATE TABLE image (
 
 CREATE TABLE comment (
     id              INTEGER PRIMARY KEY,
-    username        VARCHAR REFERENCES user(username) ON DELETE CASCADE,
+    username        VARCHAR REFERENCES user(username) ON DELETE CASCADE ON UPDATE CASCADE,
     property_id     INTEGER REFERENCES property(id) ON DELETE CASCADE,
     date            DATE NOT NULL,
     content         VARCHAR NOT NULL

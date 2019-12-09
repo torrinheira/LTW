@@ -10,9 +10,21 @@ Repository for the project of the LTW couse @FEUP
 
 
 ## TODO
-* **Comments** : Bernas
-* **Add photos to properties** : Bernas
-* **Add properties** : Done
+
+### Bernas
+    * Comments
+    * Add/delete photos to properties
+    * Login and Sign up pop ups
+
+### Vitor
+    * Users cannot reserve their own places
+    * Show all places when search string is empty
+    * When there are no reservations or places, show a prompt
+    * Price range on search
+
+### Margarida
+    * Show property reservations to owner
+    
 * **Show a page to user with reservations and with their properties**: Margarida e Vitor
 * **Reservation and check properties availability**: Done
 * **Java Script features**: Someone
@@ -23,4 +35,3 @@ Repository for the project of the LTW couse @FEUP
 |        Issue        | Description                         |
 |:-------------------:|:------------------------------------|
 |  **Reservation**    | When someone who is not logged in starts searching for a property and tries to book, they need to log in (it's already implemented), but after logging in, they go back to the home page, and we have to get them in reservation page. |
-|**Profile Pictures** | Old profile pictures are not being deleted yet, FIXME tag in includes/images.php. Currently pictures are being overwritten. |
