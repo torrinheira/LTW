@@ -31,6 +31,7 @@ submit.addEventListener('click', post_comment);
 
 function post_comment() {
     let content = document.querySelector('#content').value;
+    document.querySelector('#content').value = '';
 
     if (!content)
         return;
