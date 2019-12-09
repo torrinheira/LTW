@@ -3,7 +3,10 @@
 -----------------------
 PRAGMA foreign_keys = on;
 
+
+-- insert the default profile picture
 INSERT INTO image VALUES (1, 'default profile picture');
+
 
 -- insert users
 -- password     bernas123
@@ -13,7 +16,6 @@ INSERT INTO user VALUES ('vitor', 'turrinheira@fafense.com', '$2y$10$dsxoJhvABop
 -- password     rcom6784
 INSERT INTO user VALUES ('margaridacosme', 'mcosme@gmail.com', '$2y$10$FPDF42/Mp/MBf.WLAXXuyuY2QbNf0rr1M.N/hb.QSM4er28YDcRca', 'Margarida', 'Cosme', 1, NULL);
 
--- insert the default profile picture
 
 -- insert properties
 INSERT INTO property VALUES (1, 'T2 no Porto', 245, 'porto','travessa nova do covelo nº27', 'T2 com vista para o rio Douro. Remodelado em 2017.', 5, 'bernas');
@@ -23,6 +25,7 @@ INSERT INTO property VALUES (4, 'T3 junto ao aeroporto', 285, 'aeroporto','rua s
 INSERT INTO property VALUES (5, 'T4 no Porto', 345, 'portolandia','travessa 1000 sóis.', 'Tudo o que precisa pode encontrar aqui.', 5, 'bernas');
 INSERT INTO property VALUES (6, 'T1 no Porto', 145, 'portalegre','rua doutor roberto frias', 'T1 em frente à FEUP. Remodelado em 2018.', 5, 'margaridacosme');
 INSERT INTO property VALUES (7, 'T2 no Porto', 205, 'minasporto','circunvalção porto nº213', 'T2 junto à circunvalação, perto da pizzaria Dominos.', 5, 'bernas');
+
 
 -- insert comments
 INSERT INTO comment VALUES(1, 'vitor', 1, '2019-12-10', 'Epah está um bocado podre :/');

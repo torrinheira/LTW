@@ -32,7 +32,7 @@
 
         <ul>
         <?php
-            foreach($user_properties as $user_property){
+            foreach ($user_properties as $user_property) {
                 draw_manage_property($user_property);
             }
         ?>
