@@ -83,7 +83,7 @@
                     }
                     
                     if(($property_info['capacity'] >= $guests) && $is_available){
-                        draw_property_list_item($property_info, $owner_username, $checkin, $checkout, $guests);
+                        draw_property_list_item($property_info, $checkin, $checkout, $guests);
                         $number_of_properties = $number_of_properties + 1;
                     }
                 }
