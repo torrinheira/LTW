@@ -38,3 +38,35 @@ function cancel_reservation($reservation_id)
     $stmt = $db->prepare('DELETE FROM reservation WHERE id = ?');
     $stmt->execute(array($reservation_id));
 }
+
+
+function reservations_of_property_upcoming($id){
+
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE property_id = ? AND arrival_date > ?');
+    $stmt->execute(array($id, date('Y-m-d')));
+
+    return $stmt->fetchAll();
+
+}
+
+function current_reservation($id){
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE property_id = ? AND arrival_date <= ? AND departure_date > ?');
+    $stmt->execute(array($id, date('Y-m-d'), date('Y-m-d')));
+
+    return $stmt->fetchAll();
+}
+
+function reservations_of_property_previous($id){
+
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE property_id = ? AND departure_date <= ?');
+    $stmt->execute(array($id, date('Y-m-d')));
+
+    return $stmt->fetchAll();
+
+}

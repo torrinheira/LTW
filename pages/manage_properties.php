@@ -17,6 +17,7 @@
     $username = $_SESSION['username'];
     $user_properties = get_user_properties($username);
     $number_of_properties = count($user_properties);
+    
 ?>
 
 <!DOCTYPE html>

@@ -40,7 +40,7 @@
             foreach($reservations as $reservation){
                 $property_of_reservation = $reservation['property_id'];
                 $info = get_property_info($property_of_reservation);
-                draw_manage_reservation($reservation, $info['title'], $info['city']);
+                draw_manage_reservation($reservation, $info['title'], $info['city'], $info['owner']);
             }
         }
         else{

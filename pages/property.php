@@ -30,6 +30,8 @@
         <link href="../css/common.css" rel="stylesheet">
 
         <script src="../javascript/comments.js" type="module" defer></script>
+        <script src="./javascript/valid_date.js" defer></script>
+
     </head>
     <body>
         <?php draw_header(); ?>
