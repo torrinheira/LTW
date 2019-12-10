@@ -4,6 +4,16 @@ include_once('../includes/database.php');
 
 
 
+function get_user($comment_id)
+{
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT username FROM comment WHERE id = ?');
+    $stmt->execute(array($comment_id));
+
+    return $stmt->fetch()['username'];
+}
+
 function get_comments($property_id)
 {
     $db = Database::instance()->db();
@@ -22,7 +32,7 @@ function insert_comment($username, $property_id, $date, $content)
     $stmt = $db->prepare('INSERT INTO comment(username, property_id, date, content) VALUES(?, ?, ?, ?)');
     $stmt->execute(array($username, $property_id, $date, $content));
 
-    return $stmt->fetch()['id'];
+    return $db->lastInsertId();
 }
 
 
