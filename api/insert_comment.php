@@ -17,6 +17,10 @@ $username = $_SESSION['username'];
 $property_id = $_POST['property_id'];
 $content = $_POST['content'];
 
-insert_comment($username, $property_id, $content, date('Y-m-d'));
+
+header('Content-Type: application/json');
+
+$comment_id = insert_comment($username, $property_id, $content, date('Y-m-d'));
+echo json_encode($comment_id);
 
 ?>

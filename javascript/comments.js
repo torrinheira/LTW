@@ -60,3 +60,4 @@ function draw_comment(username, content, date) {
 
     comment_section.appendChild(comment);
 }
+
