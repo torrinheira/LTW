@@ -12,7 +12,7 @@ Repository for the project of the LTW couse @FEUP
 ## TODO
 
 ### Bernas
-    * Comments
+    * Comments (DONE)
     * Add/delete photos to properties
     * Login and Sign up pop ups
 
@@ -20,7 +20,7 @@ Repository for the project of the LTW couse @FEUP
     * Users cannot reserve their own places (DONE)
     * Show all places when search string is empty (DONE)
     * When there are no reservations or places, show a prompt (DONE)
-    * Price range on search
+    * Price range on search (DONE)
     * Check inputs validation
 
 ### Margarida
