@@ -19,8 +19,9 @@ Repository for the project of the LTW couse @FEUP
 ### Vitor
     * Users cannot reserve their own places (DONE)
     * Show all places when search string is empty (DONE)
-    * When there are no reservations or places, show a prompt
+    * When there are no reservations or places, show a prompt (DONE)
     * Price range on search
+    * Check inputs validation
 
 ### Margarida
     * Show property reservations to owner
