@@ -17,10 +17,11 @@ Repository for the project of the LTW couse @FEUP
     * Login and Sign up pop ups
 
 ### Vitor
-    * Users cannot reserve their own places
-    * Show all places when search string is empty
-    * When there are no reservations or places, show a prompt
+    * Users cannot reserve their own places (DONE)
+    * Show all places when search string is empty (DONE)
+    * When there are no reservations or places, show a prompt (DONE)
     * Price range on search
+    * Check inputs validation
 
 ### Margarida
     * Show property reservations to owner
