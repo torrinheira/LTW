@@ -16,6 +16,7 @@
 
     $username = $_SESSION['username'];
     $reservations = get_user_reservations($username);
+    $number_reservations = count($reservations);
 ?>
 
 <!DOCTYPE html>
@@ -35,11 +36,16 @@
 
         <ul>
         <?php
+        if($number_reservations > 0){
             foreach($reservations as $reservation){
                 $property_of_reservation = $reservation['property_id'];
                 $info = get_property_info($property_of_reservation);
                 draw_manage_reservation($reservation, $info['title'], $info['city']);
             }
+        }
+        else{
+            draw_no_reservations();
+        }
         ?>
         </ul>
 

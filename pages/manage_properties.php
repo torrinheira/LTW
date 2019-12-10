@@ -16,6 +16,7 @@
 
     $username = $_SESSION['username'];
     $user_properties = get_user_properties($username);
+    $number_of_properties = count($user_properties);
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +33,13 @@
 
         <ul>
         <?php
+        if($number_of_properties > 0){
             foreach ($user_properties as $user_property) {
                 draw_manage_property($user_property);
             }
+        }else{
+            draw_no_properties();
+        }
         ?>
         </ul>
         <p><a href="./add_property.php">Add property</a></p>

@@ -29,6 +29,11 @@
 
     //checks all properties reservations one by one
     $property_info = get_property_info($property_id);
+    if($property_info['owner'] == $username){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You cannot reserve your own properties.');
+        die(header('Location: ../index.php'));
+    }
+    
     $reservations = all_property_reservation($property_id);
 
     $is_available = TRUE;

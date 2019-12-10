@@ -76,3 +76,10 @@
         <?php } ?>
     </section>
 <?php } ?>
+
+
+<?php function draw_no_properties() { ?>
+    <section id="no_properties">
+        You have no properties.
+    </section>
+<?php } ?>
