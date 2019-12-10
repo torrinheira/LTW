@@ -38,6 +38,7 @@
     </section>
 <?php } ?>
 
+<!-- TODO: acho que esta função ja nao faz nada aqui(apagar mais tarde)-->
 <?php function draw_property_info_resumed($property) { ?>
     <section class = info_property>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
