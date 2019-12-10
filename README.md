@@ -24,7 +24,7 @@ Repository for the project of the LTW couse @FEUP
     * Check inputs validation
 
 ### Margarida
-    * Show property reservations to owner
+    * Show property reservations to owner (DONE)
     
 * **Show a page to user with reservations and with their properties**: Margarida e Vitor
 * **Reservation and check properties availability**: Done
