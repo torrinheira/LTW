@@ -14,6 +14,7 @@
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged in successfully!');
     }
     else {
+        $_SESSION['draw'] = 'login';
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid credentials! Login failed!');
         header('Location: ../index.php');
     }

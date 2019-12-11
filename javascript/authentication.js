@@ -1,5 +1,11 @@
 'use strict';
 
+import { request } from './network.js';
+
+let draw = null;
+request('post', '../api/fetch_modal.php', {}, false, function() {
+    draw = JSON.parse(this.response);
+});
 
 
 const login = document.querySelector('.login');
@@ -12,6 +18,14 @@ if (signup != null)
 
 const body = document.querySelector('body');
 let active_modal = false;
+
+
+if (draw == 'login') {
+    draw_login();
+}
+else if (draw == 'signup') {
+    draw_signup();
+}
 
 
 function draw_login() {

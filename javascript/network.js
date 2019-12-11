@@ -1,17 +1,17 @@
 'use strict';
 
 
-export function request(method, url, data, listener) {
+export function request(method, url, data, async, listener) {
     let request = new XMLHttpRequest();
     request.onload = listener;
 
     if (method === 'post') {
-        request.open(method, url, true);
+        request.open(method, url, async);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.send(encodeForAjax(data));
     }
     else if (method === 'get') {
-        request.open(method, url + '?' + encodeForAjax(data), true);
+        request.open(method, url + '?' + encodeForAjax(data), async);
         request.send();
     }
 }
