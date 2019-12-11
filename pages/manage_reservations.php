@@ -15,8 +15,14 @@
     }
 
     $username = $_SESSION['username'];
-    $reservations = get_user_reservations($username);
-    $number_reservations = count($reservations);
+    $upcoming_reservations = reservations_of_user_upcoming($username);
+    $current_reservation = current_user_reservation($username);
+    $previous_reservations = reservations_of_user_previous($username);
+   
+
+    $number_previous = count($previous_reservations);
+    $number_upcoming = count($upcoming_reservations);
+    $number_current = count($current_reservation);
 ?>
 
 <!DOCTYPE html>
@@ -33,24 +39,60 @@
     <body>
 
         <?php draw_header(); ?>
+        <section id="current_reservation">
+            <header>Current Reservation</header>
+            <ul>
+            <?php if($number_current > 0){
+                    foreach($current_reservation as $reservation){
+                        $property_info = get_property_info($reservation['property_id']);
+                        draw_user_current_previous($reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                    }
+                }
+                else{
+                    draw_no_reservations();
+                }
+            ?>
+            </ul>
+        </section>
 
-        <ul>
-        <?php
-        if($number_reservations > 0){
-            foreach($reservations as $reservation){
-                $property_of_reservation = $reservation['property_id'];
-                $info = get_property_info($property_of_reservation);
-                draw_manage_reservation($reservation, $info['title'], $info['city'], $info['owner']);
-            }
-        }
-        else{
-            draw_no_reservations();
-        }
-        ?>
-        </ul>
+        <section id="upcoming_reservations">
+            <header>Upcoming Reservations</header>
+            <ul>
+            <?php if($number_upcoming > 0){
 
+                
+                    foreach($upcoming_reservations as $upcoming_reservation){
+                        $property_info = get_property_info($upcoming_reservation['property_id']);
+                        draw_user_upcoming($upcoming_reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                    }
+            
+                }
+                else{
+                    draw_no_reservations();
+                } ?>
+            </ul>
+        </section>
+
+        <section id="previous_reservations">
+            <header>Previous Reservations</header>
+
+            <ul>
+            <?php if($number_previous > 0){
+                    foreach($previous_reservations as $previous_reservation){
+                        $property_info = get_property_info($previous_reservation['property_id']);
+                        draw_user_current_previous($previous_reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                    }
+                }
+                else{
+                    draw_no_reservations();
+                }
+            ?>
+
+            </ul>
+        </section>
+        
+        
         <?php draw_footer(); ?>
 
     </body>
-
 </html>

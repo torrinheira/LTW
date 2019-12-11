@@ -39,7 +39,7 @@ function cancel_reservation($reservation_id)
     $stmt->execute(array($reservation_id));
 }
 
-
+//funções que retornar as reservas de propriedades
 function reservations_of_property_upcoming($id){
 
     $db = Database::instance()->db();
@@ -66,6 +66,38 @@ function reservations_of_property_previous($id){
 
     $stmt = $db->prepare('SELECT * FROM reservation WHERE property_id = ? AND departure_date <= ?');
     $stmt->execute(array($id, date('Y-m-d')));
+
+    return $stmt->fetchAll();
+
+}
+
+//funções que retornar as reservas de um username
+function reservations_of_user_upcoming($user){
+
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE tourist = ? AND arrival_date > ?');
+    $stmt->execute(array($user, date('Y-m-d')));
+
+    return $stmt->fetchAll();
+
+}
+
+function current_user_reservation($user){
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE tourist = ? AND arrival_date <= ? AND departure_date > ?');
+    $stmt->execute(array($user, date('Y-m-d'), date('Y-m-d')));
+
+    return $stmt->fetchAll();
+}
+
+function reservations_of_user_previous($user){
+
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE tourist = ? AND departure_date <= ?');
+    $stmt->execute(array($user, date('Y-m-d')));
 
     return $stmt->fetchAll();
 
