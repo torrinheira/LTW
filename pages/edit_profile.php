@@ -22,6 +22,7 @@
         <meta charset="utf-8"></meta>
         
         <link href="../css/common.css" rel="stylesheet">
+        <script src="../javascript/messages.js" type="module" defer></script>
 
     </head>
     <body> 

@@ -29,6 +29,7 @@
 
         <link href="../css/common.css" rel="stylesheet">
         <script src="../javascript/authentication.js" type="module" defer></script>
+        <script src="../javascript/messages.js" type="module" defer></script>
 
     </head>
     <body>

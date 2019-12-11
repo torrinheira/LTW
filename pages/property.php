@@ -32,6 +32,8 @@
         <script src="../javascript/comments.js" type="module" defer></script>
         <script src="../javascript/authentication.js" type="module" defer></script>
         <script src="../javascript/valid_date.js" defer></script>
+        <script src="../javascript/messages.js" type="module" defer></script>
+
 
     </head>
     <body>
