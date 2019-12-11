@@ -45,7 +45,7 @@
         also find out what the second part of the condition does */
     if (!check_password($password)) {
         $_SESSION['draw'] = 'signup';
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password must be at least 5 characters long and contain a number!');
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password invalid( at least 5 characters, minimum 1 letter and 1 number, limited special chars)');
         die(header('Location: ../index.php'));
     }
 
