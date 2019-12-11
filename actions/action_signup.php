@@ -34,6 +34,12 @@
         die(header('Location: ../index.php'));
     }
 
+    if(!availableEmail($email)){
+        $_SESSION['draw'] = 'signup';
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already associated with other account...');
+        die(header('Location: ../index.php'));
+    }
+
     // check if the password is valid
     /* TODO: check if the password characters are valid to prevent injection,
         also find out what the second part of the condition does */

@@ -16,6 +16,26 @@ function availableUsername($username)
     return $stmt->fetch() ? false : true;
 }
 
+function availableEmail($email)
+{
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM user WHERE email = ?');
+    $stmt->execute(array($email));
+
+    return $stmt->fetch() ? false : true;
+}
+
+function getEmail($username)
+{
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT email FROM user WHERE username = ?');
+    $stmt->execute(array($username));
+
+    return $stmt->fetch();
+}
+
 function insertUser($username, $email, $password, $first_name, $last_name)
 {
     $db = Database::instance()->db();

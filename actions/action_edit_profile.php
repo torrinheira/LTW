@@ -10,7 +10,7 @@
         die(header('Location: ../pages/login.php'));
     }
 
-
+    $old_email = getEmail($username);
     // validate the new username
     $new_username = $_POST['new_username'];
     // TODO: check if the username has any invalid characters
@@ -19,6 +19,8 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username already taken...');
         die(header('Location: ../pages/edit_profile.php'));
     }
+
+    
 
     // validate the new first name
     $new_first_name = $_POST['new_first_name'];
@@ -31,6 +33,10 @@
     // validate the new email
     $new_email = $_POST['new_email'];
     // TODO: check for invalid characters
+    if ($old_email != $new_email && !availableEmail($new_email)) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already associated with other account...');
+        die(header('Location: ../pages/edit_profile.php'));
+    }
 
     // validate the new description
     $new_description = $_POST['new_description'];
