@@ -39,7 +39,7 @@
     update_property($property_id, $new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity);
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Property info updated!');
     //TODO: change here the page
-    header("Location: ../pages/profile.php?username=$username");
+    header("Location: ../pages/manage_properties.php");
 
 
 ?>

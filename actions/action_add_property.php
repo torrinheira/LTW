@@ -26,6 +26,6 @@
     
 
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Property added successfuly!');
-    header("Location: ../pages/profile.php?username=$username");
+    header("Location: ../pages/manage_properties.php");
 
 ?>

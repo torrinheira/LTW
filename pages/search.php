@@ -73,10 +73,10 @@ $properties = get_properties_cities();
                     //checks all properties reservations one by one
                     foreach ($reservations as $reservation) {
 
-                        if ($checkin >= $reservation['arrival_date'] && $checkin <= $reservation['departure_date']) {
+                        if ($checkin >= $reservation['arrival_date'] && $checkin < $reservation['departure_date']) {
                             $is_available = FALSE;
                             break;
-                        } else if ($checkout >= $reservation['arrival_date'] && $checkout <= $reservation['departure_date']) {
+                        } else if ($checkout > $reservation['arrival_date'] && $checkout <= $reservation['departure_date']) {
                             $is_available = FALSE;
                             break;
                         } else if (($checkin <= $reservation['arrival_date'] && $checkin <= $reservation['departure_date']) && ($checkout >= $reservation['arrival_date'] && $checkout >= $reservation['departure_date'])) {
