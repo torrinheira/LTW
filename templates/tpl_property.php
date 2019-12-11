@@ -38,6 +38,7 @@
     </section>
 <?php } ?>
 
+<!-- TODO: acho que esta função ja nao faz nada aqui(apagar mais tarde)-->
 <?php function draw_property_info_resumed($property) { ?>
     <section class = info_property>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
@@ -60,7 +61,7 @@
 
 <?php function draw_manage_property($user_property) { ?>
     <section id="property_of_user">
-        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a></li>
+        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a> | <a href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
     </section>
 <?php } ?>
 
@@ -74,5 +75,12 @@
             <input id="submit" type="button" value="Post" />
         </form>
         <?php } ?>
+    </section>
+<?php } ?>
+
+
+<?php function draw_no_properties() { ?>
+    <section id="no_properties">
+        You have no properties.
     </section>
 <?php } ?>

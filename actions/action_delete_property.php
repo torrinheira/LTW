@@ -22,6 +22,6 @@
 
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Property deleted.');
     //TODO: this must be change ( instead of index we must redirect to the profile page, altough it's not working)
-    header("Location: ../pages/profile.php?username=$username");
+    header("Location: ../pages/manage_properties.php");
 
 ?>

@@ -28,8 +28,7 @@
         <meta charset="utf-8">
 
         <link href="../css/common.css" rel="stylesheet">
-
-        <script src="../javascript/authentication.js" defer></script>
+        <script src="../javascript/authentication.js" type="module" defer></script>
 
     </head>
     <body>

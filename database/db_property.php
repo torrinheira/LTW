@@ -71,3 +71,4 @@ function update_property($property_id, $new_title, $new_price, $new_city, $new_a
     $stmt = $db->prepare('UPDATE property SET (title, price, city, address, description, capacity) = (?, ?, ?, ?, ?, ?) WHERE id = ?');
     $stmt->execute(array($new_title, $new_price, $new_city, $new_address, $new_description, $new_capacity, $property_id));
 }
+

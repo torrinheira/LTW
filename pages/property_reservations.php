@@ -1,23 +1,27 @@
 <?php
 
     include_once('../includes/session.php');
+    include_once('../database/db_user.php');
+    include_once('../database/db_reservation.php');
+    include_once('../debug/debug.php');
     include_once('../templates/tpl_common.php');
     include_once('../templates/tpl_property.php');
     include_once('../templates/tpl_reservation.php');
-    include_once('../database/db_user.php');
-    include_once('../database/db_reservation.php');
-    include_once('../database/db_property.php');
-    include_once('../debug/debug.php');
+
+
 
     if ($_SESSION['username'] == null) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to manage your reservations.');
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You must login to be able to see reservations.');
         die(header('Location: ./login.php'));
     }
 
     $username = $_SESSION['username'];
-    $upcoming_reservations = reservations_of_user_upcoming($username);
-    $current_reservation = current_user_reservation($username);
-    $previous_reservations = reservations_of_user_previous($username);
+    $property_id = $_GET['id'];
+
+    //$reservations = reservations_of_property($property_id);
+    $upcoming_reservations = reservations_of_property_upcoming($property_id);
+    $current_reservation = current_reservation($property_id);
+    $previous_reservations = reservations_of_property_previous($property_id);
    
 
     $number_previous = count($previous_reservations);
@@ -31,9 +35,6 @@
     <head>
         <title>Place Genie</title>
         <meta charset="utf-8">
-
-        <link href="../css/common.css" rel="stylesheet">
-
     </head>
 
     <body>
@@ -44,12 +45,11 @@
             <ul>
             <?php if($number_current > 0){
                     foreach($current_reservation as $reservation){
-                        $property_info = get_property_info($reservation['property_id']);
-                        draw_user_current_previous($reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                        draw_current_previous($reservation);
                     }
                 }
                 else{
-                    draw_no_reservations();
+                    draw_no_property_reservations();
                 }
             ?>
             </ul>
@@ -62,13 +62,12 @@
 
                 
                     foreach($upcoming_reservations as $upcoming_reservation){
-                        $property_info = get_property_info($upcoming_reservation['property_id']);
-                        draw_user_upcoming($upcoming_reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                        draw_upcoming($upcoming_reservation);
                     }
             
                 }
                 else{
-                    draw_no_reservations();
+                    draw_no_property_reservations();
                 } ?>
             </ul>
         </section>
@@ -79,12 +78,11 @@
             <ul>
             <?php if($number_previous > 0){
                     foreach($previous_reservations as $previous_reservation){
-                        $property_info = get_property_info($previous_reservation['property_id']);
-                        draw_user_current_previous($previous_reservation, $property_info['title'], $property_info['city'], $property_info['owner']);
+                        draw_current_previous($previous_reservation);
                     }
                 }
                 else{
-                    draw_no_reservations();
+                    draw_no_property_reservations();
                 }
             ?>
 
@@ -95,4 +93,5 @@
         <?php draw_footer(); ?>
 
     </body>
+
 </html>

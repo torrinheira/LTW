@@ -12,18 +12,19 @@ Repository for the project of the LTW couse @FEUP
 ## TODO
 
 ### Bernas
-    * Comments
+    * Comments (DONE)
     * Add/delete photos to properties
     * Login and Sign up pop ups
 
 ### Vitor
-    * Users cannot reserve their own places
-    * Show all places when search string is empty
-    * When there are no reservations or places, show a prompt
-    * Price range on search
+    * Users cannot reserve their own places (DONE)
+    * Show all places when search string is empty (DONE)
+    * When there are no reservations or places, show a prompt (DONE)
+    * Price range on search (DONE)
+    * Check inputs validation
 
 ### Margarida
-    * Show property reservations to owner
+    * Show property reservations to owner (DONE)
     
 * **Show a page to user with reservations and with their properties**: Margarida e Vitor
 * **Reservation and check properties availability**: Done

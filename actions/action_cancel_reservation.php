@@ -18,7 +18,7 @@
     cancel_reservation($reservation_id);
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Reservation canceled!');
     //TODO: change here the page
-    header("Location: ../index.php");
+    header("Location: ../pages/manage_reservations.php");
 
 
 ?>

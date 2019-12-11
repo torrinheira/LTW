@@ -29,16 +29,21 @@
 
     //checks all properties reservations one by one
     $property_info = get_property_info($property_id);
+    if($property_info['owner'] == $username){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You cannot reserve your own properties.');
+        die(header('Location: ../index.php'));
+    }
+    
     $reservations = all_property_reservation($property_id);
 
     $is_available = TRUE;
     foreach($reservations as $reservation){
 
-        if($checkin >= $reservation['arrival_date'] && $checkin <= $reservation['departure_date']){
+        if($checkin >= $reservation['arrival_date'] && $checkin < $reservation['departure_date']){
             $is_available = FALSE;
             break;
         }
-        else if($checkout >= $reservation['arrival_date'] && $checkout <= $reservation['departure_date']){
+        else if($checkout > $reservation['arrival_date'] && $checkout <= $reservation['departure_date']){
             $is_available = FALSE;
             break;
         }
@@ -56,7 +61,7 @@
     if(($property_info['capacity'] >= $guests) && $is_available){
         add_reservation($property_id, $username, $checkin, $checkout);
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Reservation made successfully..');
-        die(header('Location: ../index.php'));
+        die(header('Location: ../pages/manage_reservations.php'));
     }
     else{
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'An error occurred while booking. Please check your data.');

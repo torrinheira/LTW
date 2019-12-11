@@ -39,6 +39,8 @@
             <label>Check-in<input id="checkin" name="checkin" type="date" value="<?php echo date('Y-m-d');?>"></label>
             <label>Check-out<input id="checkout" name="checkout" type="date" value="<?php echo date('Y-m-d', strtotime('tomorrow'));?>"></label>
             <label>Guests<input name="guests" type="number" value="1" min="1" max="20"></label>
+            <label>Min Price<input name="minprice" type="number" value="1" min="1" max="50000"></label>
+            <label>Max Price<input name="maxprice" type="number" value="500" min="1" max="50000"></label>
             <input type="submit" value="Make a wish">
         </form>
     </section>
