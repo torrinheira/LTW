@@ -74,6 +74,10 @@ function draw_signup() {
     form.innerHTML += "<input name=\"first_name\" type=\"text\" placeholder=\"First Name\" required>";
     form.innerHTML += "<input name=\"last_name\" type=\"text\" placeholder=\"Last Name\" required>";
     form.innerHTML += "<input name=\"password\" type=\"password\" placeholder=\"Password\" required>";
+    form.innerHTML += "<input name=\"repeat_password\" type=\"password\" placeholder=\"Repeat Password\" required>";
+
+
+
     form.innerHTML += "<input type=\"submit\" value=\"Sign up\">";
     
     let paragraph = document.createElement('p');

@@ -4,7 +4,7 @@
     //new function to test input check
     //function that validates the input from users
     function check_input($input){
-        if (preg_match ("/^[a-zA-Z0-9\.\_\-]+$/", $input)) {
+        if (preg_match ("/^[a-zA-Z0-9\.\_\-\s]+$/", $input)) {
             return true; 
         }
         return false; //returns true if input only contain letters and number, returns false otherwise
