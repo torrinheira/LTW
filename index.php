@@ -16,6 +16,9 @@
         <link href="./css/common.css" rel="stylesheet">
 
         <script src="./javascript/valid_date.js" defer></script>
+        
+        <script src="./javascript/authentication.js" defer></script>
+
     </head>
     <body>
 

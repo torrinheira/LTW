@@ -8,6 +8,12 @@
 
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged out!');
 
-    header('Location: ../pages/login.php');
+
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+    else {
+        header('Location: ../index.php');
+    }
 
 ?>

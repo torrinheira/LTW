@@ -30,6 +30,9 @@
         <link href="../css/common.css" rel="stylesheet">
 
         <script src="../javascript/comments.js" type="module" defer></script>
+
+        <script src="../javascript/authentication.js" defer></script>
+
     </head>
     <body>
         <?php draw_header(); ?>
