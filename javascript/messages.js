@@ -22,7 +22,8 @@ request('post', '../api/fetch_messages.php', {}, true, function() {
     }
 
     parent.insertBefore(message_elem, parent.childNodes[0]);
-    setTimeout(remove_messages, 1500);
+    // TODO: uncomment this line
+    // setTimeout(remove_messages, 1500);
 });
 
 
