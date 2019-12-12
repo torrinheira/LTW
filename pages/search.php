@@ -24,7 +24,7 @@ $search_all = FALSE;
 if (empty($city)) {
     $search_all = TRUE;
 } else if (!check_input($city)) {
-    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid input! Only letters and numbers are allowed!');
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid input!');
     die(header('Location: ../index.php'));
 }
 

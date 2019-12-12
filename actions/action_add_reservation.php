@@ -33,6 +33,8 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You cannot reserve your own properties.');
         die(header('Location: ../index.php'));
     }
+
+
     
     $reservations = all_property_reservation($property_id);
 

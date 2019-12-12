@@ -20,6 +20,7 @@
             <label>First Name<input type="text" name="first_name" placeholder="Jonh" required></label>
             <label>Last Name<input type="text" name="last_name" placeholder="Doe" required></label>
             <label>Password<input type="password" name="password" placeholder="p4ssw0rd" required></label>
+            <label>Repeat Password<input type="password" name="repeat_password" placeholder="p4ssw0rd" required></label>
             <input type="submit" value="Sign up">
         </form>
         <p>Already have an account? <a href="../pages/login.php">Log in</a></p>

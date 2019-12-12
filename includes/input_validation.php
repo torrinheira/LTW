@@ -1,13 +1,13 @@
 <?php
 
+    
+    //new function to test input check
     //function that validates the input from users
     function check_input($input){
-
-        if (!preg_match ("/^[a-zA-Z0-9]+$/", $input)) {
-            return false; 
+        if (preg_match ("/^[a-zA-Z0-9\.\_\-\s]+$/", $input)) {
+            return true; 
         }
-
-        return true; //returns true if input only contain letters and number, returns false otherwise
+        return false; //returns true if input only contain letters and number, returns false otherwise
     }
 
     function contains_letter($password){

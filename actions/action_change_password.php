@@ -2,6 +2,8 @@
 
     include_once('../includes/session.php');
     include_once('../database/db_user.php');
+    include_once('../includes/input_validation.php');
+
 
 
     $username = $_SESSION['username'];
@@ -26,6 +28,11 @@
     // check if the old password and the confirmation one are equal
     if ($new_password != $rep_password) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'New passwords don\'t match');
+        die(header('Location: ../pages/edit_profile.php'));
+    }
+
+    if(!check_password($new_password)){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password invalid( at least 5 characters, minimum 1 letter and 1 number, limited special chars)');
         die(header('Location: ../pages/edit_profile.php'));
     }
 

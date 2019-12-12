@@ -11,6 +11,13 @@
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $password = $_POST['password'];
+    $repeat_password = $_POST['repeat_password'];
+
+    if($password != $repeat_password){
+        $_SESSION['draw'] = 'signup';
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords do not match!');
+        die(header('Location: ../index.php'));
+    }
 
 
     // check if the username has any invalid characters
@@ -27,12 +34,18 @@
         die(header('Location: ../index.php'));
     }
 
+    if(!availableEmail($email)){
+        $_SESSION['draw'] = 'signup';
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already associated with other account...');
+        die(header('Location: ../index.php'));
+    }
+
     // check if the password is valid
     /* TODO: check if the password characters are valid to prevent injection,
         also find out what the second part of the condition does */
     if (!check_password($password)) {
         $_SESSION['draw'] = 'signup';
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password must be at least 5 characters long and contain a number!');
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password invalid( at least 5 characters, minimum 1 letter and 1 number, limited special chars)');
         die(header('Location: ../index.php'));
     }
 

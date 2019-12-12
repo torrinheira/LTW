@@ -2,8 +2,8 @@
     <section id="reservation_form">
         <form action="../actions/action_add_reservation.php" method="post">
             <input type = "hidden" name = "property_id" value="<?=$property_id?>">
-            <label>Check-in<input name="checkin" type="date" value="<?php echo date($checkin);?>"></label>
-            <label>Check-out<input name="checkout" type="date" value="<?php echo date($checkout);?>"></label>
+            <label>Check-in<input id="checkin" name="checkin" type="date" value="<?php echo date($checkin);?>"></label>
+            <label>Check-out<input id="checkout" name="checkout" type="date" value="<?php echo date($checkout);?>"></label>
             <label>Guests<input name="guests" type="number" value="<?= $guests?>" min="1" max="20"></label>
             <input type="submit" value="Confirm">
         </form>
