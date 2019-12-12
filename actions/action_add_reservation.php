@@ -2,10 +2,10 @@
 
 include_once('../includes/session.php');
 include_once('../includes/redirect.php');
+
 include_once('../database/db_property.php');
 include_once('../database/db_reservation.php');
 include_once('../database/db_user.php');
-include_once('../debug/debug.php');
 
 
 $username = $_SESSION['username'];
@@ -15,10 +15,9 @@ $checkin = $_POST['checkin'];
 $checkout = $_POST['checkout'];
 $guests = $_POST['guests'];
 
-
-//TODO: read readme @github
 if ($username == null) {
-    die(redirect_login('error', 'Please log in to confirm your reservation.'));
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to confirm your reservation.');
+    die(header('Location: ../pages/login.php'));
 }
 
 //we need to verify again if dates and number of guests are right, otherwise is not possible to conclude the reservation
@@ -26,10 +25,15 @@ if ($checkout <= $checkin) {
     die(redirect('error', 'Please verify your check in and check out dates.'));
 }
 
-//checks all properties reservations one by one
+if($guests <= 0){
+    die(redirect('error','Number of guests invalid'));
+}
+
+
 $property_info = get_property_info($property_id);
-if ($property_info['owner'] == $username) {
-    die(redirect('error', 'You cannot reserve your own properties.'));
+if($property_info['owner'] == $username){
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You cannot reserve your own properties.');
+    die(header('Location: ../index.php'));
 }
 
 

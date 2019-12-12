@@ -103,3 +103,12 @@ function reservations_of_user_previous($user){
 
 }
 
+function get_reservation_info($id){
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT * FROM reservation WHERE tourist = ?');
+    $stmt->execute(array($id));
+
+    return $stmt->fetch();
+}
+

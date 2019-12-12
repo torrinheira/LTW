@@ -2,6 +2,7 @@
 
 include_once('../includes/session.php');
 include_once('../includes/input_validation.php');
+include_once('../includes/redirect.php');
 include_once('../templates/tpl_common.php');
 include_once('../templates/tpl_property.php');
 include_once('../database/db_property.php');
@@ -11,7 +12,6 @@ include_once('../debug/debug.php');
 
 
 
-// TODO: validate all of these inputs
 $city = $_GET['city'];
 $checkin = $_GET['checkin'];
 $checkout = $_GET['checkout'];
@@ -26,6 +26,22 @@ if (empty($city)) {
 } else if (!check_input($city)) {
     $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid input!');
     die(header('Location: ../index.php'));
+}
+
+if(!check_dates($checkin ) || !check_dates($checkout)){
+    die(redirect('error', 'Date: invalid format'));
+}
+
+if($checkout <= $checkin){
+    die(redirect('error', 'Checkout must be bigger than checkin'));
+}
+
+if($minprice > $maxprice){
+    die(redirect('error', 'Maximum price must be equal or greater than Minimum price'));
+}
+
+if($guests <= 0){
+    die(redirect('error', 'Guest: bigger or equal to 1'));
 }
 
 //search into the db all properties located in city 'city'

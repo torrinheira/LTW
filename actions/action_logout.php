@@ -7,6 +7,8 @@
     session_destroy();
     session_start();
 
-    die(redirect('success', 'Logged out!'));
+
+    $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged out!');
+    header('Location: ../index.php');
 
 ?>

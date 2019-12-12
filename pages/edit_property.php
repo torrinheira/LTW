@@ -4,6 +4,7 @@
     include_once('../includes/redirect.php');
     include_once('../database/db_property.php');
     include_once('../templates/tpl_common.php');
+    include_once('../includes/redirect.php');
 
 
     $username = $_SESSION['username'];
@@ -12,11 +13,15 @@
         die(redirect_login('error', 'Please log in to continue.'));
     }
 
-    // TODO: check if the user that is logged in is the owner of the property,
-    // if not set error message and die
+    
+    
 
-    // TODO: check if the id is a number (if it is valid)
     $property_id = $_GET['id'];
+
+    $info = get_property_info($property_id);
+    if($username != $info['owner']){
+        die(redirect('error', 'you cannot edit other user property'));
+    }
     $property_info = get_property_info($property_id);
 
 ?>

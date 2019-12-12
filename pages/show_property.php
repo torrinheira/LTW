@@ -27,7 +27,6 @@
 
         <?php draw_header(); ?>
 
-        <!-- TODO: in this function is missing photos display-->
         <?php draw_property_info($property_info) ?>
 
         <?php draw_footer(); ?>
