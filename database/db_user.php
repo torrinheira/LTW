@@ -33,7 +33,7 @@ function getEmail($username)
     $stmt = $db->prepare('SELECT email FROM user WHERE username = ?');
     $stmt->execute(array($username));
 
-    return $stmt->fetch();
+    return $stmt->fetch()['email'];
 }
 
 function insertUser($username, $email, $password, $first_name, $last_name)

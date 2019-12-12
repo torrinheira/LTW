@@ -4,6 +4,7 @@ include_once('../includes/session.php');
 include_once('../includes/redirect.php');
 include_once('../database/db_user.php');
 
+include_once('../debug/debug.php');
 
 $username = $_SESSION['username'];
 if ($username == null) {
@@ -31,8 +32,9 @@ $new_last_name = $_POST['new_last_name'];
 
 // validate the new email
 $new_email = $_POST['new_email'];
+
 // TODO: check for invalid characters
-if ($old_email != $new_email && !availableEmail($new_email)) {
+if (strcmp($old_email, $new_email) !== 0 && !availableEmail($new_email)) {
     die(redirect('error', 'Email already associated to another account.'));
 }
 
