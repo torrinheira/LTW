@@ -4,6 +4,7 @@ include_once('../includes/session.php');
 include_once('../includes/redirect.php');
 
 include_once('../database/db_property.php');
+include_once('../database/db_property_image.php');
 
 include_once('../templates/tpl_common.php');
 
@@ -22,7 +23,7 @@ if ($username != $info['owner']) {
 }
 $property_info = get_property_info($property_id);
 
-$property_images = 
+$property_images = get_property_images($property_id);
 
 ?> 
 
@@ -42,10 +43,16 @@ $property_images =
     <?php draw_header(); ?>
     <section id="change_pictures">
         <div id="uploaded_images">
-
+            <?php foreach ($property_images as $image) { ?>
+                <image src="../images/t_medium/<?=$image['id']?>.jpg" width="400" height="400">
+            <?php } ?>
         </div>
-
-    
+        <div id="upload_image">
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <input type="submit" value="Upload">
+            </form>
+        </div>
     </section>
     <section id="edit_property">
         <form action="../actions/action_edit_property.php" method="post">
