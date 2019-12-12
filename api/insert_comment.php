@@ -5,6 +5,8 @@ include_once('../includes/session.php');
 include_once('../database/db_comment.php');
 include_once('../database/db_user.php');
 include_once('../database/db_property.php');
+include_once('../includes/input_validation.php');
+include_once('../includes/redirect.php');
 
 
 if (!isset($_SESSION['username'])) {
@@ -12,7 +14,6 @@ if (!isset($_SESSION['username'])) {
     die(header('Location: ../pages/login.php'));
 }
 
-// TODO: check if all these are valid
 $username = $_SESSION['username'];
 $property_id = $_POST['property_id'];
 $content = $_POST['content'];

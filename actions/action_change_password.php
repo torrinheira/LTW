@@ -3,6 +3,7 @@
     include_once('../includes/session.php');
     include_once('../database/db_user.php');
     include_once('../includes/input_validation.php');
+    include_once('../includes/redirect.php');
 
 
 
@@ -13,16 +14,16 @@
     }
 
     
-    // TODO: check if the password has any invalid characters
     $old_password = $_POST['old_password'];
-    // check if the password is correct
+    if(!check_password($old_password)){
+        die(redirect('error','Password contains invalid characters.'));
+    }
     if (!validCredentials($username, $old_password)) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid password');
         die(header('Location: ../pages/edit_profile.php'));
     }
 
 
-    // TODO: check if the passwords have any invalid characters
     $new_password = $_POST['new_password'];
     $rep_password = $_POST['rep_password'];
     // check if the old password and the confirmation one are equal
@@ -30,6 +31,7 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'New passwords don\'t match');
         die(header('Location: ../pages/edit_profile.php'));
     }
+
 
     if(!check_password($new_password)){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password invalid( at least 5 characters, minimum 1 letter and 1 number, limited special chars)');

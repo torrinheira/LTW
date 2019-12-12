@@ -2,13 +2,25 @@
     
     include_once('../includes/session.php');
     include_once('../database/db_user.php');
+    include_once('../includes/redirect.php');
+    include_once('../includes/input_validation.php');
 
+
+    if(isset($_SESSION['username'])){
+        die(redirect('error','User already logged in!'));
+    }
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // TODO: check if the user is already logged in
-    // TODO: check if the username and password have no invalid characters
+    
+    if(!check_input($username)){
+        die(redirect('error','Username: Invalid characters!'));
+    }
+
+    if(!check_password($password)){
+        die(redirect('error','Password: Invalid characters!'));
+    }
     if (validCredentials($username, $password)) {
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged in successfully!');

@@ -3,7 +3,8 @@
     include_once('../database/db_property.php');
     include_once('../database/db_reservation.php');
     include_once('../database/db_user.php');
-    include_once('../debug/debug.php');
+    include_once('../includes/redirect.php');
+    include_once('../includes/input_validation.php');
 
 
     $username = $_SESSION['username'];
@@ -14,7 +15,6 @@
     $guests = $_POST['guests'];
 
 
-    //TODO: read readme @github
     if ($username == null) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to confirm your reservation.');
         die(header('Location: ../pages/login.php'));
@@ -26,8 +26,11 @@
         die(header('Location: ../index.php'));
     }
 
+    if($guests <= 0){
+        die(redirect('error','Number of guests invalid'));
+    }
 
-    //checks all properties reservations one by one
+
     $property_info = get_property_info($property_id);
     if($property_info['owner'] == $username){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'You cannot reserve your own properties.');

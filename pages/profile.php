@@ -5,17 +5,20 @@
     include_once('../templates/tpl_profile.php');
     include_once('../database/db_user.php');
     include_once('../debug/debug.php');
+    include_once('../includes/input_validation.php');
+    include_once('../includes/redirect.php');
 
     
 
-    // TODO: check if the username has invalid characters
     $username = $_GET['username'];
+    if(!check_input($username)){
+        die(redirect('error', 'Username: invalid characters'));
+    }
 
     $profile_info = getUserInfo($username);
 
     if ($profile_info == null) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Could not find user with username: ' . $username);
-        // TODO: change this page
         die(header('Location: ../index.php'));
     }
 

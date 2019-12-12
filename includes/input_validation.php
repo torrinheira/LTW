@@ -7,8 +7,30 @@
         if (preg_match ("/^[a-zA-Z0-9\.\_\-\s]+$/", $input)) {
             return true; 
         }
-        return false; //returns true if input only contain letters and number, returns false otherwise
+        return false; 
     }
+
+    function check_input_address($input){
+        if (preg_match ("/^[a-zA-Z0-9\.\_\-\s\ª\º\,]+$/", $input)) {
+            return true; 
+        }
+        return false; 
+    }
+
+    function check_input_names($input){
+        if (preg_match ("/^[a-zA-Z0-9\.\_\-\s\ç\Ç]+$/", $input)) {
+            return true; 
+        }
+        return false; 
+    }
+
+    function check_dates($input){
+        if (preg_match ("/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/", $input)) {
+            return true; 
+        }
+        return false; 
+    }
+
 
     function contains_letter($password){
         if(strcspn($password, 'abcdefghijklmnopqrstuvxzwyABCDEFGHIJKLMNOPQRSTUVXWYZ') + 1){
@@ -27,7 +49,7 @@
     }
 
 
-    //function that verfies password
+    
     function check_password($password){
 
         if(check_input($password) && (strlen($password) > 5)){

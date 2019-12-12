@@ -3,9 +3,9 @@
     include_once('../includes/session.php');
     include_once('../includes/input_validation.php');
     include_once('../database/db_user.php');
+    include_once('../includes/redirect.php');
 
 
-    // TODO: check if any of these variables have invalid characters
     $username = $_POST['username'];
     $email = $_POST['email'];
     $first_name = $_POST['first_name'];
@@ -40,9 +40,15 @@
         die(header('Location: ../index.php'));
     }
 
+    if(!check_input_names($first_name)){
+        die(redirect('error', 'First name: invalid characters'));
+    }
+
+    if(!check_input_names($last_name)){
+        die(redirect('error', 'Last name: invalid characters'));
+    }
+
     // check if the password is valid
-    /* TODO: check if the password characters are valid to prevent injection,
-        also find out what the second part of the condition does */
     if (!check_password($password)) {
         $_SESSION['draw'] = 'signup';
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Password invalid( at least 5 characters, minimum 1 letter and 1 number, limited special chars)');
