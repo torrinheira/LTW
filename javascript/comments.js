@@ -9,21 +9,22 @@ const property_id = urlParams.get('id');
 
 // Get the user that is logged in, null in case no user is logged
 let session_username = null;
-request('post', '../api/fetch_session.php', {}, false, function (){
+request('post', '../api/fetch_session.php', {}, true, function (){
     session_username = JSON.parse(this.response);
+
+    if (session_username != null) {
+        let submit = document.querySelector('#submit');
+        // Add listener for the user to post a comment
+        submit.addEventListener('click', function() {
+            let content = document.querySelector('#content').value;
+            if (!content)
+                return;
+            // request to insert the comment into the database
+            request('post', '../api/insert_comment.php', { property_id: property_id, content: content }, true, post_comment);
+        });
+    }
 });
 
-// Add listener for the user to post a comment
-if (session_username != null) {
-    let submit = document.querySelector('#submit');
-    submit.addEventListener('click', function() {
-        let content = document.querySelector('#content').value;
-        if (!content)
-            return;
-        // request to insert the comment into the database
-        request('post', '../api/insert_comment.php', { property_id: property_id, content: content }, true, post_comment);
-    });
-}
 
 // Draw the new comment on the page
 function post_comment() {
