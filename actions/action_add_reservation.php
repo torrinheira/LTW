@@ -58,7 +58,7 @@ if (($property_info['capacity'] >= $guests) && $is_available) {
     add_reservation($property_id, $username, $checkin, $checkout);
     die(redirect('error', 'Reservation made successfully.'));
 } else {
-    die(redirect('error', 'An error occurred while booking. Please check your data.'))
+    die(redirect('error', 'An error occurred while booking. Please check your data.'));
 }
 
 ?>
