@@ -2,9 +2,10 @@
 
 include_once('../includes/session.php');
 include_once('../includes/redirect.php');
+
 include_once('../database/db_property.php');
+
 include_once('../templates/tpl_common.php');
-include_once('../includes/redirect.php');
 
 
 $username = $_SESSION['username'];
@@ -20,6 +21,8 @@ if ($username != $info['owner']) {
     die(redirect('error', 'you cannot edit other user property'));
 }
 $property_info = get_property_info($property_id);
+
+$property_images = 
 
 ?> 
 
@@ -37,6 +40,13 @@ $property_info = get_property_info($property_id);
 
 <body>
     <?php draw_header(); ?>
+    <section id="change_pictures">
+        <div id="uploaded_images">
+
+        </div>
+
+    
+    </section>
     <section id="edit_property">
         <form action="../actions/action_edit_property.php" method="post">
             <label> <input type="hidden" id="id_property" name="id_property" value="<?= $property_info['id'] ?>"> </label>
