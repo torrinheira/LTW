@@ -15,11 +15,11 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 if (!check_input($username)) {
-    die(redirect('error', 'Username: Invalid characters!'));
+    die(redirect_login('error', 'Username: Invalid characters!'));
 }
 
 if (!check_password($password)) {
-    die(redirect('error', 'Password: Invalid characters!'));
+    die(redirect_login('error', 'Password: Invalid characters!'));
 }
 
 if (validCredentials($username, $password)) {

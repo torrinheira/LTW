@@ -46,9 +46,9 @@ $property_info = get_property_info($property_id);
             <label>Address<input type="text" name="new_address" value="<?= $property_info['address'] ?>" required></label>
             <label>Description
                 <textarea name="new_description" rows="5" cols="50" placeholder="Tell us a little bit about yourself..."><?php
-                                                                                                                            if ($property_info['description'] != null)
-                                                                                                                                echo $property_info['description'];
-                                                                                                                            ?></textarea>
+                if ($property_info['description'] != null)
+                    echo $property_info['description'];
+                ?></textarea>
             </label>
             <label>Capacity<input type="number" name="new_capacity" value="<?= $property_info['capacity'] ?>" min="1" max="20" required></label>
             <input type="submit" value="Update property">
