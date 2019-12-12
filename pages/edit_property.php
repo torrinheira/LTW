@@ -1,7 +1,7 @@
 <?php
 
     include_once('../includes/session.php');
-    include_once('../debug/debug.php');
+    include_once('../includes/redirect.php');
     include_once('../database/db_property.php');
     include_once('../templates/tpl_common.php');
 
@@ -9,8 +9,7 @@
     $username = $_SESSION['username'];
 
     if ($username == null) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to continue.');
-        die(header('Location: ../pages/login.php'));
+        die(redirect_login('error', 'Please log in to continue.'));
     }
 
     // TODO: check if the user that is logged in is the owner of the property,

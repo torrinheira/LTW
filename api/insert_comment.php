@@ -1,6 +1,7 @@
 <?php
 
 include_once('../includes/session.php');
+include_once('../includes/redirect.php');
 
 include_once('../database/db_comment.php');
 include_once('../database/db_user.php');
@@ -8,8 +9,7 @@ include_once('../database/db_property.php');
 
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to leave a comment');
-    die(header('Location: ../pages/login.php'));
+    die(redirect_login('error', 'Please log in to leave a comment'));
 }
 
 // TODO: check if all these are valid

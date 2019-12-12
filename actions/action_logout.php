@@ -1,19 +1,12 @@
 <?php
     
     include_once('../includes/session.php');
+    include_once('../includes/redirect.php');
 
 
     session_destroy();
     session_start();
 
-    $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged out!');
-
-
-    if (isset($_SERVER['HTTP_REFERER'])) {
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-    }
-    else {
-        header('Location: ../index.php');
-    }
+    die(redirect('success', 'Logged out!'));
 
 ?>

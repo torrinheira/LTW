@@ -3,12 +3,12 @@
     include_once('../includes/session.php');
     include_once('../database/db_user.php');
     include_once('../database/db_property.php');
+    include_once('../includes/redirect.php');
 
 
     //verify if user is logged in
     if (!isset($_SESSION['username'])) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to list your property');
-        die(header('Location: ../pages/login.php'));
+        die(redirect_login('error', 'Please log in to list your property.'));
     }
 
     //TODO: check if given info is valid (if its field or not)

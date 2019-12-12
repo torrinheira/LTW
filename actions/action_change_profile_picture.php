@@ -1,14 +1,14 @@
 <?php
 
     include_once('../includes/session.php');
-    include_once('../database/db_user.php');
+    include_once('../includes/redirect.php');
     include_once('../includes/images.php');
+    include_once('../database/db_user.php');
 
 
     $username = $_SESSION['username'];
     if ($username == null) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to change your profile picture');
-        die(header('Location: ../pages/login.php'));
+        die(redirect_login('error', 'Please log in to change your profile picture'));
     }
 
     $image_file = $_FILES['image']['tmp_name'];
@@ -23,6 +23,6 @@
 
     setProfilePicture($username, $image_id);
 
-    $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Picture changed successfuly!');
-    header('Location: ../pages/profile.php?username=' . $username);
+    die(redirect('success', 'Picture changed successfuly!'));
+    
 ?>
