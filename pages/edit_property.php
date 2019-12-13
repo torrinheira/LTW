@@ -2,9 +2,11 @@
 
 include_once('../includes/session.php');
 include_once('../includes/redirect.php');
+
 include_once('../database/db_property.php');
+include_once('../database/db_property_image.php');
+
 include_once('../templates/tpl_common.php');
-include_once('../includes/redirect.php');
 
 
 $username = $_SESSION['username'];
@@ -20,6 +22,10 @@ if ($username != $info['owner']) {
     die(redirect('error', 'you cannot edit other user property'));
 }
 $property_info = get_property_info($property_id);
+
+$property_images = get_property_images($property_id);
+
+$_SESSION['property_id'] = $property_id;
 
 ?> 
 
@@ -37,6 +43,23 @@ $property_info = get_property_info($property_id);
 
 <body>
     <?php draw_header(); ?>
+    <section id="change_pictures">
+        <div id="uploaded_images">
+            <?php foreach ($property_images as $image) { ?>
+            <div class="image_tile">
+                <image src="../images/t_medium/<?=$image['image_id']?>.jpg" width="400" height="400">
+                <a href="../actions/action_delete_property_image.php?image_id=<?=$image['image_id']?>">Delete</a>
+            </div>
+            <?php } ?>
+        </div>
+        <div id="upload_image">
+            <form action="../actions/action_upload_property_image.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" required>
+                <input type="text" name="description">
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    </section>
     <section id="edit_property">
         <form action="../actions/action_edit_property.php" method="post">
             <label> <input type="hidden" id="id_property" name="id_property" value="<?= $property_info['id'] ?>"> </label>

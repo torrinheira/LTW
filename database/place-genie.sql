@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS comment;
+DROP TABLE IF EXISTS property_image;
 
 
 CREATE TABLE user (
@@ -58,3 +59,8 @@ CREATE TABLE comment (
     content         VARCHAR NOT NULL
 );
 
+
+CREATE TABLE property_image (
+    image_id        INTEGER UNIQUE REFERENCES image(id) ON DELETE CASCADE,
+    property_id     INTEGER REFERENCES property(id) ON DELETE CASCADE
+);

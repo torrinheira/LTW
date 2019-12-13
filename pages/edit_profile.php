@@ -37,10 +37,10 @@ $profile_info = getUserInfo($_SESSION['username']);
     <section id="change_picture">
         <header>Profile picture</header>
 
-        <img src="../images/t_medium/<?= $profile_info['image'] ?>.jpg" width="400" height="400">
+        <img src="../images/t_medium/<?=$profile_info['image']?>.jpg" width="400" height="400">
 
         <form action="../actions/action_change_profile_picture.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="image">
+            <input type="file" name="image" required>
             <input type="submit" value="Upload">
         </form>
 

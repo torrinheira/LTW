@@ -1,7 +1,6 @@
 <?php
 
 include_once('../includes/database.php');
-include_once('../debug/debug.php');
 
 
 function insertImage($description)
