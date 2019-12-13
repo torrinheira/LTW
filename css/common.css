@@ -21,9 +21,11 @@
     background-color: white;
     border: 2px solid goldenrod;
     border-radius: 1em;
-
+    justify-content: center;
+    text-align: center;
+    left: 50%;
+    top:1em;
     position: absolute;
-    top: 0;
 }
 
 /* MODAL BOXES */
@@ -88,7 +90,7 @@
 
 
 /* all buttons */
-button, input[type="button"], input[type="submit"] {
+.button, button, input[type="button"], input[type="submit"] {
     background-color: goldenrod;
     border: 2px solid goldenrod;
     border-radius: 1em;
@@ -97,19 +99,73 @@ button, input[type="button"], input[type="submit"] {
     color: white;
     display: inline-block;
 }
-button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+.button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover {
     background-color: white;
     color: goldenrod;
     border: 2px solid goldenrod;
 }
 
+.button{
+    text-decoration: none;
+    padding:0 0.3em;
+}
+
+
 /* footer */
-body > footer{
-  position: relative;
-  left: 0;
+
+body > footer {
+  position: fixed;
   bottom: 0;
+display: flex;
+justify-content: space-between;
   width: 100%;
-  background-color: aqua;
+  background-color: goldenrod;
   color: black;
   text-align: center;
 }
+
+
+
+body > footer > p {
+    padding: 0 1em;
+    display: inline-block;
+    color: black;
+    text-align: right;
+}
+
+/* header */
+body > header{
+    background-color: white;
+}
+
+
+#search{
+    display: grid;
+    background-color:aqua;
+    padding: 0px 10px;
+}
+
+form {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search > form > div{
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+
+  
+
+
