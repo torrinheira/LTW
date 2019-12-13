@@ -16,27 +16,77 @@ html {
 /* search */
 
 #search{
-    
-    width: 60em;
-    background-color: red;
+    width: 40em;
+    background-color: whitesmoke;
     border-radius: 10px;
-    margin: 2em auto;
+    margin: 7em 17em;
 }
-
+/*
 #search > form {
     display: flex;
     flex-flow: wrap;
     align-items: center;
     justify-content: space-between;
+}*/
+
+#search > form{
+    display: grid;
+    grid-template-rows: 5vh 5vh 4vh 4vh;
+    grid-template-areas: "where where" "checkin checkout" "minprice maxprice" "guests guests" "submit submit";
 }
+
+.where{
+    grid-area: where;
+}
+
+.checkin{
+    grid-area: checkin;
+}
+
+.checkout{
+    grid-area: checkout;
+}
+
+.minprice{
+    grid-area: minprice;
+}
+
+.maxprice{
+    grid-area: maxprice;
+}
+
+.guests{
+    grid-area: guests;
+}
+
+.submit{
+    grid-area: submit;
+}
+
+
 
 #search > form > div{
     color: black;
     font-weight: 600;
+    text-align: left;
+}
+
+#search > form > div.submit{
+    color: black;
+    font-weight: 600;
     text-align: center;
-    padding: 2px;
+}
+
+#search > form > div.where{
+    color: black;
+    font-weight: 600;
 }
 
 body {
     margin: 0;
+}
+
+body > header{
+    background-color: #191970;
+    height: 0;
 }

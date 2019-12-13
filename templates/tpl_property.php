@@ -13,7 +13,6 @@
 
 <?php function draw_property_list_item($property, $checkin, $checkout, $guests) { ?>
     <li>
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
         <h3>Property ID: <?= $property['id']?></h3> 
         <h4 class="pl_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>

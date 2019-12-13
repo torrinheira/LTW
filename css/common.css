@@ -114,14 +114,14 @@
 /* footer */
 
 body > footer {
-  position: fixed;
-  bottom: 0;
-display: flex;
-justify-content: space-between;
-  width: 100%;
-  background-color: goldenrod;
-  color: black;
-  text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #191970;
+    color: goldenrod;
+    text-align: center;
 }
 
 
@@ -129,16 +129,16 @@ justify-content: space-between;
 body > footer > p {
     padding: 0 1em;
     display: inline-block;
-    color: black;
+    color: goldenrod;
     text-align: right;
 }
 
 /* header */
 body > header{
-    background-color: white;
+    background-color: #191970;
 }
 
-
+/* search */
 #search{
     display: grid;
     background-color:aqua;

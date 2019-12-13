@@ -25,13 +25,13 @@
 <?php function draw_search() { ?>
     <div id="search">
         <form action="../pages/search.php" method="get">
-            <div>Where:<input type="search" name ="city" placeholder="Your dreams"></div>
-            <div>Check-in:<input id="checkin" name="checkin" type="date" value="<?php echo date('Y-m-d');?>"></div>
-            <div>Check-out:<input id="checkout" name="checkout" type="date" value="<?php echo date('Y-m-d', strtotime('tomorrow'));?>"></div>
-            <div>Guests:<input name="guests" type="number" value="1" min="1" max="20"></div>
-            <div>Min Price:<input name="minprice" type="number" value="1" min="1" max="50000"></div>
-            <div>Max Price:<input name="maxprice" type="number" value="500" min="1" max="50000"></div>
-            <div> <input type="submit" value="Make a wish"> </div>
+            <div class="where">Where <input type="search" name ="city" placeholder="Your dreams"></div>
+            <div class="checkin">Check-in <input id="checkin" name="checkin" type="date" value="<?php echo date('Y-m-d');?>"></div>
+            <div class="checkout">Check-out <input id="checkout" name="checkout" type="date" value="<?php echo date('Y-m-d', strtotime('tomorrow'));?>"></div>
+            <div class="guests">Guests <input name="guests" type="number" value="1" min="1" max="20"></div>
+            <div class ="minprice">Min Price <input name="minprice" type="number" value="1" min="1" max="50000"></div>
+            <div class = "maxprice">Max Price <input name="maxprice" type="number" value="500" min="1" max="50000"></div>
+            <div class="submit"> <input type="submit" value="Make a wish"> </div>
         </form>
     </div>
 <?php } ?>
