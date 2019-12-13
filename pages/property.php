@@ -38,7 +38,9 @@
     <body>
         <?php draw_header(); ?>
         <?php draw_property_info($property, $owner); ?>
-        <?php draw_reservation($checkin, $checkout, $numberguest, $property_id); ?>
+        <?php if($owner != $_SESSION['username']){
+                draw_reservation($checkin, $checkout, $numberguest, $property_id);
+            } ?>
         <?php draw_comments(); ?>
         <?php draw_footer(); ?>
     </body>
