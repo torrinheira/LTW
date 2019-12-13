@@ -26,16 +26,14 @@
 
 <?php function draw_property_info($property, $images) { ?>
     <section class = info_property>
-        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
-        <h3>Property ID: <?=$property['id']?></h3> 
-        <h4 class="p_title">Title: <?=$property['title']?> </h4>
+        <h1 class="p_title"><?=$property['title']?></h1>
 
         <!-- implementing slideshow here -->
         <?php if ($images != null) { ?>
         <div class="slideshow_container">
             <?php foreach ($images as $image) { ?>
             <div class="slide">
-                <img src="../images/originals/<?=$image['image_id']?>.jpg" width="500" height="500">
+                <img src="../images/t_medium/<?=$image['image_id']?>.jpg" height="400">
             </div>
             <?php } ?>
 

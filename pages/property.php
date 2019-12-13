@@ -10,6 +10,7 @@ include_once('../database/db_property.php');
 include_once('../database/db_property_image.php');
 include_once('../database/db_comment.php');
 
+
 $property_id = $_GET['id'];
 $checkin = $_GET['checkin'];
 $checkout = $_GET['checkout'];
@@ -29,13 +30,13 @@ $images = get_property_images($property_id);
     <meta charset="utf-8">
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/slideshow.css" rel="stylesheet">
 
-    <script src="../javascript/comments.js" type="module" defer></script>
-    <script src="../javascript/authentication.js" type="module" defer></script>
     <script src="../javascript/valid_date.js" defer></script>
     <script src="../javascript/messages.js" type="module" defer></script>
-
-
+    <script src="../javascript/authentication.js" type="module" defer></script>
+    <script src="../javascript/comments.js" type="module" defer></script>
+    <script src="../javascript/slideshow.js" defer></script>
 </head>
 
 <body>

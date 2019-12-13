@@ -1,0 +1,58 @@
+/* slideshow container */
+.slideshow_container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* slides */
+/* hide all slides by default */
+.slide {
+    display: none;
+}
+
+.slide > img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* previous and next buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 0.75em;
+    color: white;
+    background-color: rgb(110, 110, 110, 0.5);
+    border-radius: 0.5em;
+}
+.prev:hover, .next:hover {
+    background-color: rgb(110, 110, 110, 0.7);
+}
+
+/* position the next button */
+.next {
+    right: 0;
+}
+
+
+.dots {
+    width: 100%;
+    text-align: center;
+    margin: 0.5em 0 1em 0;
+}
+/* dots/indicators */
+.dot {
+    cursor: pointer;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0.4em;
+    background-color: rgb(175, 175, 175);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active, .dot:hover {
+    background-color: rgb(143, 143, 143);
+}
