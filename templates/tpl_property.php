@@ -24,14 +24,34 @@
 <?php } ?>
 
 
-<?php function draw_property_info($property) { ?>
+<?php function draw_property_info($property, $images) { ?>
     <section class = info_property>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
-        <h3>Property ID: <?= $property['id']?></h3> 
-        <h4 class="p_title">Title: <?= $property['title']?> </h4>
-        <h5 class="p_price">Price per night: <?= $property['price']?> </h5>
-        <h5 class="p_city">City:<?= $property['city']?> </h5>
-        <h5 class="p_address">Address: <?= $property['address']?> </h5>
+        <h3>Property ID: <?=$property['id']?></h3> 
+        <h4 class="p_title">Title: <?=$property['title']?> </h4>
+
+        <!-- implementing slideshow here -->
+        <?php if ($images != null) { ?>
+        <div class="slideshow_container">
+            <?php foreach ($images as $image) { ?>
+            <div class="slide">
+                <img src="../images/originals/<?=$image['image_id']?>.jpg" width="500" height="500">
+            </div>
+            <?php } ?>
+
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+        <div class="dots">
+            <?php for ($i = 0; $i < sizeof($images); $i++) { ?>
+                <span class="dot"></span>
+            <?php } ?>
+        </div>
+        <?php } ?>
+
+        <h5 class="p_price">Price per night: <?=$property['price']?> </h5>
+        <h5 class="p_city">City:<?=$property['city']?> </h5>
+        <h5 class="p_address">Address: <?=$property['address']?> </h5>
         <h5 class="p_description">Description: <?= $property['description']?> </h5>
         <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
         <h5 class="p_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
