@@ -25,7 +25,7 @@ function get_comments($property_id)
 }
 
 
-function insert_comment($username, $property_id, $date, $content)
+function insert_comment($username, $property_id, $content, $date)
 {
     $db = Database::instance()->db();
 
