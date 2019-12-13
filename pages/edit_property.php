@@ -25,6 +25,8 @@ $property_info = get_property_info($property_id);
 
 $property_images = get_property_images($property_id);
 
+$_SESSION['property_id'] = $property_id;
+
 ?> 
 
 <!DOCTYPE html>
@@ -44,12 +46,16 @@ $property_images = get_property_images($property_id);
     <section id="change_pictures">
         <div id="uploaded_images">
             <?php foreach ($property_images as $image) { ?>
-                <image src="../images/t_medium/<?=$image['id']?>.jpg" width="400" height="400">
+            <div class="image_tile">
+                <image src="../images/t_medium/<?=$image['image_id']?>.jpg" width="400" height="400">
+                <a href="../actions/action_delete_property_image.php?image_id=<?=$image['image_id']?>">Delete</a>
+            </div>
             <?php } ?>
         </div>
         <div id="upload_image">
-            <form action="" method="post" enctype="multipart/form-data">
-                <input type="file" name="image">
+            <form action="../actions/action_upload_property_image.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" required>
+                <input type="text" name="description">
                 <input type="submit" value="Upload">
             </form>
         </div>

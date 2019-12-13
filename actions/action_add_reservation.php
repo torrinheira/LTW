@@ -16,8 +16,7 @@ $checkout = $_POST['checkout'];
 $guests = $_POST['guests'];
 
 if ($username == null) {
-    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Please log in to confirm your reservation.');
-    die(header('Location: ../pages/login.php'));
+    die(redirect_login('error', 'Please log in to confirm your reservation.'));
 }
 
 //we need to verify again if dates and number of guests are right, otherwise is not possible to conclude the reservation

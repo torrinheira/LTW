@@ -21,4 +21,14 @@ function insert_property_image($image_id, $property_id)
     $stmt->execute(array($image_id, $property_id));
 }
 
+function get_property($image_id)
+{
+    $db = Database::instance()->db();
+
+    $stmt = $db->prepare('SELECT property_id FROM property_image WHERE image_id = ?');
+    $stmt->execute(array($image_id));
+
+    return $stmt->fetch()['property_id'];
+}
+
 ?>
