@@ -145,7 +145,7 @@ body > header{
     padding: 0px 10px;
 }
 
-form {
+#search > form {
     display: flex;
     flex-flow: wrap;
     align-items: center;
