@@ -1,5 +1,5 @@
 <?php function draw_reservation($checkin, $checkout, $guests, $property_id) { ?>
-    <section id="reservation_form">
+    <section class="reservation_form">
         <form action="../actions/action_add_reservation.php" method="post">
             <input type = "hidden" name = "property_id" value="<?=$property_id?>">
             <label>Check-in<input id="checkin" name="checkin" type="date" value="<?php echo date($checkin);?>"></label>
@@ -25,12 +25,11 @@
 
 
 <?php function draw_property_info($property, $images) { ?>
-    <section class = info_property>
         <h1 class="p_title"><?=$property['title']?></h1>
 
         <!-- implementing slideshow here -->
         <?php if ($images != null) { ?>
-        <div class="slideshow_container">
+        <div class="slideshow">
             <?php foreach ($images as $image) { ?>
             <div class="slide">
                 <img src="../images/t_medium/<?=$image['image_id']?>.jpg" height="400">
@@ -39,36 +38,22 @@
 
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
-        </div>
-        <div class="dots">
-            <?php for ($i = 0; $i < sizeof($images); $i++) { ?>
-                <span class="dot"></span>
-            <?php } ?>
+            <div class="dots">
+                <?php for ($i = 0; $i < sizeof($images); $i++) { ?>
+                    <span class="dot"></span>
+                <?php } ?>
+            </div>
         </div>
         <?php } ?>
-
-        <h5 class="p_price">Price per night: <?=$property['price']?> </h5>
-        <h5 class="p_city">City:<?=$property['city']?> </h5>
-        <h5 class="p_address">Address: <?=$property['address']?> </h5>
-        <h5 class="p_description">Description: <?= $property['description']?> </h5>
-        <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
-        <h5 class="p_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
-    </section>
+    <div class ="info">
+        <h2>Info</h2>
+        <p class="p_description"><i class="fas fa-info"></i><?= $property['description']?></p>
+        <p class="p_address"><i class="fas fa-map-marker-alt"></i><?=$property['city']?>, <?=$property['address']?></p>
+        <p class="p_price"><i class="fas fa-euro-sign"></i><?=$property['price']?></p>
+        <p class="p_capacity"><i class="fas fa-users"></i><?= $property['capacity']?></p>
+        <p class="p_owner"><i class="fas fa-id-badge"></i><a href="../pages/profile.php?username=<?=$property['owner']?>"><?=$property['owner']?></a></p>
+    </div>
 <?php } ?>
-
-<!-- TODO: acho que esta função ja nao faz nada aqui(apagar mais tarde)-->
-<?php function draw_property_info_resumed($property) { ?>
-    <section class = info_property>
-        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
-        <h4 class="p_title">Title: <?= $property['title']?> </h4>
-        <h5 class="p_price">Price per night: <?= $property['price']?> </h5>
-        <h5 class="p_city">City:<?= $property['city']?> </h5>
-        <h5 class="p_address">Address: <?= $property['address']?> </h5>
-        <h5 class="p_description">Description: <?= $property['description']?> </h5>
-        <h5 class="p_capacity">Max capacity: <?= $property['capacity']?> </h5>
-    </section>
-<?php } ?>
-
 
 <?php function draw_no_found() { ?>
     <section id="no_results">
@@ -85,15 +70,15 @@
 
 
 <?php function draw_comments() { ?>
-    <section id="comments">
-        <header>Comments</header>
+    <div class="comments">
+        <h2><i class="fas fa-comment"></i>Comments</h2>
         <?php if (isset($_SESSION['username'])) { ?>
         <form id="comment_form">
             <textarea id="content" placeholder="What did you think of this property?" rows="5"></textarea>
             <input id="submit" type="button" value="Post" />
         </form>
         <?php } ?>
-    </section>
+    </div>
 <?php } ?>
 
 

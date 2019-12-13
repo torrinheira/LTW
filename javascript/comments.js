@@ -46,7 +46,7 @@ request('post', '../api/fetch_comments.php', { id: property_id }, true, function
 });
 
 // Draw a comment
-const comment_section = document.querySelector('#comments');
+const comment_section = document.querySelector('.comments');
 
 function draw_comment(id, username, content, date) {
     let comment = document.createElement('article');

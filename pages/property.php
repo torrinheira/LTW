@@ -31,12 +31,16 @@ $images = get_property_images($property_id);
 
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/slideshow.css" rel="stylesheet">
+    <link href="../css/property.css" rel="stylesheet">
+    
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 
     <script src="../javascript/valid_date.js" defer></script>
     <script src="../javascript/messages.js" type="module" defer></script>
     <script src="../javascript/authentication.js" type="module" defer></script>
     <script src="../javascript/comments.js" type="module" defer></script>
     <script src="../javascript/slideshow.js" defer></script>
+
 </head>
 
 <body>

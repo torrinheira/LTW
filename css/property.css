@@ -1,0 +1,38 @@
+body {
+    display: grid;
+
+    height: 100%;
+
+    grid-template-columns: 2fr 1fr;
+
+    grid-template-areas: 
+        "header header"
+        "title title"
+        "slideshow info"
+        "reservation reservation"
+        "comments comments"
+        "footer footer";
+}
+
+body > header {
+    grid-area: header;
+}
+.p_title {
+    grid-area: title;
+    border-bottom: 2px solid goldenrod;
+}
+.slideshow {
+    grid-area: slideshow;
+}
+.info {
+    grid-area: info;
+}
+.comments {
+    grid-area: comments;
+}
+body > footer {
+    grid-area: footer;
+}
+.reservation_form {
+    grid-area: reservation;
+}

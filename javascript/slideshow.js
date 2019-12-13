@@ -5,14 +5,14 @@ let curr_slide = 0;
 show_slide();
 
 // add event listener to the next button
-let next = document.querySelector('.slideshow_container > .next');
+let next = document.querySelector('.slideshow > .next');
 next.addEventListener('click', function() {
     curr_slide++;
     show_slide();
 });
 
 // add event listener to the previous button
-let prev = document.querySelector('.slideshow_container > .prev');
+let prev = document.querySelector('.slideshow > .prev');
 prev.addEventListener('click', function() {
     curr_slide--;
     show_slide();
