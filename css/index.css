@@ -1,19 +1,19 @@
-/* colocar num ficheiro so para o indice */
 html {
-    /* The image used */
     background-image: url("../images/bg.jpg");
 
-    /* Full height */
     height: 100%;
 
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-}
-/* search */
+    background-size: cover; 
+} 
 
-#search{
+body > footer {
+    position: absolute;
+    bottom: 0;
+}
+
+#search {
     width: 40em;
     background-color: whitesmoke;
     border-radius: 10px;
