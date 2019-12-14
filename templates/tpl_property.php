@@ -11,14 +11,14 @@
 <?php } ?>
 
 
-<?php function draw_property_list_item($property, $checkin, $checkout, $guests) { ?>
-    <li>
-        <!-- TODO: remove the id field, it is only temporary for testing purposes -->
-        <h3>Property ID: <?= $property['id']?></h3> 
-        <h4 class="pl_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>
-        <h5 class="pl_price">Price: <?=$property['price']?></h5>
-        <h5 class="pl_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<?php function draw_property_list_item($image, $property, $checkin, $checkout, $guests) { ?>
+    <li class="p_item">
+        <img class="p_image" src="<?=$image?>" height="200" width="200">
+        <div class="p_info">
+            <h4 class="p_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>
+            <h5 class="p_price">Price: <?=$property['price']?></h5>
+            <h5 class="p_owner"><a href="../pages/profile.php?username=<?=$property['owner']?>">Owner: <?=$property['owner']?></a></h5>
+        </div>
     </li>
 <?php } ?>
 
@@ -27,23 +27,31 @@
         <h1 class="p_title"><?=$property['title']?></h1>
 
         <!-- implementing slideshow here -->
-        <?php if ($images != null) { ?>
         <div class="slideshow">
+            <?php if ($images != null) { ?>
             <?php foreach ($images as $image) { ?>
             <div class="slide">
                 <img src="../images/t_medium/<?=$image['image_id']?>.jpg" height="400">
+            </div>
+            <?php } ?>
+            <?php } else { ?>
+            <div class="slide">
+                <img src="../images/not_found.jpg" height="400">
             </div>
             <?php } ?>
 
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
             <div class="dots">
+                <?php if ($images != null) { ?>
                 <?php for ($i = 0; $i < sizeof($images); $i++) { ?>
+                    <span class="dot"></span>
+                <?php } ?>
+                <?php } else { ?>
                     <span class="dot"></span>
                 <?php } ?>
             </div>
         </div>
-        <?php } ?>
     <div class ="info">
         <h2>Info</h2>
         <p class="p_description"><i class="fas fa-info"></i><?= $property['description']?></p>
