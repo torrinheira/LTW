@@ -106,29 +106,6 @@ i {
 }
 
 
-/* 
-.search{
-    display: grid;
-    background-color:aqua;
-    padding: 0px 10px;
-}
-
-.search > form {
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.search > form > div{
-    color: black;
-    font-weight: 600;
-    text-align: center;
-    padding: 2px;
-}
-
-
-
 /*  FIXME: change this to a page specific file  */
 /* profile page */
 
@@ -189,3 +166,89 @@ i {
 .add_property_button{
     padding:1em;
 }
+
+
+
+/******************* */
+/* user reservations */
+/******************* */
+
+#current_reservation, #upcoming_reservations, #previous_reservations{
+    background-color: brown;
+    padding:1.2em;
+    margin: 2px auto;
+    border-style: solid;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#current_reservation > ul > li > a, #upcoming_reservations > ul > li > a, #previous_reservations > ul > li > a{
+    text-decoration: none;
+    padding:0.4em;
+    margin: auto;
+    font-weight: 300;
+}
+
+/* unvisited link */
+#current_reservation > ul > li > a:link, #upcoming_reservations > ul > li > a:link, #previous_reservations > ul > li > a:link{
+    color: black;
+  }
+  
+  /* visited link */
+#current_reservation > ul > li > a:visited, #upcoming_reservations > ul > li > a:visited, #previous_reservations > ul > li > a:visited {
+    color: grey;
+  }
+  
+  /* mouse over link */
+#current_reservation > ul > li > a:hover, #upcoming_reservations > ul > li > a:hover, #previous_reservations > ul > li > a:hover {
+    color: palevioletred;
+  }
+  
+  /* selected link */
+#current_reservation > ul > li > a:active, #upcoming_reservations > ul > li > a:active, #previous_reservations > ul > li > a:active {
+    color: goldenrod;
+  }
+
+#current_reservation > ul >li , #upcoming_reservations > ul > li , #previous_reservations > ul > li {
+    list-style-type: none;
+    text-align: center;
+    padding: 0.8em;
+}
+ /*cancel*/
+#upcoming_reservations > ul > li > label > a{
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#upcoming_reservations > ul > li > label > a:link{
+    color:black;
+}
+
+#upcoming_reservations > ul > li > label > a:visited{
+    color:grey;
+
+}
+
+#upcoming_reservations > ul > li > label > a:hover{
+    color:palevioletred;
+
+}
+
+#upcoming_reservations > ul > li > label > a:active{
+    color:goldenrod;
+
+}
+
+/***************************** */
+
+#current_reservation > header, #upcoming_reservations > header, #previous_reservations > header{
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+}
+
+#no_properties > li{
+    list-style-type: none;
+    text-align: center;
+}
+

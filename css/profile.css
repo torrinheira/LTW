@@ -1,0 +1,25 @@
+/* profile page */
+#info{
+    width: 400px;
+    margin: auto;
+    background: whitesmoke;
+    box-shadow:0 4px 10px 0 rgba(0.0, 0.0, 0.0, 0.5);
+    padding: 1em;
+}
+
+.profile_image{
+    position: relative;
+}
+
+.icon{
+    margin-right: 5px; 
+}
+
+.main_info{
+    padding: 20px;
+}
+
+.profile_edit{
+    padding: 0.8em;
+    margin: 0 8em;
+}
