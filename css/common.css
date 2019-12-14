@@ -164,7 +164,7 @@ body {
 }
 
 
-/* profile */
+/* profile page */
 #info{
     width: 400px;
     margin: auto;
@@ -189,6 +189,29 @@ body {
     padding: 0.8em;
     margin: 0 8em;
 }
-  
+
+/* login */
+
+.login_form{
+    padding: 0.5em;
+    margin:0 auto;
+}
+
+
+/* manage properties page */
+
+#property_of_user{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: goldenrod;
+    padding:1em;
+    margin: auto;
+}
+
+#property_of_user > li{
+    padding: 0.5em;
+    list-style-type: none;
+}
+
 
 

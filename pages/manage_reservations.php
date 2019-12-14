@@ -35,6 +35,8 @@ $number_current = count($current_reservation);
     <meta charset="utf-8">
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <script src="../javascript/messages.js" type="module" defer></script>
 
 </head>
