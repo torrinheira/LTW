@@ -1,3 +1,7 @@
+@import 'constants.css';
+@import 'header.css';
+@import 'footer.css';
+
 html, body {
     margin: 0;
     padding: 0;
@@ -8,22 +12,6 @@ i {
     margin: 0 1em;
 }
 
-#menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    padding: 0.50em;
-}
-#menu > nav > ul {
-    list-style-type: none;
-
-    display: flex;
-    flex-wrap: nowrap;
-}
-#menu li {
-    padding-left: 1em;
-}
 
 /* MESSAGES */
 .messages {
@@ -62,8 +50,6 @@ i {
     align-items: center;
     border-radius: 1em;
 }
-
-
 .modal_body {
     padding: 2em;
     position: relative;
@@ -94,7 +80,7 @@ i {
 .login, .signup {
     cursor: pointer;
 }
-.login:hover, .signup:hover {
+.modal .login:hover, .modal .signup:hover {
     text-decoration: underline;
 }
 
@@ -121,33 +107,6 @@ i {
 }
 
 
-/* footer */
-
-body > footer {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #191970;
-    color: goldenrod;
-    text-align: center;
-}
-
-
-
-body > footer > p {
-    padding: 0 1em;
-    display: inline-block;
-    color: goldenrod;
-    text-align: right;
-}
-
-/* header */
-body > header{
-    background-color: #191970;
-}
-
 /* search */
 #search{
     display: grid;
@@ -168,14 +127,3 @@ body > header{
     text-align: center;
     padding: 2px;
 }
-
-body {
-    margin: 0;
-}
-
-
-
-
-  
-
-

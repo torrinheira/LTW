@@ -11,8 +11,6 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 /* search */
 
 #search{
@@ -80,13 +78,4 @@ html {
 #search > form > div.where{
     color: black;
     font-weight: 600;
-}
-
-body {
-    margin: 0;
-}
-
-body > header{
-    background-color: #191970;
-    height: 0;
 }

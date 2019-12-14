@@ -1,23 +1,21 @@
 <?php function draw_header() { ?>
     <header>
-        <section id="menu">
-            <a href="../index.php"><img src="../images/logo.png" width="130" height="80" alt="Place Genie Logo"></a>
-            <nav>
-                <input type="checkbox" id="hamburger" />
-                <label class="hamburger" for="hamburger"></label>
-                <ul>
-                    <?php if (isset($_SESSION['username'])) { ?>
-                        <li><a class="button" href="../pages/manage_reservations.php">Reservations</a></li>
-                        <li><a class="button" href="../pages/manage_properties.php">Properties</a></li>
-                        <li><a class="button" href="../pages/profile.php?username=<?=$_SESSION['username']?>"><?=$_SESSION['username']?></a></li>
-                        <li><a class="button" href="../actions/action_logout.php">Logout</a></li>
-                    <?php } else { ?>
-                        <li><input class="login" type="button" value="Log in"/></li>
-                        <li><input class="signup" type="button" value="Sign up"/></li>
-                    <?php } ?>
-                </ul>
-            </nav>
-        </section>
+        <nav>
+            <a class="logo" href="../index.php"><img src="../images/logo.png" width="130" height="80" alt="Place Genie Logo"></a>
+            <input id="menu_btn" type="checkbox"/>
+            <label class="menu_icon" for="menu_btn"></label>
+            <ul class="menu">
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <li><a class="button" href="../pages/manage_reservations.php">Reservations</a></li>
+                    <li><a class="button" href="../pages/manage_properties.php">Properties</a></li>
+                    <li><a class="button" href="../pages/profile.php?username=<?=$_SESSION['username']?>"><?=$_SESSION['username']?></a></li>
+                    <li><a class="button" href="../actions/action_logout.php">Logout</a></li>
+                <?php } else { ?>
+                    <li><a class="button login">Log in</a></li>
+                    <li><a class="button signup">Sign up</a></li>
+                <?php } ?>
+            </ul>
+        </nav>
     </header>
 <?php } ?>
 

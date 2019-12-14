@@ -1,0 +1,21 @@
+@import 'constants.css';
+
+/* TODO: make footer responsive */
+
+
+body > footer {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    background-color: var(--dark-grey);
+    color: var(--dark-gold);
+}
+
+body > footer > p {
+    padding: 0 1em;
+    display: inline-block;
+    text-align: right;
+}

@@ -1,8 +1,8 @@
 :root {
-    --dark-blue: #031a6b;
-    --gold: #cdac00;
-    --purple: #541388;
-
-    --title-font: ;
-    --text-font: ;
+    --dark-grey: #3b3b3b;
+    
+    --light-gold: goldenrod;
+    --dark-gold: #b17e22;
+    
+    --dark-blue: #191970;
 }
