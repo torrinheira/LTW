@@ -161,7 +161,11 @@ i {
 }
 
 
+
+/******************* */
 /* user reservations */
+/******************* */
+
 #current_reservation, #upcoming_reservations, #previous_reservations{
     background-color: brown;
     padding:1.2em;
@@ -201,7 +205,34 @@ i {
 #current_reservation > ul >li , #upcoming_reservations > ul > li , #previous_reservations > ul > li {
     list-style-type: none;
     text-align: center;
+    padding: 0.8em;
 }
+ /*cancel*/
+#upcoming_reservations > ul > li > label > a{
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#upcoming_reservations > ul > li > label > a:link{
+    color:black;
+}
+
+#upcoming_reservations > ul > li > label > a:visited{
+    color:grey;
+
+}
+
+#upcoming_reservations > ul > li > label > a:hover{
+    color:palevioletred;
+
+}
+
+#upcoming_reservations > ul > li > label > a:active{
+    color:goldenrod;
+
+}
+
+/***************************** */
 
 #current_reservation > header, #upcoming_reservations > header, #previous_reservations > header{
     text-align: center;
