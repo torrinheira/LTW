@@ -1,5 +1,9 @@
 @import 'constants.css';
 
+
+/* TODO: extend some of the input boxes */
+
+/* ------------------ BACKGROUND IMAGE --------------------- */
 html {
     background-image: url("../images/bg.jpg");
 
@@ -10,73 +14,91 @@ html {
     background-size: cover; 
 }
 
-
-
-/*
+/* --------------------- SEARCH FORM ------------------------ */
 .search {
-    width: 40em;
     background-color: whitesmoke;
-    border-radius: 10px;
-    margin: 7em 17em;
+
+    width: 38em;
+
+    border-radius: 1em;
+    padding: 1em;
+    margin: auto;
 }
 
-.search > form{
+.search > form {
     display: grid;
-    grid-template-rows: 5vh 5vh 4vh 4vh;
-    grid-template-areas: "where where" "checkin checkout" "minprice maxprice" "guests guests" "submit submit";
+    grid-template-areas:
+        "where where"
+        "checkin checkout"
+        "guests guests"
+        "min max"
+        "submit submit";
 }
 
-.where{
+.search > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5em 0em;
+}
+
+.search > form > .where {
     grid-area: where;
 }
-
-.checkin{
+.search > form > .checkin {
     grid-area: checkin;
 }
-
-.checkout{
+.search > form > .checkout {
     grid-area: checkout;
 }
-
-.minprice{
-    grid-area: minprice;
-}
-
-.maxprice{
-    grid-area: maxprice;
-}
-
-.guests{
+.search > form > .guests {
     grid-area: guests;
 }
-
-.submit{
+.search > form > .min {
+    grid-area: min;
+}
+.search > form > .max {
+    grid-area: max;
+}
+.search > form > .submit {
     grid-area: submit;
+    margin: 0.5em auto;
+}
+
+@media (max-width: 40em) {
+    .search > form {
+        display: grid;
+        grid-template-areas:
+            "where"
+            "checkin"
+            "checkout"
+            "guests"
+            "min"
+            "max"
+            "submit";
+
+        padding: 1em;
+    }
+
+    .search {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
 }
 
 
-
-.search > form > div{
-    color: black;
-    font-weight: 600;
-    text-align: left;
-}
-
-.search > form > div.submit{
-    color: black;
-    font-weight: 600;
-    text-align: center;
-}
-
-.search > form > div.where{
-    color: black;
-    font-weight: 600;
-}
-*/
-
-
+/* -------------------------- FOOTER --------------------------- */
 body > footer {
     position: fixed;
     bottom: 0;
     left: 0;
-}   
+}
+
+@media ((max-height: 640px) and (max-width: 40em)) or ((max-height: 460px) and (min-width: 40em)){
+    body > footer {
+        position: relative;
+        bottom: auto;
+        left: auto;
+    }
+}

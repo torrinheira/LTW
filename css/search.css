@@ -23,6 +23,7 @@ body > header {
 /* ---------------- SEARCH BAR ----------------*/
 .search {
     grid-area: search;
+    background-color: var(--light-grey);
 }
 
 .search > form {
@@ -32,8 +33,6 @@ body > header {
     flex-wrap: wrap;
 
     padding: 1em;
-
-    background-color: var(--light-grey);
 }
 
 .search > form > .form_entry {
@@ -41,11 +40,10 @@ body > header {
     flex-direction: column;
 }
 
-.search > form:last-child {
+.search > form > .submit {
     flex-basis: 100%;
 }
 .search > form input[type="submit"] {
-    justify-self: content;
     width: 10em;
 }
 
