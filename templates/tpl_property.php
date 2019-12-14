@@ -13,7 +13,6 @@
 
 <?php function draw_property_list_item($property, $checkin, $checkout, $guests) { ?>
     <li>
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
         <!-- TODO: remove the id field, it is only temporary for testing purposes -->
         <h3>Property ID: <?= $property['id']?></h3> 
         <h4 class="pl_title"><a href="./property.php?id=<?=$property['id']?>&checkin=<?=$checkin?>&checkout=<?=$checkout?>&guests=<?=$guests?>">Title: <?=$property['title']?></a></h4>
@@ -64,7 +63,7 @@
 
 <?php function draw_manage_property($user_property) { ?>
     <section id="property_of_user">
-        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a> | <a href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
+        <li><?= $user_property['title']?>, <?= $user_property['city']?> : <a href="../pages/property.php?id=<?=$user_property['id']?>">View property</a>|<a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a> | <a href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
     </section>
 <?php } ?>
 

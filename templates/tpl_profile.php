@@ -19,7 +19,7 @@
     </section>
 
     <?php if ($profile['username'] == $_SESSION['username']) { ?>
-        <p><a href="./edit_profile.php">Edit profile</a></p>
+        <p><a class="button" href="./edit_profile.php">Edit profile</a></p>
     <?php } ?>
 
 <?php } ?>

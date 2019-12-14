@@ -5,8 +5,10 @@
 let checkIn = document.getElementById('checkin');
 let checkOut = document.getElementById('checkout');
 
-checkIn.addEventListener('change', validateCheckIn);
-checkOut.addEventListener('change', validateCheckOut);
+if (checkIn && checkOut) {
+    checkIn.addEventListener('change', validateCheckIn);
+    checkOut.addEventListener('change', validateCheckOut);
+}
 
 
 function validateCheckIn(event) {
