@@ -7,9 +7,9 @@
 
 <?php function draw_profile_info($profile) { ?>
     <section id="info">
-        
+
         <div class="profile_image">
-            <img src="../images/t_small/<?=$profile['image']?>.jpg" width="200" height="200">
+            <img src="../images/t_medium/<?=$profile['image']?>.jpg" width="400" height="400">
         </div>
         
         <div class="main_info">
