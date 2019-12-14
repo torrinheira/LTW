@@ -62,8 +62,14 @@ $properties = get_properties_cities();
 <head>
     <title>Place Genie</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/search.css" rel="stylesheet">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
     <script src="../javascript/authentication.js" type="module" defer></script>
     <script src="../javascript/messages.js" type="module" defer></script>
 
@@ -73,10 +79,9 @@ $properties = get_properties_cities();
 <body>
 
     <?php draw_header(); ?>
-
     <?php draw_search(); ?>
 
-    <ul>
+    <ul class="results">
         <?php
         foreach ($properties as $property) {
             //if a property is available to rent 
@@ -106,8 +111,9 @@ $properties = get_properties_cities();
                         }
                     }
 
-                    if (($property_info['capacity'] >= $guests) && $is_available && $property_info['price'] >= $minprice && $property_info['price'] <= $maxprice) {
-                        draw_property_list_item($property_info, $checkin, $checkout, $guests);
+                    if (($property_info['capacity'] >= $guests) && $is_available && $property_info['price'] >= $minprice && $property_info['price'] <= $maxprice) {           
+                        $image = "../images/not_found.jpg";
+                        draw_property_list_item($image, $property_info, $checkin, $checkout, $guests);
                         $number_of_properties = $number_of_properties + 1;
                     }
                 }
@@ -135,7 +141,8 @@ $properties = get_properties_cities();
                 }
 
                 if (($property_info['capacity'] >= $guests) && $is_available && $property_info['price'] >= $minprice && $property_info['price'] <= $maxprice) {
-                    draw_property_list_item($property_info, $checkin, $checkout, $guests);
+                    $image = "../images/not_found.jpg";
+                    draw_property_list_item($image, $property_info, $checkin, $checkout, $guests);
                     $number_of_properties = $number_of_properties + 1;
                 }
             }
@@ -146,7 +153,6 @@ $properties = get_properties_cities();
         }
         ?>
     </ul>
-
     <?php draw_footer(); ?>
 
 </body>

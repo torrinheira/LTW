@@ -1,0 +1,72 @@
+@import 'constants.css';
+
+
+/* TODO: style and layout the search form */
+
+body {
+    display: grid;
+
+    grid-template-areas:
+        "header"
+        "search"
+        "results"
+        "footer";
+}
+
+
+/* ---------------- HEADER ----------------*/
+body > header {
+    grid-area: header;
+}
+
+
+/* ---------------- SEARCH BAR ----------------*/
+.search {
+    grid-area: search;
+}
+
+
+/* ---------------- SEARCH RESULTS ---------------- */
+.results {
+    grid-area: results;
+
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 1em;
+}
+
+.p_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    margin: 0.5em;
+
+    background-color: var(--light-grey);
+}
+
+.p_item > img {
+    margin: 0.5em;
+}
+
+.p_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 1em;
+}
+
+
+
+/* ---------------- FOOTER ---------------- */
+body > footer {
+    grid-area: footer;
+}
+

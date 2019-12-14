@@ -21,7 +21,7 @@
 
 
 <?php function draw_search() { ?>
-    <div id="search">
+    <div class="search">
         <form action="../pages/search.php" method="get">
             <div class="where">Where <input type="search" name ="city" placeholder="Your dreams"></div>
             <div class="checkin">Check-in <input id="checkin" name="checkin" type="date" value="<?php echo date('Y-m-d');?>"></div>

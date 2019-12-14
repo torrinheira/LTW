@@ -23,7 +23,7 @@ $profile_info = getUserInfo($_SESSION['username']);
 <head>
     <title>Place Genie</title>
     <meta charset="utf-8">
-    </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../css/common.css" rel="stylesheet">
     <script src="../javascript/messages.js" type="module" defer></script>

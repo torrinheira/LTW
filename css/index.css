@@ -1,33 +1,36 @@
-/* colocar num ficheiro so para o indice */
+@import 'constants.css';
+
 html {
-    /* The image used */
     background-image: url("../images/bg.jpg");
 
-    /* Full height */
     height: 100%;
 
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
 }
-/* search */
 
-#search{
+body > footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.search {
     width: 40em;
     background-color: whitesmoke;
     border-radius: 10px;
     margin: 7em 17em;
 }
 /*
-#search > form {
+.search > form {
     display: flex;
     flex-flow: wrap;
     align-items: center;
     justify-content: space-between;
 }*/
 
-#search > form{
+.search > form{
     display: grid;
     grid-template-rows: 5vh 5vh 4vh 4vh;
     grid-template-areas: "where where" "checkin checkout" "minprice maxprice" "guests guests" "submit submit";
@@ -63,19 +66,19 @@ html {
 
 
 
-#search > form > div{
+.search > form > div{
     color: black;
     font-weight: 600;
     text-align: left;
 }
 
-#search > form > div.submit{
+.search > form > div.submit{
     color: black;
     font-weight: 600;
     text-align: center;
 }
 
-#search > form > div.where{
+.search > form > div.where{
     color: black;
     font-weight: 600;
 }
