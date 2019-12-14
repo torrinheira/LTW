@@ -60,8 +60,9 @@
 
 <?php function draw_manage_property($user_property) { ?>
     <section id="property_of_user">
-        <li><i class="fa fa-home"></i><?= $user_property['title']?> <i class="fa fa-map-marker"></i><?= $user_property['city']?> </li> 
-        <li><a href="../pages/property.php?id=<?=$user_property['id']?>">View property</a>|<a href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a> | <a href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a> | <a href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
+        <li><i class="fa fa-home icon"></i><?= $user_property['title']?></li>
+        <li><i class="fa fa-map-marker icon"></i><?= $user_property['city']?></li> 
+        <li><a class="button" href="../pages/property.php?id=<?=$user_property['id']?>">View property</a> <a class="button" href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a>  <a class="button" href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a>   <a class="button" href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
     </section>
 <?php } ?>
 

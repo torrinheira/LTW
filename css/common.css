@@ -205,13 +205,22 @@ body {
     border-radius: 10px;
     border-color: goldenrod;
     padding:1em;
-    margin: auto;
+    margin:2em 1em;
 }
 
 #property_of_user > li{
     padding: 0.5em;
     list-style-type: none;
+    margin-left: 50%;
 }
 
+#property_of_user > li > a{
+    text-decoration: none;
+    padding:0.4em;
+}
+
+.add_property_button{
+    padding:1em;
+}
 
 
