@@ -7,20 +7,28 @@
 
 <?php function draw_profile_info($profile) { ?>
     <section id="info">
-        <img src="../images/t_medium/<?=$profile['image']?>.jpg" width="400" height="400">
         
-        <p><?=$profile['username']?></p>
-        <p><?=$profile['first_name'] . ' ' . $profile['last_name']?></p>
-        <p><?=$profile['email']?></p>
+        <div class="profile_image">
+            <img src="../images/t_small/<?=$profile['image']?>.jpg" width="200" height="200">
+        </div>
+        
+        <div class="main_info">
+            <p><i class="fa fa-user-circle icon"></i><?=$profile['username']?></p>
+            <p><i class="fa fa-arrow-circle-right icon"></i><?=$profile['first_name'] . ' ' . $profile['last_name']?></p>
+            <p><i class="fa fa-envelope icon"></i><?=$profile['email']?></p>
 
-        <?php if ($profile['description'] != null) { ?>
-            <p><?=$profile['description']?></p>
+            <?php if ($profile['description'] != null) { ?>
+                <p><i class="fa fa-info-circle icon"></i> <?=$profile['description']?></p>
+            <?php } ?>
+        </div>
+
+        <hr>
+
+        <?php if ($profile['username'] == $_SESSION['username']) { ?>
+            <div class = "profile_edit"><a class="button" href="./edit_profile.php">Edit profile</a></div>
         <?php } ?>
+            
     </section>
-
-    <?php if ($profile['username'] == $_SESSION['username']) { ?>
-        <p><a class="button" href="./edit_profile.php">Edit profile</a></p>
-    <?php } ?>
 
 <?php } ?>
 
