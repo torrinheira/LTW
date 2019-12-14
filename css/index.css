@@ -10,25 +10,15 @@ html {
     background-size: cover; 
 }
 
-body > footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
 
+
+/*
 .search {
     width: 40em;
     background-color: whitesmoke;
     border-radius: 10px;
     margin: 7em 17em;
 }
-/*
-.search > form {
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    justify-content: space-between;
-}*/
 
 .search > form{
     display: grid;
@@ -82,3 +72,11 @@ body > footer {
     color: black;
     font-weight: 600;
 }
+*/
+
+
+body > footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}   

@@ -25,6 +25,31 @@ body > header {
     grid-area: search;
 }
 
+.search > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 1em;
+
+    background-color: var(--light-grey);
+}
+
+.search > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.search > form:last-child {
+    flex-basis: 100%;
+}
+.search > form input[type="submit"] {
+    justify-self: content;
+    width: 10em;
+}
+
+
 
 /* ---------------- SEARCH RESULTS ---------------- */
 .results {

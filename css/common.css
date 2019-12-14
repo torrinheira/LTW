@@ -106,7 +106,7 @@ i {
 }
 
 
-/* search */
+/* 
 .search{
     display: grid;
     background-color:aqua;
@@ -128,8 +128,10 @@ i {
 }
 
 
+
 /*  FIXME: change this to a page specific file  */
 /* profile page */
+
 #info{
     width: 400px;
     margin: auto;
