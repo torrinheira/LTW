@@ -6,6 +6,8 @@ include_once('../includes/input_validation.php');
 
 include_once('../database/db_user.php');
 include_once('../database/db_reservation.php');
+include_once('../database/db_property.php');
+
 
 
 $username = $_SESSION['username'];
@@ -15,14 +17,14 @@ if ($username == null) {
 
 $reservation_id = $_GET['id'];
 
-$reservation_id = $_GET['id'];
-$resevation_info = get_reservation_info($reservation_id);
+$reservation_info = get_reservation_info($reservation_id);
+$property = get_property_info($reservation_info['property_id']);
 
-if ($username != $resevation_info['tourist']){
-    die(redirect('error', 'You cannot delete other user reservation.'));
+
+if (($username == $reservation_info['tourist']) || ($username == $property['owner'])){
+    cancel_reservation($reservation_id);
+    die(redirect('success', 'Reservation canceled!'));
 }
 
-cancel_reservation($reservation_id);
-die(redirect('success', 'Reservation canceled!'));
-
+die(redirect('error', 'You cannot delete other user reservation.'));
 ?>

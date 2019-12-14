@@ -28,6 +28,8 @@ $number_of_properties = count($user_properties);
     <meta charset="utf-8">
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <script src="../javascript/messages.js" type="module" defer></script>
 
 </head>
@@ -46,8 +48,8 @@ $number_of_properties = count($user_properties);
             draw_no_properties();
         }
         ?>
+        <div class="add_property_button"><a class="button" href="./add_property.php">Add property</a></div>
     </ul>
-    <p><a class="button" href="./add_property.php">Add property</a></p>
 
     <?php draw_footer(); ?>
 
