@@ -78,10 +78,17 @@ function draw_comment(id, username, content, date) {
 
 // Add event listener for comments delete method
 document.addEventListener('click', function(event) {
-    if (event.target && event.target.getAttribute('class').includes('del_comment')) {
+    if (!event.target)
+        return;
+
+    let elem_class = event.target.getAttribute('class');
+    if (elem_class == null)
+        return;
+
+    if (elem_class.includes('del_comment')) {
         let id = event.target.getAttribute('data-id');
 
-        event.target.parentElement.parentElement.remove();
-        request('post', '../api/delete_comment.php', { comment_id: id }, true, null);
+    event.target.parentElement.parentElement.remove();
+    request('post', '../api/delete_comment.php', { comment_id: id }, true, null);
     }
 });
