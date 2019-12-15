@@ -26,6 +26,8 @@ $profile_info = getUserInfo($_SESSION['username']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/edit_profile.css" rel="stylesheet">
+
     <script src="../javascript/messages.js" type="module" defer></script>
 
 </head>
@@ -37,7 +39,7 @@ $profile_info = getUserInfo($_SESSION['username']);
     <section id="change_picture">
         <header>Profile picture</header>
 
-        <img src="../images/t_medium/<?=$profile_info['image']?>.jpg" width="400" height="400">
+        <img src="../images/t_medium/<?=$profile_info['image']?>.jpg" class="responsive_image" width="400" height="400">
 
         <form action="../actions/action_change_profile_picture.php" method="post" enctype="multipart/form-data">
             <input type="file" name="image" required>
