@@ -113,20 +113,22 @@ body > header {
 }
 
 
-@media (max-width: 65em) {
+@media (max-width: 65em){
     .p_item {
         width: 90%;
         margin: 0.5em auto;
         flex-wrap: wrap;
     }
+}
 
+@media (max-width: 1050px) {
     .p_item > .p_image {
         margin: 0.5em auto;
     }
+    .p_item {
+        flex-direction: column;
+    }
 }
-
-
-
 
 
 /* ---------------- FOOTER ---------------- */
