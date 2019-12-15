@@ -26,8 +26,7 @@ request('post', '../api/fetch_messages.php', {}, true, function() {
 
     message_bg.appendChild(message_elem)
     parent.appendChild(message_bg);
-    // TODO: uncomment this line
-    // setTimeout(remove_messages, 1500);
+    setTimeout(remove_messages, 1500);
 });
 
 

@@ -35,7 +35,7 @@ i {
 }
 
 .messages .error {
-    color: red;
+    color: rgb(167, 0, 0);
 }
 
 /*  ------------------- MODAL BOXES ---------------------- */
