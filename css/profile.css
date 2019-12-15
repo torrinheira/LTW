@@ -47,7 +47,7 @@
         box-sizing: border-box;
         width: 100%;
     }
-    .profile_image > img{
+    .profile_image > img {
         width: 100%;
         max-width: 300px;
         height: auto;
