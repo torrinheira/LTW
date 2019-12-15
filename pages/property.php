@@ -10,11 +10,18 @@ include_once('../database/db_property.php');
 include_once('../database/db_property_image.php');
 include_once('../database/db_comment.php');
 
-
+if(!isset($_GET['checkin']) || !isset($_GET['checkout']) || !isset($_GET['guests'])){
+    $numberguest = 1;
+    $checkin = date('Y-m-d');
+    $checkout= date('Y-m-d', strtotime('tomorrow'));
+}
+else{
+    $checkin = $_GET['checkin'];
+    $checkout = $_GET['checkout'];
+    $numberguest = $_GET['guests'];
+}
 $property_id = $_GET['id'];
-$checkin = $_GET['checkin'];
-$checkout = $_GET['checkout'];
-$numberguest = $_GET['guests'];
+
 $property = get_property_info($property_id);
 
 $comments = get_comments($property_id);
@@ -47,9 +54,13 @@ $images = get_property_images($property_id);
 <body>
     <?php draw_header(); ?>
     <?php draw_property_info($property, $images); ?>
-    <?php if ($property['owner'] != $_SESSION['username']){
-        draw_reservation($checkin, $checkout, $numberguest, $property_id);
-    } ?>
+    <?php 
+    if(isset($_SESSION['username'])){
+        if ($property['owner'] != $_SESSION['username']){
+            draw_reservation($checkin, $checkout, $numberguest, $property_id);
+        } 
+    }
+    ?>
     <?php draw_comments(); ?>
     <?php draw_footer(); ?>
 </body>
