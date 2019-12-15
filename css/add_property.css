@@ -1,3 +1,6 @@
+@import 'constants.css';
+
+
 html {
     background-image: url("../images/property.jpg");
 
@@ -8,17 +11,21 @@ html {
     background-size: cover; 
 }
 
-#add_property{
-    background-color: whitesmoke;
 
-    width: 38em;
-
-    border-radius: 1em;
+/* ------------------------------------- ADD PROPERTY ---------------------------------------- */
+#add_property {
+    box-sizing: border-box;
+    width: 50em;
     padding: 1em;
     margin: auto;
+
+    background-color: whitesmoke;
+    border-radius: 1em;
 }
 
 #add_property > form {
+    width: 100%;
+
     display: grid;
     grid-template-areas:
         "title title"
@@ -29,13 +36,14 @@ html {
 }
 
 #add_property > form > .form_entry {
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
 
-    margin: 0.5em 0em;
+    margin: 0.25em 0em;
 }
 
-/** */
 #add_property > form > .p_title {
     grid-area: title;
 }
@@ -59,24 +67,14 @@ html {
     margin: 0.5em auto;
 }
 
-@media (max-width: 40em) {
-    #add_property > form {
-        display: grid;
-        grid-template-areas:
-            "title"
-            "city"
-            "address"
-            "price"
-            "capacity"
-            "description"
-            "submit";
-
-        padding: 1em;
-    }
-
+@media (max-width: 55em) {
     #add_property {
         width: 100%;
         border-radius: 0;
-        padding: 0;
+    }
+    
+    #add_property > form {
+        display: flex;
+        flex-direction: column;
     }
 }

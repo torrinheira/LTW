@@ -38,7 +38,7 @@ if (!isset($_SESSION['username'])) {
             <div class="form_entry p_price">Price per night<input type="number" name="price" placeholder="35" min="0" required></div>
             <div class="form_entry p_capacity">Capacity<input type="number" name="capacity" value="1" min="1" max="20" required></div>
             <div class="form_entry p_description">Description<textarea name="description" rows="5" cols="50" placeholder="Tell us a little bit about your place..."></textarea></div>
-            <div class="submit"><input type="submit" value="Add Property"></div>
+            <div class="form_entry submit"><input type="submit" value="Add Property"></div>
         </form>
     </section>
 
