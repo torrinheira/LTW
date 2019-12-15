@@ -37,6 +37,7 @@ $number_current = count($current_reservation);
 
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/reservations.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 
     <script src="../javascript/messages.js" type="module" defer></script>

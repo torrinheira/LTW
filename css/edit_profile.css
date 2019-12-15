@@ -1,0 +1,53 @@
+/* change picture */
+#change_picture{
+    border-radius:20px;
+    border-style: solid;
+    border-color: grey;
+    justify-content: center;
+    margin: 5px auto;
+    padding: 0.3em;
+    width: 50%;
+}
+
+#change_picture > header{
+    justify-content: center;
+    font-weight: 600;
+}
+
+.responsive_image{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/*edit profile */
+#edit_profile{
+    border-radius:20px;
+    border-style: solid;
+    border-color: grey;
+    justify-content: center;
+    margin: 5px auto;
+    padding: 0.3em;
+    width: 50%;
+}
+
+#edit_profile > header{
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* change password */
+#change_password{
+    border-radius:20px;
+    border-style: solid;
+    border-color: grey;
+    justify-content: center;
+    margin: 5px auto;
+    padding: 0.3em;
+    width: 50%;
+}
+
+#change_password > header{
+    justify-content: center;
+    font-weight: 600;
+}
