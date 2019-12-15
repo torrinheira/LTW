@@ -1,13 +1,5 @@
 <?php function draw_profile($profile) { ?>
-    <section id=profile>
-        <?php draw_profile_info($profile); ?>
-    </section>
-<?php } ?>
-
-
-<?php function draw_profile_info($profile) { ?>
-    <section id="info">
-
+    <section id=info>
         <div class="profile_image">
             <img src="../images/t_medium/<?=$profile['image']?>.jpg" width="400" height="400">
         </div>
@@ -22,14 +14,10 @@
             <?php } ?>
         </div>
 
-        <hr>
-
         <?php if ($profile['username'] == $_SESSION['username']) { ?>
-            <div class = "profile_edit"><a class="button" href="./edit_profile.php">Edit profile</a></div>
+            <a class="button" href="./edit_profile.php">Edit profile</a>
         <?php } ?>
-            
     </section>
-
 <?php } ?>
 
 <?php function draw_host_info($profile) { ?>

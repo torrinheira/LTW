@@ -1,25 +1,55 @@
-/* profile page */
-#info{
-    width: 400px;
-    margin: auto;
-    background: whitesmoke;
-    box-shadow:0 4px 10px 0 rgba(0.0, 0.0, 0.0, 0.5);
+@import 'constants.css';
+
+
+#info {
+    width: 40em;
+    margin: 0 auto;
     padding: 1em;
+    
+    background: whitesmoke;
+
+    box-shadow:0 4px 10px 0 rgba(0.0, 0.0, 0.0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.profile_image{
-    position: relative;
+/* ------------------------------------ PROFILE IMAGE ----------------------------------- */
+.profile_image {
+    margin: 1em auto;
+}
+.profile_image > img {
+    border-radius: 50%;
+    box-shadow:0 4px 10px 0 rgba(0.0, 0.0, 0.0, 0.5);
 }
 
-.icon{
-    margin-right: 5px; 
+/* ------------------------------------- PROFILE INFO ----------------------------------- */
+.main_info {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.main_info{
-    padding: 20px;
+/* ------------------------------------- EDIT PROFILE ------------------------------------- */
+#info > .button {
+    margin: 1em auto;
 }
 
-.profile_edit{
-    padding: 0.8em;
-    margin: 0 8em;
+/* -------------------------------------- MEDIA QUERIES ---------------------------------- */
+@media (max-width: 45em) {
+    #info {
+        padding: 0.5em;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .profile_image > img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
 }
