@@ -7,7 +7,7 @@ html{
     
     background-color: whitesmoke;
     
-    width: 38em;
+    width: 55%;
     
     border-radius: 1em;
     padding: 1em;
@@ -19,11 +19,17 @@ html{
     padding: 0.2em;
 }
 
+.responsive_image{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
 /*property info part */
 #edit_property{
     background-color: whitesmoke;
 
-    width: 38em;
+    width: 55%;
 
     border-radius: 1em;
     padding: 1em;
