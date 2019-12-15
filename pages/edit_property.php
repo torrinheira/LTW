@@ -52,7 +52,7 @@ $_SESSION['property_id'] = $property_id;
         <div id="uploaded_images">
             <?php foreach ($property_images as $image) { ?>
             <div class="image_tile">
-                <image src="../images/t_medium/<?=$image['image_id']?>.jpg" width="400" height="400">
+                <img src="../images/t_medium/<?=$image['image_id']?>.jpg" class="responsive_image" width="400" height="400">
                 <a class="button" href="../actions/action_delete_property_image.php?image_id=<?=$image['image_id']?>">Delete</a>
             </div>
             <?php } ?>
