@@ -22,6 +22,8 @@ if (!isset($_SESSION['username'])) {
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/add_property.css" rel="stylesheet">
+
     <script src="../javascript/messages.js" type="module" defer></script>
 </head>
 
@@ -30,13 +32,13 @@ if (!isset($_SESSION['username'])) {
 
     <section id="add_property">
         <form action="../actions/action_add_property.php" method="post">
-            <label>Title<input type="text" name="title" placeholder="Apartment by the river Douro" required></label>
-            <label>Price per night<input type="number" name="price" placeholder="35" min="0" required></label>
-            <label>City<input type="text" name="city" placeholder="Porto" required></label>
-            <label>Address<input type="text" name="address" placeholder="Rua da Ribeira Negra, Porto 4050-321, Portugal" required></label>
-            <label>Description<textarea name="description" rows="5" cols="50" placeholder="Tell us a little bit about your place..."></textarea></label>
-            <label>Capacity<input type="number" name="capacity" value="1" min="1" max="20" required></label>
-            <input type="submit" value="Add Property">
+            <div class="form_entry p_title">Title<input type="text" name="title" placeholder="Apartment by the river Douro" required></div>
+            <div class="form_entry p_city">City<input type="text" name="city" placeholder="Porto" required></div>
+            <div class="form_entry p_address">Address<input type="text" name="address" placeholder="Rua da Ribeira Negra, Porto 4050-321, Portugal" required></div>
+            <div class="form_entry p_price">Price per night<input type="number" name="price" placeholder="35" min="0" required></div>
+            <div class="form_entry p_capacity">Capacity<input type="number" name="capacity" value="1" min="1" max="20" required></div>
+            <div class="form_entry p_description">Description<textarea name="description" rows="5" cols="50" placeholder="Tell us a little bit about your place..."></textarea></div>
+            <div class="submit"><input type="submit" value="Add Property"></div>
         </form>
     </section>
 
