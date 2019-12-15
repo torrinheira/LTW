@@ -1,10 +1,10 @@
+@import 'constants.css';
+
+
 body {
     display: grid;
 
-    height: 100%;
-
     grid-template-columns: 2fr 1fr;
-
     grid-template-areas: 
         "header header"
         "title title"
@@ -14,25 +14,158 @@ body {
         "footer footer";
 }
 
+/* ------------------------------- HEADER ------------------------------------ */
 body > header {
     grid-area: header;
 }
+
+/* -------------------------------- PROPERTY TITLE ------------------------------- */
 .p_title {
     grid-area: title;
-    border-bottom: 2px solid goldenrod;
+    border-bottom: 2px solid var(--light-gold);
+    padding: 0 0.5em;
+    margin: 0.5em 0;
 }
+
+/* ----------------------------------- SLIDESHOW ------------------------------------ */
 .slideshow {
     grid-area: slideshow;
 }
-.info {
+
+/* -------------------------------------- PROPERTY INFO ---------------------------------- */
+.p_info {
     grid-area: info;
+
+    display: grid;
+    grid-template-areas:
+        "info info"
+        "description description"
+        "address address"
+        "capacity price"
+        "owner owner";
+    grid-template-rows: min-content min-content min-content min-content min-content;
+
+    padding: 0.5em;
 }
+.p_info > * {
+    margin: 0.5em 0;
+}
+.p_info > .p_description {
+    grid-area: description;
+    text-justify: inter-word;
+}
+.p_info > .p_address {
+    grid-area: address;
+}
+.p_info > .p_price {
+    grid-area: price;
+}
+.p_info > .p_capacity {
+    grid-area: capacity;
+}
+.p_info > .p_owner {
+    grid-area: owner;
+}
+
+/* ------------------------------------------ COMMENT SECTION ------------------------------- */
 .comments {
     grid-area: comments;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    width: 55em;
+    margin: 0.5em auto;
+    padding: 1em 2em;
+
+    background-color: var(--light-grey);
 }
+
+
+
+.comments > h2 {
+    padding: 0.5em;
+    border-bottom: 2px solid var(--dark-gold);
+}
+
+.comment_form {
+    display: flex;
+    flex-direction: column;
+
+}
+#content {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5em;
+}
+#submit {
+    margin: 0.5em;
+}
+
+.comment {
+    margin: 1em 0;
+}
+.comment * {
+    margin: 0;
+}
+
+.comment > header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between; 
+    margin-bottom: 0.5em;
+}
+.comment > p {
+    padding: 0 0.5em;
+}
+.comment > footer {
+    margin-top: 0.5em;
+}
+
+/* ------------------------------------------- RESERVATION FORM -------------------------------- */
+.reservation_form {
+    box-sizing: border-box;
+    grid-area: reservation;
+    width: 100%;
+
+    margin: 0.5em auto;
+    padding: 0.5em;
+}
+.reservation_form > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.reservation_form > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto 0.5em; 
+}
+
+/* -------------------------------------------- PAGE FOOTER ------------------------------------- */
 body > footer {
     grid-area: footer;
 }
-.reservation_form {
-    grid-area: reservation;
+
+
+/* ----------------------------------------------- MEDIA QUERIES ---------------------------------- */
+@media (max-width: 60em) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .comments {
+        box-sizing: border-box;
+        width: 100%;
+
+        margin: 0.5em 0;
+    }
 }

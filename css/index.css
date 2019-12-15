@@ -95,7 +95,7 @@ body > footer {
     left: 0;
 }
 
-@media ((max-height: 640px) and (max-width: 40em)) or ((max-height: 460px) and (min-width: 40em)){
+@media ((max-height: 640px) and (max-width: 40em)) or ((max-height: 460px) and (min-width: 40em)) {
     body > footer {
         position: relative;
         bottom: auto;

@@ -58,8 +58,9 @@ function draw_comment(id, username, content, date) {
     if (username == session_username) {
         let del_comment = document.createElement('span');
         del_comment.setAttribute('class', 'del_comment');
+        del_comment.setAttribute('class', 'button');
         del_comment.setAttribute('data-id', id);
-        del_comment.innerHTML = 'Delete';
+        del_comment.innerHTML = 'delete';
         header.appendChild(del_comment);
     }
 

@@ -37,6 +37,8 @@ $_SESSION['property_id'] = $property_id;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
     <link href="../css/common.css" rel="stylesheet">
     <script src="../javascript/messages.js" type="module" defer></script>
 

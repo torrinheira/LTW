@@ -3,13 +3,14 @@
 include_once('../includes/session.php');
 include_once('../includes/input_validation.php');
 include_once('../includes/redirect.php');
+
 include_once('../templates/tpl_common.php');
 include_once('../templates/tpl_property.php');
-include_once('../database/db_property.php');
-include_once('../database/db_user.php');
-include_once('../database/db_reservation.php');
-include_once('../debug/debug.php');
 
+include_once('../database/db_user.php');
+include_once('../database/db_property.php');
+include_once('../database/db_reservation.php');
+include_once('../database/db_property_image.php');
 
 
 $city = $_GET['city'];
@@ -112,7 +113,7 @@ $properties = get_properties_cities();
                     }
 
                     if (($property_info['capacity'] >= $guests) && $is_available && $property_info['price'] >= $minprice && $property_info['price'] <= $maxprice) {           
-                        $image = "../images/not_found.jpg";
+                        $image = get_property_preview_image($property_info['id']);
                         draw_property_list_item($image, $property_info, $checkin, $checkout, $guests);
                         $number_of_properties = $number_of_properties + 1;
                     }
@@ -141,7 +142,7 @@ $properties = get_properties_cities();
                 }
 
                 if (($property_info['capacity'] >= $guests) && $is_available && $property_info['price'] >= $minprice && $property_info['price'] <= $maxprice) {
-                    $image = "../images/not_found.jpg";
+                    $image = get_property_preview_image($property_info['id']);
                     draw_property_list_item($image, $property_info, $checkin, $checkout, $guests);
                     $number_of_properties = $number_of_properties + 1;
                 }

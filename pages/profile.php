@@ -31,11 +31,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
         <link href="../css/common.css" rel="stylesheet">
         <link href="../css/profile.css" rel="stylesheet">
 
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 
         <script src="../javascript/authentication.js" type="module" defer></script>
         <script src="../javascript/messages.js" type="module" defer></script>

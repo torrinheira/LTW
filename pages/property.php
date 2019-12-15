@@ -30,7 +30,6 @@ $images = get_property_images($property_id);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/slideshow.css" rel="stylesheet">
     <link href="../css/property.css" rel="stylesheet">

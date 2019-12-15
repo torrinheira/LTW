@@ -42,11 +42,8 @@ body > header {
 
 .search > form > .submit {
     flex-basis: 100%;
+    margin: 0.5em auto;
 }
-.search > form input[type="submit"] {
-    width: 10em;
-}
-
 
 
 /* ---------------- SEARCH RESULTS ---------------- */
@@ -57,7 +54,7 @@ body > header {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     margin: 0;
     padding: 1em;
@@ -65,26 +62,70 @@ body > header {
 
 .p_item {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    justify-content: start;
+    margin: 0.5em auto;
+    padding: 0.5em;
 
-    margin: 0.5em;
+    width: 60em;
 
     background-color: var(--light-grey);
 }
 
-.p_item > img {
+.p_item > .p_image {
     margin: 0.5em;
 }
 
-.p_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.p_item > .p_info {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "description description"
+        "address address"
+        "capacity price"
+        "owner owner";
 
-    margin: 1em;
+    margin: 0.5em;
 }
+
+.p_item > .p_info > * {
+    margin: 0.5em 0;
+}
+
+.p_item > .p_info > .p_title {
+    grid-area: title;
+    margin: 0;
+}
+.p_item > .p_info > .p_description {
+    grid-area: description;
+    text-justify: inter-word;
+}
+.p_item > .p_info > .p_address {
+    grid-area: address;
+}
+.p_item > .p_info > .p_price {
+    grid-area: price;
+}
+.p_item > .p_info > .p_capacity {
+    grid-area: capacity;
+}
+.p_item > .p_info > .p_owner {
+    grid-area: owner;
+}
+
+
+@media (max-width: 65em) {
+    .p_item {
+        width: 90%;
+        margin: 0.5em auto;
+        flex-wrap: wrap;
+    }
+
+    .p_item > .p_image {
+        margin: 0.5em auto;
+    }
+}
+
+
 
 
 
