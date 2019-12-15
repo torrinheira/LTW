@@ -14,14 +14,28 @@ i {
 }
 
 /* ---------------------- MESSAGES -------------------------- */
+.message_bg {
+    width: 100%;
+    height: 0;
+
+    position: fixed;
+    top: 0;
+}
+
 .messages {
-    padding: 0em 1em;
-    background-color: white;
-    border: 2px solid goldenrod;
+    background-color: whitesmoke;
+    border: 2px solid var(--light-gold);
     border-radius: 1em;
+    
+    padding: 0em 1em;
+    margin: 0.5em auto;
+
     width: 10em;
-    margin: 0 auto;
-    z-index: 3;
+    text-align: center;
+}
+
+.messages .error {
+    color: red;
 }
 
 /*  ------------------- MODAL BOXES ---------------------- */

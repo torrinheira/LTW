@@ -14,6 +14,9 @@ request('post', '../api/fetch_messages.php', {}, true, function() {
         parent = document.querySelector('body');
     }
 
+    let message_bg = document.createElement('div');
+    message_bg.setAttribute('class', 'message_bg');
+
     let message_elem = document.createElement('div');
     message_elem.setAttribute('class', 'messages');
 
@@ -21,7 +24,8 @@ request('post', '../api/fetch_messages.php', {}, true, function() {
         message_elem.innerHTML = "<p class=\"" + messages[i]['type'] + "\">" + messages[i]['content'] + "</p>";
     }
 
-    parent.insertBefore(message_elem, parent.childNodes[0]);
+    message_bg.appendChild(message_elem)
+    parent.appendChild(message_bg);
     // TODO: uncomment this line
     // setTimeout(remove_messages, 1500);
 });
