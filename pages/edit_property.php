@@ -52,7 +52,7 @@ $_SESSION['property_id'] = $property_id;
         <div id="uploaded_images">
             <?php foreach ($property_images as $image) { ?>
             <div class="image_tile">
-                <img src="../images/t_medium/<?=$image['image_id']?>.jpg" class="responsive_image" width="400" height="400">
+                <img class="responsive_image" width="400" src="../images/t_medium/<?=$image['image_id']?>.jpg"  height="400">
                 <a class="button" href="../actions/action_delete_property_image.php?image_id=<?=$image['image_id']?>">Delete</a>
             </div>
             <?php } ?>
@@ -69,16 +69,16 @@ $_SESSION['property_id'] = $property_id;
         <form action="../actions/action_edit_property.php" method="post">
             <input type="hidden" id="id_property" name="id_property" value="<?= $property_info['id'] ?>"> 
             <div class="form_entry p_title">Title<input type="text" name="new_title" value="<?= $property_info['title'] ?>" required></div>
-            <div class="form_entry p_price">Price per night<input type="number" name="new_price" value="<?= $property_info['price'] ?>" min="0" required></div>
             <div class="form_entry p_city">City<input type="text" name="new_city" value="<?= $property_info['city'] ?>" required></div>
             <div class="form_entry p_address">Address<input type="text" name="new_address" value="<?= $property_info['address'] ?>" required></div>
+            <div class="form_entry p_price">Price per night<input type="number" name="new_price" value="<?= $property_info['price'] ?>" min="0" required></div>
+            <div class="form_entry p_capacity">Capacity<input type="number" name="new_capacity" value="<?= $property_info['capacity'] ?>" min="1" max="20" required></div>
             <div class="form_entry p_description">Description
                 <textarea name="new_description" rows="5" cols="50" placeholder="Tell us a little bit about yourself..."><?php
                 if ($property_info['description'] != null)
                     echo $property_info['description'];
                 ?></textarea>
             </div>
-            <div class="form_entry p_capacity">Capacity<input type="number" name="new_capacity" value="<?= $property_info['capacity'] ?>" min="1" max="20" required></div>
             <div class="input"><input type="submit" value="Update property"></div>
         </form>
     </section>
