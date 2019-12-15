@@ -75,12 +75,24 @@
 <?php } ?>
 
 
-<?php function draw_manage_property($user_property) { ?>
-    <section id="property_of_user">
-        <li><i class="fa fa-home icon"></i><?= $user_property['title']?></li>
-        <li><i class="fa fa-map-marker icon"></i><?= $user_property['city']?></li> 
-        <li><a class="button" href="../pages/property.php?id=<?=$user_property['id']?>">View property</a> <a class="button" href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a>  <a class="button" href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a>   <a class="button" href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a> </li>
-    </section>
+<?php function draw_manage_property($image, $user_property) { ?>
+    <li class="property">
+    <?php if ($image != null) { ?>    
+        <img class="p_image" src="../images/t_small/<?=$image['image_id']?>.jpg" height="200">
+    <?php } else { ?>
+        <img class="p_image" src="../images/not_found.jpg" height="200">
+    <?php } ?>
+        <div class="p_info">
+            <p class="p_title"><i class="fa fa-home icon"></i><?= $user_property['title']?></p>
+            <p class="p_address"><i class="fa fa-map-marker icon"></i><?=$user_property['city']?>, <?=$user_property['address']?></p> 
+            <div class="actions">
+                <a class="button" href="../pages/property.php?id=<?=$user_property['id']?>">View property</a>
+                <a class="button" href="../pages/edit_property.php?id=<?=$user_property['id']?>">Edit</a>
+                <a class="button" href="../actions/action_delete_property.php?id=<?=$user_property['id']?>">Delete</a>
+                <a class="button" href="../pages/property_reservations.php?id=<?=$user_property['id']?>">Reservations</a>
+            </div>
+        </div>
+    </li>
 <?php } ?>
 
 
