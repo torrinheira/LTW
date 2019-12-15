@@ -1,0 +1,94 @@
+html{
+    background-color: grey;
+}
+
+/*pictures part */
+#change_pictures{
+    
+    background-color: whitesmoke;
+    
+    width: 38em;
+    
+    border-radius: 1em;
+    padding: 1em;
+    margin: 5px auto;
+    
+}
+
+.image_tile{
+    padding: 0.2em;
+}
+
+/*property info part */
+#edit_property{
+    background-color: whitesmoke;
+
+    width: 38em;
+
+    border-radius: 1em;
+    padding: 1em;
+    margin: auto;
+}
+
+#edit_property > form {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "city address"
+        "price capacity"
+        "description description"
+        "submit submit";
+}
+
+#edit_property > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5em 0em;
+}
+
+#edit_property > form > .p_title {
+    grid-area: title;
+}
+#edit_property > form > .p_city {
+    grid-area: city;
+}
+#edit_property > form > .p_address {
+    grid-area: address;
+}
+#edit_property> form > .p_price {
+    grid-area: price;
+}
+#edit_property > form > .p_capacity {
+    grid-area: capacity;
+}
+#edit_property > form > .p_description {
+    grid-area: description;
+}
+#edit_property > form > .submit {
+    grid-area: submit;
+    margin: 0.5em auto;
+}
+
+
+@media (max-width: 40em) {
+    #edit_property > form {
+        display: grid;
+        grid-template-areas:
+            "title"
+            "city"
+            "address"
+            "price"
+            "capacity"
+            "description"
+            "submit";
+
+        padding: 1em;
+    }
+
+    #edit_property {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+}
