@@ -30,12 +30,12 @@
 
 
 <?php function draw_user_current_previous($reservation, $title, $city, $owner) { ?>
-    <li><i class="fa fa-home"></i><?= $title?><i class="fa fa-map-marker"></i><?= $city?><i class="fa fa-calendar"></i><?=$reservation['arrival_date']?> to <?=$reservation['departure_date']?> <a href="../pages/property.php?id=<?=$reservation['property_id']?>">View property</a>  <a href="../pages/profile.php?username=<?=$owner?>">View host</a></li>
+    <li><i class="fa fa-home"></i><?= $title?><i class="fa fa-map-marker"></i><?= $city?><i class="fa fa-calendar"></i><?=$reservation['arrival_date']?> to <?=$reservation['departure_date']?> <a href="../pages/property.php?id=<?=$reservation['property_id']?>">Property</a>  <a href="../pages/profile.php?username=<?=$owner?>">Host</a></li>
 <?php } ?>
 
 
 <?php function draw_user_upcoming($reservation, $title, $city, $owner) { ?>
-    <li><i class="fa fa-home"></i><?= $title?><i class="fa fa-map-marker"></i><?= $city?><i class="fa fa-calendar"></i><?=$reservation['arrival_date']?> to <?=$reservation['departure_date']?> <a href="../pages/property.php?id=<?=$reservation['property_id']?>">View property</a>  <a href="../pages/profile.php?username=<?=$owner?>">View host</a></li> 
+    <li><i class="fa fa-home"></i><?= $title?><i class="fa fa-map-marker"></i><?= $city?><i class="fa fa-calendar"></i><?=$reservation['arrival_date']?> to <?=$reservation['departure_date']?> <a href="../pages/property.php?id=<?=$reservation['property_id']?>">Property</a>  <a href="../pages/profile.php?username=<?=$owner?>">Host</a></li> 
     <li> <label><a href="../actions/action_cancel_reservation.php?id=<?=$reservation['id']?>">Cancel</a> </label></li>
 
 <?php } ?>

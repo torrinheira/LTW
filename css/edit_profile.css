@@ -7,6 +7,7 @@
     margin: 5px auto;
     padding: 0.3em;
     width: 50%;
+    background-color: whitesmoke;
 }
 
 #change_picture > header{
@@ -21,6 +22,7 @@
 }
 
 /*edit profile */
+/*content inside this section should be greedy */
 #edit_profile{
     border-radius:20px;
     border-style: solid;
@@ -29,11 +31,70 @@
     margin: 5px auto;
     padding: 0.3em;
     width: 50%;
+    background-color: whitesmoke;
 }
 
 #edit_profile > header{
     justify-content: center;
     font-weight: 600;
+}
+
+#edit_profile > form{
+    display: grid;
+    grid-template-areas: 
+        "username username"
+        "firstname lastname"
+        "email email"
+        "description description"
+        "submit submit";
+
+}
+
+#edit_profile > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5em 0em;
+}
+
+#edit_profile > form > .username {
+    grid-area: username;
+}
+#edit_profile > form > .first {
+    grid-area: firstname;
+}
+#edit_profile > form > .last {
+    grid-area: lastname;
+}
+#edit_profile > form > .email {
+    grid-area: email;
+}
+#edit_profile > form > .description {
+    grid-area: description;
+}
+#edit_profile > form > .submit {
+    grid-area: submit;
+    margin: 0.5em auto;
+}
+@media (max-width: 40em) {
+    #edit_profile > form {
+        display: grid;
+        grid-template-areas:
+            "username"
+            "firstname"
+            "lastname"
+            "email"
+            "description"
+            "submit";
+
+        padding: 1em;
+    }
+
+    #edit_profile {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
 }
 
 /* change password */
@@ -45,9 +106,61 @@
     margin: 5px auto;
     padding: 0.3em;
     width: 50%;
+    background-color: whitesmoke;
 }
 
 #change_password > header{
     justify-content: center;
     font-weight: 600;
+}
+
+
+#change_password > form{
+    display: grid;
+    grid-template-areas: 
+        "old_password"
+        "new_password"
+        "new_password_confirm"
+        "submit";
+
+}
+
+#change_password > form > .form_entry {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5em 0em;
+}
+
+#change_password > form > .old_pass {
+    grid-area: old_password;
+}
+#change_password > form > .new_pass {
+    grid-area: new_password;
+}
+#change_password > form > .new_pass_confirm {
+    grid-area: new_password_confirm;
+}
+#change_password > form > .submit {
+    grid-area: submit;
+    margin: 0.5em auto;
+}
+
+@media (max-width: 40em) {
+    #change_password > form {
+        display: grid;
+        grid-template-areas:
+            "old_password"
+            "new_password"
+            "new_password_confirm"
+            "submit";
+
+        padding: 1em;
+    }
+
+    #change_password {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
 }
