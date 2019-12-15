@@ -57,8 +57,7 @@ function draw_comment(id, username, content, date) {
 
     if (username == session_username) {
         let del_comment = document.createElement('span');
-        del_comment.setAttribute('class', 'del_comment');
-        del_comment.setAttribute('class', 'button');
+        del_comment.setAttribute('class', 'del_comment button');
         del_comment.setAttribute('data-id', id);
         del_comment.innerHTML = 'delete';
         header.appendChild(del_comment);
@@ -79,7 +78,7 @@ function draw_comment(id, username, content, date) {
 
 // Add event listener for comments delete method
 document.addEventListener('click', function(event) {
-    if (event.target && event.target.getAttribute('class') == 'del_comment') {
+    if (event.target && event.target.getAttribute('class').includes('del_comment')) {
         let id = event.target.getAttribute('data-id');
 
         event.target.parentElement.parentElement.remove();
