@@ -60,27 +60,27 @@ $profile_info = getUserInfo($_SESSION['username']);
     <section id="edit_profile">
         <header>Public profile</header>
         <form action="../actions/action_edit_profile.php" method="post">
-            <label>Username<input type="text" name="new_username" placeholder="Username" value="<?= $profile_info['username'] ?>" required></label>
-            <label>First Name<input type="text" name="new_first_name" placeholder="John" value="<?= $profile_info['first_name'] ?>" required></label>
-            <label>Last Name<input type="text" name="new_last_name" placeholder="Doe" value="<?= $profile_info['last_name'] ?>" required></label>
-            <label>Email<input type="email" name="new_email" placeholder="johndoe@something.com" value="<?= $profile_info['email'] ?>" required></label>
-            <label>Description
+            <div class="form_entry username">Username<input type="text" name="new_username" placeholder="Username" value="<?= $profile_info['username'] ?>" required></div>
+            <div class="form_entry first">First Name<input type="text" name="new_first_name" placeholder="John" value="<?= $profile_info['first_name'] ?>" required></div>
+            <div class="form_entry last">Last Name<input type="text" name="new_last_name" placeholder="Doe" value="<?= $profile_info['last_name'] ?>" required></div>
+            <div class="form_entry email">Email<input type="email" name="new_email" placeholder="johndoe@something.com" value="<?= $profile_info['email'] ?>" required></div>
+            <div class=" form_entry description">Description
                 <textarea name="new_description" rows="5" cols="50" placeholder="Tell us a little bit about yourself..."><?php 
                 if ($profile_info['description'] != null)
                     echo $profile_info['description'];
                 ?></textarea>
-            </label>
-            <input type="submit" value="Update profile">
+            </div>
+            <div class="input"><input type="submit" value="Update profile"></div>
         </form>
     </section>
 
     <section id="change_password">
         <header>Change password</header>
         <form action="../actions/action_change_password.php" method="post">
-            <label>Old password<input type="password" name="old_password" required></label>
-            <label>New password<input type="password" name="new_password" required></label>
-            <label>Confirm new password<input type="password" name="rep_password" required></label>
-            <input type="submit" value="Update password">
+            <div class="form_entry old_pass">Old password<input type="password" name="old_password" required></div>
+            <div class="form_entry new_pass">New password<input type="password" name="new_password" required></div>
+            <div class="form_entry new_pass_confirm">Confirm new password<input type="password" name="rep_password" required></div>
+            <div class="input"><input type="submit" value="Update password"></div>
         </form>
     </section>
 
