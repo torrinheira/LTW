@@ -95,9 +95,6 @@ $number_current = count($current_reservation);
         </ul>
     </section>
 
-
-    <?php draw_footer(); ?>
-
 </body>
 
 </html>

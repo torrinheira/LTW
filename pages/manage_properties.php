@@ -56,8 +56,6 @@ $number_of_properties = count($user_properties);
     </ul>
     <div class="add_property"><a class="button" href="./add_property.php">Add property</a></div>
 
-    <?php draw_footer(); ?>
-
 </body>
 
 </html>

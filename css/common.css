@@ -40,7 +40,6 @@ i {
 
 /*  ------------------- MODAL BOXES ---------------------- */
 .modal_bg {
-
     background-color: rgba(0.0, 0.0, 0.0, 0.6);
     
     width: 100%;
@@ -52,18 +51,17 @@ i {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: nowrap;
 }
 .modal {
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 1em;
 
     position: relative;
-    width: 30em;
-    height: 20em;
+    width: 40em;
+    height: 30em;
 
-    margin: auto;
-    padding: 2em;
+    margin: 0 auto;
+    padding: 1.5em;
 
     display: flex;
     flex-direction: column;
@@ -71,16 +69,19 @@ i {
     align-items: center;
 }
 .modal_body {
-    padding: 2em;
+    padding: 1em;
     position: relative;
-    text-align: center;
+    align-items: center;
+}
+.modal_body > form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 .modal_body > form > * {
-    display: block;
-}
-.modal_body > form:not(:last-child) {
     width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em auto;
 }
 
 
@@ -125,10 +126,10 @@ i {
     cursor: pointer;
 }
 
-
-/* login */
-
-.login_form{
-    padding: 0.5em;
-    margin:0 auto;
+/* ----------------------------------------- MEDIA QUERIES ------------------------------------------- */
+@media(max-width: 45em) {
+    .modal {
+        box-sizing: border-box;
+        width: 100%;
+    }
 }

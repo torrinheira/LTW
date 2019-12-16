@@ -41,9 +41,7 @@ if (!isset($_SESSION['username'])) {
             <div class="form_entry submit"><input type="submit" value="Add Property"></div>
         </form>
     </section>
-
-    <?php draw_footer(); ?>
-
+    
 </body>
 
 </html>

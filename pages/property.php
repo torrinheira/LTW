@@ -62,7 +62,6 @@ $images = get_property_images($property_id);
     }
     ?>
     <?php draw_comments(); ?>
-    <?php draw_footer(); ?>
 </body>
 
 </html>

@@ -154,7 +154,6 @@ $properties = get_properties_cities();
         }
         ?>
     </ul>
-    <?php draw_footer(); ?>
 
 </body>
 

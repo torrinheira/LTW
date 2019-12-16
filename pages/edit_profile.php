@@ -81,8 +81,6 @@ $profile_info = getUserInfo($_SESSION['username']);
         </form>
     </section>
 
-    <?php draw_footer(); ?>
-
 </body>
 
 </html>

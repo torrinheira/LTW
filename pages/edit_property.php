@@ -82,7 +82,6 @@ $_SESSION['property_id'] = $property_id;
             <div class="input"><input type="submit" value="Update property"></div>
         </form>
     </section>
-    <?php draw_footer(); ?>
 </body>
 
 </html>
