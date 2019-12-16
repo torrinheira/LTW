@@ -7,8 +7,8 @@
     function checkExtension($image) {
         $ext = pathinfo($image, PATHINFO_EXTENSION);
 
-        if ($ext != 'jpg' || $ext != 'jpeg')
-            redirect('error', 'Only .jpg or .jpeg');
+        if ($ext != 'jpg' && $ext != 'jpeg')
+            redirect('error', $ext);
     }
 
 
@@ -62,7 +62,6 @@
             return;
         }
 
-        // FIXME: the files are not being deleted yet
         unlink(realpath("../images/originals/" . $image_id . ".jpg"));
         unlink(realpath("../images/t_medium/" . $image_id. ".jpg"));
         unlink(realpath("../images/t_small/" . $image_id . ".jpg"));
