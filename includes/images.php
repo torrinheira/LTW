@@ -2,13 +2,14 @@
 
     include_once('../database/db_image.php');
     include_once('../inludes/images.php');
+    include_once('../includes/redirect.php');
 
 
     function checkExtension($image) {
         $ext = pathinfo($image, PATHINFO_EXTENSION);
 
         if ($ext != 'jpg' && $ext != 'jpeg')
-            redirect('error', $ext);
+            die(redirect('error', 'Only .jpg or .jpeg'));
     }
 
 
