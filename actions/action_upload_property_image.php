@@ -15,7 +15,7 @@ $property_id = $_SESSION['property_id'];
 unset($_SESSION['property_id']);
 
 $image_file = $_FILES['image']['tmp_name'];
-// TODO: validate
+checkExtension($image_file);
 $image_description = $_POST['description'];
 
 

@@ -1,6 +1,15 @@
 <?php
 
     include_once('../database/db_image.php');
+    include_once('../inludes/images.php');
+
+
+    function checkExtension($image) {
+        $ext = pathinfo($image, PATHINFO_EXTENSION);
+
+        if ($ext != 'jpg' || $ext != 'jpeg')
+            redirect('error', 'Only .jpg or .jpeg');
+    }
 
 
     function uploadImage($image, $description) {
@@ -17,7 +26,6 @@
         move_uploaded_file($image, $originalFileName);
         
         // create an image representation of the original image
-        // FIXME: execution stops here
         $original = imagecreatefromjpeg($originalFileName);
 
         $width = imagesx($original);        // width of the original image

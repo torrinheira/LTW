@@ -12,6 +12,7 @@
     }
 
     $image_file = $_FILES['image']['tmp_name'];
+    checkExtension($image_file);
     $image_description = $username . "'s profile picture";
 
     $image_id = uploadImage($image_file, $image_description);
