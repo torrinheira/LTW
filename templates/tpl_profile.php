@@ -14,9 +14,14 @@
             <?php } ?>
         </div>
 
-        <?php if ($profile['username'] == $_SESSION['username']) { ?>
+        <?php 
+
+        if(isset($_SESSION['username'])){
+            if ($profile['username'] == $_SESSION['username']) { 
+            ?>
             <a class="button" href="./edit_profile.php">Edit profile</a>
-        <?php } ?>
+        <?php }
+        } ?>
     </section>
 <?php } ?>
 
